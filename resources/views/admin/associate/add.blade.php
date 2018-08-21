@@ -2,9 +2,9 @@
 	<div class="page-content">
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form role="add-associate" action="{{url('admin/associate')}}" method="POST" class="horizontal-form">
+			<form role="add-investor" action="{{url('admin/investor')}}" method="POST" class="horizontal-form">
 				<div class="form-body">
-					<h3 class="form-section">Add Associate</h3>
+					<h3 class="form-section">Add investor</h3>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -27,7 +27,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Email</label>
-								<input type="text" id="firstName" name="email" class="form-control" placeholder="Enter Email">
+								<input type="text" id="email" name="email" class="form-control" placeholder="Enter Email">
 								
 							</div>
 						</div>
@@ -48,7 +48,7 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<label class="control-label">Mobile Number</label>
-										<input type="text" id="lastName" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
+										<input type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
 										
 									</div>
 								</div>
@@ -79,15 +79,11 @@
 						<!--/span-->
 					</div>
 					<!--/row-->
-					<!-- <div class="row">
+					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Category</label>
-								<select class="select2_category form-control" name="Category" data-placeholder="Choose a Category" tabindex="1">
-									<option value="Category 1">Category 1</option>
-									<option value="Category 2">Category 2</option>
-									<option value="Category 3">Category 5</option>
-									<option value="Category 4">Category 4</option>
+								<label class="control-label">Select Associate</label>
+								<select class="select2_category form-control" name="associate" >
 								</select>
 							</div>
 						</div>
@@ -103,7 +99,7 @@
 								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>
 					<!--/row-->
 					<div class="row">
 						<div class="col-md-12 ">
@@ -177,11 +173,16 @@
 					</div>
 				</div>
 				<div class="form-actions right">
-					<a href="{{url('admin/associate')}}" class="btn default">Cancel</a>
-					<button type="button" data-request="ajax-submit" data-target='[role="add-associate"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
+					<a href="{{url('admin/investor')}}" class="btn default">Cancel</a>
+					<button type="button" data-request="ajax-submit" data-target='[role="add-investor"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
 				</div>
 			</form>
 			<!-- END FORM-->
 		</div>		
 	</div>
 </div>
+@section('requirejs')
+<script type="text/javascript">
+	dynamicSelect2('associate','{{url("admin/ajax/associate")}}','Select Associate');
+</script>
+@endsection
