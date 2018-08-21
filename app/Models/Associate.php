@@ -7,8 +7,6 @@ namespace Models;
 
 class Associate extends Model
 {
-    protected $table = 'associate';
-    protected $primaryKey = 'id';
     
     /*const CREATED_AT = 'created';
     const UPDATED_AT = 'updated';*/
