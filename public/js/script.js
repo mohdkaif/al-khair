@@ -225,7 +225,7 @@ var dynamicDatepicker = function($className, $maxDate=true,$minDate=true){
     }); 
 }
 
-/*var dynamicSelect2 = function($className, $url,$placeholder,$tags){
+var dynamicSelect2 = function($className, $url,$placeholder,$tags){
     if($placeholder){
         $placeholder = 'Select';
     }
@@ -248,8 +248,8 @@ var dynamicDatepicker = function($className, $maxDate=true,$minDate=true){
                 return query;
             }
         },placeholder:$placeholder
-    }).parent('.customSelect').addClass('select2Init');
-}*/
+    });
+}
 
 function show_validation_error(msg) {
     if ($.isPlainObject(msg)) {

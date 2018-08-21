@@ -2,9 +2,9 @@
 	<div class="page-content">
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form role="add-associate" action="{{url('admin/associate')}}" method="POST" class="horizontal-form">
+			<form role="add-investor" action="{{url('admin/investor')}}" method="POST" class="horizontal-form">
 				<div class="form-body">
-					<h3 class="form-section">Add Associate</h3>
+					<h3 class="form-section">Add investor</h3>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -79,7 +79,7 @@
 						<!--/span-->
 					</div>
 					<!--/row-->
-					<!-- <div class="row">
+					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Category</label>
@@ -103,7 +103,7 @@
 								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>
 					<!--/row-->
 					<div class="row">
 						<div class="col-md-12 ">
@@ -177,8 +177,8 @@
 					</div>
 				</div>
 				<div class="form-actions right">
-					<a href="{{url('admin/associate')}}" class="btn default">Cancel</a>
-					<button type="button" data-request="ajax-submit" data-target='[role="add-associate"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
+					<a href="{{url('admin/investor')}}" class="btn default">Cancel</a>
+					<button type="button" data-request="ajax-submit" data-target='[role="add-investor"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
 				</div>
 			</form>
 			<!-- END FORM-->

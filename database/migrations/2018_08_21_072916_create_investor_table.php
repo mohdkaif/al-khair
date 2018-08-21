@@ -35,7 +35,6 @@ class CreateInvestorTable extends Migration
             $table->double('yearly_interest_rate');
             $table->double('monthly_interest_rate');
             $table->double('weekly_interest_rate');
-            $table->double('weekly_interest_rate');
             $table->enum('account_status',['open','closed','pending','trashed'])->default('open');
             $table->string('start_date');
             $table->timestamps();
