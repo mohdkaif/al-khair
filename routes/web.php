@@ -17,11 +17,11 @@ Route::get('/',
 	}
 );
 
-Auth::routes();
+	Auth::routes();
 	Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
-	Route::post('/associate/status', 'AssociateController@changeStatus');
-	Route::resource('/associate', 'AssociateController');
-	Route::resource('/investor', 'InvestorController');
+	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
+		Route::post('/associate/status', 'AssociateController@changeStatus');
+		Route::resource('/associate', 'AssociateController');
+		Route::resource('/investor', 'InvestorController');
 
-});
+	});
