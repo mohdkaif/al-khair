@@ -27,7 +27,7 @@
 		<div class="page-head">
 			<!-- BEGIN PAGE TITLE -->
 			<div class="page-title">
-				<h1>Ajax Datatables <small>basic datatable samples</small></h1>
+				<h1>Associates <small> MANAGE</small></h1>
 			</div>
 			<!-- END PAGE TITLE -->
 			<!-- BEGIN PAGE TOOLBAR -->
