@@ -11,17 +11,23 @@
 |
 */
 
-Route::get('/',
-	function () {
-	    return redirect('/login');
-	}
-);
+	Route::get('/',
+		function () {
+		    return redirect('/login');
+		}
+	);
 
 	Auth::routes();
 	Route::get('/home', 'HomeController@index')->name('home');
+	
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
-		Route::post('/associate/status', 'AssociateController@changeStatus');
-		Route::resource('/associate', 'AssociateController');
-		Route::resource('/investor', 'InvestorController');
-
+		Route::group(['prefix' => 'associate'],function(){
+			Route::post('/status', 'AssociateController@changeStatus');
+			Route::resource('/', 'AssociateController');
+		});
+		
+		Route::group(['prefix' => 'investor'],function(){
+			Route::post('/status', 'InvestorController@changeStatus');
+			Route::resource('/', 'InvestorController');
+		});
 	});
