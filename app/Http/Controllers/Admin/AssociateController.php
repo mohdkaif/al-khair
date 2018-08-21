@@ -172,4 +172,22 @@ class AssociateController extends Controller
         }
        return $this->populateresponse();
     }
+
+    public function  all_list(Request $request){
+        $language = \App::getLocale();
+        $where = 'status = "active"';
+
+        if(!empty($request->search)){
+            $where .= " AND name LIKE '%{$request->search}%'";
+        }
+
+        $bank = \Models\Associate::list(
+            'array',
+            $where,
+            ['name as text', 'id as id']
+        );
+        return response()->json([
+            'results'    => $bank,
+        ]);
+    }
 }

@@ -30,4 +30,9 @@
 			Route::post('/status', 'InvestorController@changeStatus');
 			Route::resource('/', 'InvestorController');
 		});
+
+		Route::group(['prefix' => 'ajax'],function(){
+			Route::post('/associate', 'AssociateController@ajaxList');
+			//Route::resource('/', 'InvestorController');
+		});
 	});
