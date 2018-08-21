@@ -13,10 +13,13 @@ class CreateAssocitaeTable extends Migration
      */
     public function up()
     {
-        Schema::create('associate', function (Blueprint $table) {
+        Schema::create('associates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('user_id');
+            $table->string('parent_id')->nullable();
+            $table->enum('have_child',['yes','no'])->default('no');
+            $table->integer('level')->nullable();
             $table->string('email')->unique();
             $table->string('first_name');
             $table->string('last_name');
@@ -41,6 +44,6 @@ class CreateAssocitaeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('associate');
+        Schema::dropIfExists('associates');
     }
 }
