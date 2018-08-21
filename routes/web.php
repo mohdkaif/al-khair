@@ -32,7 +32,7 @@
 		});
 
 		Route::group(['prefix' => 'ajax'],function(){
-			Route::post('/associate', 'AssociateController@ajaxList');
+			Route::get('/associate', 'AssociateController@ajaxList');
 			//Route::resource('/', 'InvestorController');
 		});
 	});

@@ -173,7 +173,7 @@ class AssociateController extends Controller
        return $this->populateresponse();
     }
 
-    public function  all_list(Request $request){
+    public function  ajaxList(Request $request){
         $language = \App::getLocale();
         $where = 'status = "active"';
 
@@ -181,7 +181,7 @@ class AssociateController extends Controller
             $where .= " AND name LIKE '%{$request->search}%'";
         }
 
-        $bank = \Models\Associate::list(
+        $bank = \Models\Associate::all_list(
             'array',
             $where,
             ['name as text', 'id as id']

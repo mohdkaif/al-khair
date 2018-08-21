@@ -2,9 +2,9 @@
 	<div class="page-content">
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form role="add-investor" action="{{url('admin/investor')}}" method="POST" class="horizontal-form">
+			<form role="add-associate" action="{{url('admin/associate')}}" method="POST" class="horizontal-form">
 				<div class="form-body">
-					<h3 class="form-section">Add investor</h3>
+					<h3 class="form-section">Add associate</h3>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -83,7 +83,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Select Associate</label>
-								<select class="select2_category form-control" name="associate" >
+								<select class="select2_category form-control associate" name="associate" >
 								</select>
 							</div>
 						</div>
@@ -173,8 +173,8 @@
 					</div>
 				</div>
 				<div class="form-actions right">
-					<a href="{{url('admin/investor')}}" class="btn default">Cancel</a>
-					<button type="button" data-request="ajax-submit" data-target='[role="add-investor"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
+					<a href="{{url('admin/associate')}}" class="btn default">Cancel</a>
+					<button type="button" data-request="ajax-submit" data-target='[role="add-associate"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
 				</div>
 			</form>
 			<!-- END FORM-->
@@ -183,6 +183,6 @@
 </div>
 @section('requirejs')
 <script type="text/javascript">
-	dynamicSelect2('associate','{{url("admin/ajax/associate")}}','Select Associate');
+	dynamicSelect2('.associate','{{url("admin/ajax/associate")}}','Select Associate');
 </script>
 @endsection
