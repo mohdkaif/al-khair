@@ -206,5 +206,23 @@
 </div>
 
 @section('requirejs')
+<script src="{{ asset('js/chat/socket.io') }}.js"></script>
+<script>
+  	var socket = new io.connect(
+		'{!!env('SOCKET_CONNECTION_URL')!!}:{!!env('SOCKET_CONNECTION_PORT')!!}', {
+		'reconnection': true,
+		'reconnectionDelay': 2000,
+		'reconnectionDelayMax' : 5000,
+		'secure':false
+	});
+
+  	// socket.on('latlong', function (2,29.3324,89.43213,callback) {
+   //  	console.log(data);
+   //  	callback("erdfg");
+	socket.emit('my other event',2,29.3324,89.43213,function($k){
+		console.log($k);
+	});
+  	// });
+</script>
 {!! $html->scripts()!!}
 @endsection
