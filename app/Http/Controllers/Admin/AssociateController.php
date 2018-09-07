@@ -17,7 +17,7 @@ class AssociateController extends Controller
 
     public function index(Request $request, Builder $builder){
         $data['site_title'] = $data['page_title'] = 'Associate List';
-        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li><li><a href="#">Data Tables</a><i class="fa fa-circle"></i></li><li><a href="#">Ajax Datatables</a></li></ul>';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li><li><a href="#">Associates</a><i class="fa fa-circle"></i></li><li><a href="#">Manage</a></li></ul>';
         $data['view'] = 'admin.associate.list';
         $users  = _arefy(\Models\Users::where('status','!=','trashed')->where('type','=','associate')->get());
         if ($request->ajax()) {
@@ -171,5 +171,23 @@ class AssociateController extends Controller
             }
         }
        return $this->populateresponse();
+    }
+
+    public function  ajaxList(Request $request){
+        $language = \App::getLocale();
+        $where = 'status = "active"';
+
+        if(!empty($request->search)){
+            $where .= " AND name LIKE '%{$request->search}%'";
+        }
+
+        $bank = \Models\Associate::all_list(
+            'array',
+            $where,
+            ['name as text', 'id as id']
+        );
+        return response()->json([
+            'results'    => $bank,
+        ]);
     }
 }

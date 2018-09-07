@@ -7,7 +7,6 @@ namespace Models;
 
 class Associate extends Model
 {
-    protected $table = 'associate';
     protected $primaryKey = 'id';
     
     /*const CREATED_AT = 'created';
@@ -110,5 +109,35 @@ class Associate extends Model
             return $table_user->limit($limit)->get();
         }
     }
+
+    public static function all_list($fetch = "array", $where = "", $keys = [], $order_by = "name"){
+        $prefix          = \DB::getTablePrefix();
+        $table_associate     = \DB::table((new static)->getTable());
+        \DB::statement(\DB::raw('set @row_number=0'));
+
+        if(!empty($keys)){
+            $table_associate->select($keys);
+        }
+
+        if(!empty($where)){
+            $table_associate->whereRaw($where); 
+        }
+
+        if($fetch === 'array'){
+            $industries_list = $table_associate->get();
+            return json_decode(
+                json_encode(
+                    $industries_list
+                ),
+                true
+            );
+        }else if($fetch === 'obj'){
+            return $table_associate->get();                
+        }else if($fetch === 'single'){
+            return $table_associate->get()->first();
+        }else{
+            return $table_associate->get();
+        }
+    } 
 
 }
