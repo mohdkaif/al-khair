@@ -17,6 +17,13 @@ Route::get('/contact', 'HomeController@contact');
 Route::get('/about', 'HomeController@aboutUs');
 
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
+		
+		Route::get('/',
+			function () {
+			    return redirect('/login');
+			}
+		);
+
 		Auth::routes();
 		Route::get('/home', 'HomeController@index')->name('home');
 		Route::group(['prefix' => 'associate'],function(){
