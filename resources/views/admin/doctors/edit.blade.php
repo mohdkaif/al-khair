@@ -1,15 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <div class="page-content-wrapper">
 	<div class="page-content">
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form role="add-associate" action="{{url('admin/associate')}}" method="POST" class="horizontal-form">
+			<form role="add-doctor" action="{{url(sprintf('admin/doctors/%s',___encrypt($doctorDetails['id'])))}}" method="POST" class="horizontal-form">
+				<input type="hidden" name="_method" value="PUT" />
 				<div class="form-body">
-					<h3 class="form-section">{{$page_title}}</h3>
+
+					<h3 class="form-section">Edit Doctor</h3>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">First Name</label>
-								<input type="text" id="firstName" value="{{$associateDetails['first_name']}}" name="first_name" class="form-control" placeholder="Enter First Name">
+								<input type="text" id="firstName" name="first_name" value="{{$doctorDetails['first_name']}}" class="form-control" placeholder="Enter First Name">
 								
 							</div>
 						</div>
@@ -17,7 +21,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Last Name</label>
-								<input type="text" id="lastName" value="{{$associateDetails['last_name']}}" name="last_name" class="form-control" placeholder="Enter Last Name">
+								<input type="text" id="lastName" value="{{$doctorDetails['last_name']}}" name="last_name" class="form-control" placeholder="Enter Last Name">
 								
 							</div>
 						</div>
@@ -27,12 +31,11 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Email</label>
-								<input type="text" id="firstName" name="email" class="form-control" placeholder="Enter Email">
+								<input type="text" id="email" value="{{$doctorDetails['email']}}" name="email" class="form-control" placeholder="Enter Email">
 								
 							</div>
 						</div>
 						<!--/span-->
-						    {{ csrf_field() }}
 
 						<div class="col-md-6">
 							<div class="row">
@@ -48,7 +51,7 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<label class="control-label">Mobile Number</label>
-										<input type="text" id="lastName" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
+										<input type="text" id="mobile_number" name="mobile_number" class="form-control" value="{{$doctorDetails['mobile_number']}}" placeholder="Enter Mobile Number">
 										
 									</div>
 								</div>
@@ -73,43 +76,16 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">Date of Birth</label>
-								<input type="date" class="form-control" name="date_of_birth" placeholder="mm/dd/yyyy">
+								<input type="date" class="form-control" value="{{$doctorDetails['dob']}}" name="date_of_birth" placeholder="mm/dd/yyyy">
 							</div>
 						</div>
 						<!--/span-->
 					</div>
-					<!--/row-->
-					<!-- <div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Category</label>
-								<select class="select2_category form-control" name="Category" data-placeholder="Choose a Category" tabindex="1">
-									<option value="Category 1">Category 1</option>
-									<option value="Category 2">Category 2</option>
-									<option value="Category 3">Category 5</option>
-									<option value="Category 4">Category 4</option>
-								</select>
-							</div>
-						</div>
-					
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Membership</label>
-								<div class="radio-list">
-									<label class="radio-inline">
-									<input type="radio" name="membership" id="membership1" value="option1" checked> Option 1 </label>
-									<label class="radio-inline">
-									<input type="radio" name="membership" id="membership2" value="option2"> Option 2 </label>
-								</div>
-							</div>
-						</div>
-					</div> -->
-					<!--/row-->
 					<div class="row">
 						<div class="col-md-12 ">
 							<div class="form-group">
 								<label>Profile Picture</label>
-								<input type="file" class="form-control" name="profile_picture">
+								<input type="file" value="{{$doctorDetails['image']}}" class="form-control" name="profile_picture">
 							</div>
 						</div>
 					</div>
@@ -118,7 +94,7 @@
 						<div class="col-md-12 ">
 							<div class="form-group">
 								<label>Street</label>
-								<input type="text" class="form-control" placeholder="Enter Street" name="street">
+								<input type="text" class="form-control" value="{{$doctorDetails['street']}}" placeholder="Enter Street" name="street">
 							</div>
 						</div>
 					</div>
@@ -126,14 +102,14 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>City</label>
-								<input type="text" class="form-control" placeholder="Enter City" name="city">
+								<input type="text" class="form-control" placeholder="Enter City" value="{{$doctorDetails['city']}}" name="city">
 							</div>
 						</div>
 						<!--/span-->
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>State</label>
-								<input type="text" class="form-control" placeholder="Enter State" name="state">
+								<input type="text" class="form-control" placeholder="Enter State" value="{{$doctorDetails['state']}}" name="state">
 							</div>
 						</div>
 						<!--/span-->
@@ -143,7 +119,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Post Code</label>
-								<input type="text" class="form-control" placeholder="Enter Post Code" name="pin_code">
+								<input type="text" class="form-control" placeholder="Enter Post Code" value="{{$doctorDetails['post_code']}}" name="pin_code">
 							</div>
 						</div>
 						<!--/span-->
@@ -153,35 +129,80 @@
 								<select class="form-control" name="country">
 									<option value="">select Country</option>
 									<option value="India">India</option>
-									<option value="Singapore">Singapore</option>
 								</select>
 							</div>
 						</div>
 						<!--/span-->
 					</div>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Password</label>
-								<input type="password" class="form-control" placeholder="Enter Password" name="password">
+								<label>Qualifications</label>
+								<textarea rows="4" class="form-control" value="{{$doctorDetails['qualifications']}}" placeholder="Enter Qualifications" name="qualifications">
+								</textarea>
 							</div>
 						</div>
 						<!--/span-->
-						<div class="col-md-6">
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Confirm Password</label>
-								<input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm_password">
+								<label>Specifications</label>
+								<textarea rows="4" class="form-control" value="{{$doctorDetails['specifications']}}" placeholder="Enter Specifications" name="specifications">
+								</textarea>
 							</div>
 						</div>
 						<!--/span-->
 					</div>
 				</div>
 				<div class="form-actions right">
-					<a href="{{url('admin/associate')}}" class="btn default">Cancel</a>
-					<button type="button" data-request="ajax-submit" data-target='[role="add-associate"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
+					<a href="{{url('admin/doctors')}}" class="btn default">Cancel</a>
+					<button type="button" data-request="ajax-submit" data-target='[role="add-doctor"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
 				</div>
 			</form>
 			<!-- END FORM-->
 		</div>		
 	</div>
 </div>
+@section('requirejs')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script>
+      $(document).ready(function(){
+            $('#country').select2({
+                ajax : {
+                    url : 'country',
+                    dataType : 'json',
+                    delay : 200,
+                    data : function(params){
+                        return {
+                            q : params.term,
+                            page : params.page
+                        };
+                    },
+                    processResults : function(data, params){
+                        params.page = params.page || 1;
+                        return {
+                            results : data.data,
+                            pagination: {
+                                more : (params.page  * 10) < data.total
+                            }
+                        };
+                    }
+                },
+                minimumInputLength : 1,
+                templateResult : function (repo){
+                    if(repo.loading) return repo.name;
+                    var markup = "<img src="+repo.photo+"></img> &nbsp; "+ repo.name;
+                    return markup;
+                },
+                templateSelection : function(repo)
+                {
+                    return repo.name;
+                },
+                escapeMarkup : function(markup){ return markup; }
+            });
+        });
+    </script>
+</script>
+@endsection

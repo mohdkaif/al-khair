@@ -84,7 +84,9 @@ class Doctors extends Model
         if($where){
             $table_doctor->whereRaw($where);
         }
-
+         if($user_id){
+            $table_doctor->where('id',$user_id);
+        }
         //$userlist['userCount'] = !empty($table_user->count())?$table_user->count():0;
         
         if(!empty($order)){

@@ -23,30 +23,30 @@ class DoctorController extends Controller
 
     public function index(Request $request, Builder $builder){
         $data['site_title'] = $data['page_title'] = 'Doctors List';
-        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li><li><a href="#">Data Tables</a><i class="fa fa-circle"></i></li><li><a href="#">Ajax Datatables</a></li></ul>';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li><li><a href="#">Doctors</a><i class="fa fa-circle"></i></li><li><a href="#">List</a></li></ul>';
         $data['view'] = 'admin.doctors.list';
-        $users  = _arefy(\Models\Doctors::where('status','!=','trashed')->get());
+        $doctors  = _arefy(\Models\Doctors::where('status','!=','trashed')->get());
         if ($request->ajax()) {
-            return DataTables::of($users)
+            return DataTables::of($doctors)
             ->editColumn('action',function($item){
                 $html    = '<div class="edit_details_box">';
-                $html   .= '<a href="'.url(sprintf('admin/associate/%s',___encrypt($item['id']))).'" title="View Detail"><i class="fa fa-fw fa-eye"></i> | </a>';
-                $html   .= '<a href="'.url(sprintf('admin/associate/%s/edit',___encrypt($item['id']))).'"  title="Edit Detail"><i class="fa fa-edit"></i></a> | ';
+                $html   .= '<a href="'.url(sprintf('admin/doctors/%s',___encrypt($item['id']))).'" title="View Detail"><i class="fa fa-fw fa-eye"></i> | </a>';
+                $html   .= '<a href="'.url(sprintf('admin/doctors/%s/edit',___encrypt($item['id']))).'"  title="Edit Detail"><i class="fa fa-edit"></i></a> | ';
                 if($item['status'] == 'active'){
                     $html   .= '<a href="javascript:void(0);" 
-                        data-url="'.url(sprintf('admin/associate/status/?id=%s&status=inactive',$item['id'])).'" 
+                        data-url="'.url(sprintf('admin/doctors/status/?id=%s&status=inactive',$item['id'])).'" 
                         data-request="ajax-confirm"
                         data-ask_image="'.url('/images/inactive-user.png').'"
                         data-ask="Would you like to change '.$item['name'].' status from active to inactive?" title="Update Status"><i class="fa fa-fw fa-ban"></i></a>';
                 }elseif($item['status'] == 'inactive'){
                     $html   .= '<a href="javascript:void(0);" 
-                        data-url="'.url(sprintf('admin/associate/status/?id=%s&status=active',$item['id'])).'" 
+                        data-url="'.url(sprintf('admin/doctors/status/?id=%s&status=active',$item['id'])).'" 
                         data-request="ajax-confirm"
                         data-ask_image="'.url('/images/active-user.png').'"
                         data-ask="Would you like to change '.$item['name'].' status from inactive to active?" title="Update Status"><i class="fa fa-fw fa-check"></i></a>';
                 }elseif($item['status'] == 'pending'){
                     $html   .= '<a href="javascript:void(0);" 
-                        data-url="'.url(sprintf('admin/associate/status/?id=%s&status=active',$item['id'])).'" 
+                        data-url="'.url(sprintf('admin/doctors/status/?id=%s&status=active',$item['id'])).'" 
                         data-request="ajax-confirm"
                         data-ask_image="'.url('/images/active-user.png').'"
                         data-ask="Would you like to change '.$item['name'].' status from pending to active?" title="Update Status"><i class="fa fa-fw fa-check"></i></a>';
@@ -142,11 +142,11 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $data['site_title'] = $data['page_title'] = 'Edit Associate';
-        $data['view'] = 'admin.associate.edit';
+    {   
+        $data['site_title'] = $data['page_title'] = 'Edit Doctor';
+        $data['view'] = 'admin.doctors.edit';
         $id = ___decrypt($id);
-        $data['associateDetails'] = _arefy(\Models\Associate::list('single',$id));
+        $data['doctorDetails'] = _arefy(\Models\Doctors::list('single',$id));
         //dd($data['associateDetails']);
         return view('home',$data);
     }
@@ -160,8 +160,42 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+{       $id = ___decrypt($id);
+        $request->request->add(['id'=>$id]);
+        $validation = new Validations($request);
+        $validator  = $validation->createDoctor('edit');
+        if($validator->fails()){
+            $this->message = $validator->errors();
+        }else{
+            $data['first_name']         =!empty($request->first_name)?$request->first_name:'';
+            $data['last_name']          =!empty($request->last_name)?$request->last_name:'';
+            $data['name']               = $request->first_name.' '.$request->last_name;
+            $data['email']              =!empty($request->email)?$request->email:'';
+            $data['mobile_number']      =!empty($request->mobile_number)?$request->mobile_number:'';
+            $data['country_code']       =!empty($request->country_code)?$request->country_code:'';
+            $data['image']              = !empty($request->first_name)?$request->first_name:'';
+            $data['status']             = 'active';
+            $data['gender']             =!empty($request->gender)?$request->gender:'';
+            $data['dob']                =!empty($request->date_of_birth)?$request->date_of_birth:'';
+            $data['city']               =!empty($request->city)?$request->city:'';
+            $data['state']              =!empty($request->state)?$request->state:'';
+            $data['country']            =!empty($request->country)?$request->country:'';
+            $data['post_code']          =!empty($request->pin_code)?$request->pin_code:'';
+            $data['qualifications']     =!empty($request->qualifications)?$request->qualifications:'';
+            $data['specifications']     =!empty($request->specifications)?$request->specifications:'';
+            $data['street']             =!empty($request->street)?$request->street:'';
+            $data['updated_at']         =date('Y-m-d H:i:s');
+            $data['created_at']         =date('Y-m-d H:i:s');
+            $inserId = \Models\Doctors::change($id,$data);
+            if($inserId){
+                $this->status = true;
+                $this->modal  = true;
+                $this->alert    = true;
+                $this->message  = "Doctor has been updated successfully.";
+                $this->redirect = url('admin/doctors');
+            } 
+        } 
+        return $this->populateresponse();
     }
 
     /**
@@ -174,4 +208,29 @@ class DoctorController extends Controller
     {
         //
     }
+
+    public function changeStatus(Request $request){
+        $validation = new Validations($request);
+        $validator = $validation->changeStatus();
+
+        if($validator->fails()){
+            $this->message = $validator->errors();
+        }else{
+            $userData                = ['status' => $request->status, 'updated_at' => date('Y-m-d H:i:s')];
+            $isUpdated               = \Models\Doctors::change($request->id,$userData);
+
+            if($isUpdated){
+                if($request->status == 'trashed'){
+                    $this->message = 'Deleted Doctor successfully.';
+                }else{
+                    $this->message = 'Updated Doctor successfully.';
+                }
+                $this->status = true;
+                $this->redirect = true;
+                $this->jsondata = [];
+            }
+        }
+       return $this->populateresponse();
+    }
+
 }

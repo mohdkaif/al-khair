@@ -20,6 +20,7 @@ Route::get('/',
 Route::get('/', 'HomeController@index');
 Route::get('doctors', 'HomeController@index');
 Route::get('hospitals', 'HomeController@index');
+Route::get('country', 'Country@country');
 
 
 	Auth::routes();
@@ -42,6 +43,11 @@ Route::get('hospitals', 'HomeController@index');
 		});
 
 		Route::resource('doctors', 'DoctorController');
+		Route::group(['prefix' => 'doctors'],function(){
+			Route::post('/status', 'DoctorController@changeStatus');
+			//Route::resource('/', 'InvestorController');
+		});
+		
 	});
 	
 	

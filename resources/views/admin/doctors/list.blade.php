@@ -27,7 +27,7 @@
 		<div class="page-head">
 			<!-- BEGIN PAGE TITLE -->
 			<div class="page-title">
-				<h1>Associates <small> MANAGE</small></h1>
+				<h1>Doctors <small> MANAGE</small></h1>
 			</div>
 			<!-- END PAGE TITLE -->
 			<!-- BEGIN PAGE TOOLBAR -->
@@ -147,34 +147,6 @@
 							<span class="hidden-480">
 							Add Doctor </span>
 							</a>
-							<div class="btn-group">
-								<a class="btn btn-default btn-circle" href="javascript:;" data-toggle="dropdown">
-								<i class="fa fa-share"></i>
-								<span class="hidden-480">
-								Tools </span>
-								<i class="fa fa-angle-down"></i>
-								</a>
-								<ul class="dropdown-menu pull-right">
-									<li>
-										<a href="javascript:;">
-										Export to Excel </a>
-									</li>
-									<li>
-										<a href="javascript:;">
-										Export to CSV </a>
-									</li>
-									<!-- <li>
-										<a href="javascript:;">
-										Export to XML </a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="javascript:;">
-										Print Invoices </a>
-									</li> -->
-								</ul>
-							</div>
 						</div>
 					</div>
 					<div class="portlet-body">
