@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts -->
     
-   <title>Medica - Health &amp; Medical Template | Home</title>
+   <title>Al-Khair-Meditour - Health</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{url('front/img/core-img/favicon.ico')}}">
@@ -22,8 +22,22 @@
 
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{url('front/css/responsive.css')}}">
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body class="page-md login">
+    <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+    }
+</script>
+<!-- Preloader -->
+<div id="preloader">
+<div class="medica-load"></div>
+    <img src="{{url('front/img/core-img/plus.png')}}" alt="logo">
+</div>
+
     <div id="app">
        
 

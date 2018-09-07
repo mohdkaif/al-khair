@@ -38,7 +38,7 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
+                            <a class="navbar-brand" href="index.html"><img src="{{url('front/img/core-img/logo.png')}}" alt="Logo"></a>
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medicaMenu" aria-controls="medicaMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
 
@@ -60,7 +60,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="about-us.html">About Us</a>
+                                        <a class="nav-link" href="{{url('about')}}">About Us</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="services.html">Services</a>
@@ -69,7 +69,7 @@
                                         <a class="nav-link" href="blog.html">News</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
+                                        <a class="nav-link" href="{{url('contact')}}">Contact</a>
                                     </li>
                                 </ul>
                                 <!-- Search Form -->

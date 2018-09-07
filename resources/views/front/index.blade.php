@@ -1,29 +1,9 @@
 
-<?php include('includes/top-header.php');?>
-<?php include('includes/header.php');?>
-
-<div id="google_translate_element"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- Preloader -->
-<div id="preloader">
-    <div class="medica-load"></div>
-    <img src="img/core-img/plus.png" alt="logo">
-</div>
-
-
-
 <!-- ***** Hero Area Start ***** -->
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide height-800 bg-img" style="background-image: url(img/bg-img/hero1.jpg);">
+        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/hero1.jpg')}});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -84,7 +64,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
-                        <img src="img/icons/alarm-clock.png" alt="">
+                        <img src="{{url('front/img/icons/alarm-clock.png')}}" alt="">
                     </div>
                     <div class="contact-meta">
                         <p>Monday - Friday 08:00 - 21:00 <br> Saturday and Sunday - CLOSED</p>
@@ -94,7 +74,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
-                        <img src="img/icons/envelope.png" alt="">
+                        <img src="{{url('front/img/icons/envelope.png"')}} alt="">
                     </div>
                     <div class="contact-meta">
                         <p>0080 673 729 766 | 0080 234 5678 900 <br> contact@business.com</p>
@@ -104,7 +84,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
-                        <img src="img/icons/map-pin.png" alt="">
+                        <img src="{{url('front/img/icons/map-pin.png')}}" alt="">
                     </div>
                     <div class="contact-meta">
                         <p>Lamas Carbajal Str, no 14-18 <br> 41770 Montellano</p>
@@ -180,7 +160,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
                 </div>
                 <div class="col-12 col-lg-5">
                     <div class="medica-about-thumbnail">
-                        <img src="img/bg-img/doctor.png" alt="">
+                        <img src="{{url('front/img/bg-img/doctor.png')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -190,12 +170,12 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 <!-- ***** About Us Area End ***** -->
 
 <!-- ***** Services Area Start ***** -->
-<section class="medica-services-area section_padding_100 bg-img gradient-background-overlay" style="background-image: url(img/bg-img/service.jpg);">
+<section class="medica-services-area section_padding_100 bg-img gradient-background-overlay" style="background-image: url({{url('front/img/bg-img/service.jpg')}});">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section_heading white-heading">
-                    <img src="img/icons/hospital2.png" alt="">
+                    <img src="{{url('front/img/icons/hospital2.png"')}} alt="">
                     <h2>Our Services</h2>
                 </div>
             </div>
@@ -204,42 +184,42 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
         <div class="row">
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="img/icons/hospital.png" alt="">
+                    <img src="{{url('front/img/icons/hospital.png"')}} alt="">
                     <h5>Ambulatory Care</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.3s">
-                    <img src="img/icons/blood.png" alt="">
+                    <img src="{{url('front/img/icons/blood.png"')}} alt="">
                     <h5>Laboratory</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.4s">
-                    <img src="img/icons/ambulance.png" alt="">
+                    <img src="{{url('front/img/icons/ambulance.png"')}} alt="">
                     <h5>Ambulance Service</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.5s">
-                    <img src="img/icons/nuclear.png" alt="">
+                    <img src="{{url('front/img/icons/nuclear.png"')}} alt="">
                     <h5>Radiology</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="img/icons/emergency-call.png" alt="">
+                    <img src="{{url('front/img/icons/emergency-call.png')}}" alt="">
                     <h5>Emergency Care</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="single-service-area">
-                    <img src="img/icons/medicine.png" alt="">
+                    <img src="{{url('front/img/icons/medicine.png"')}} alt="">
                     <h5>Pharmacy</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
@@ -259,7 +239,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
         <div class="row">
             <div class="col-12">
                 <div class="section_heading">
-                    <img src="img/icons/doctor.png" alt="">
+                    <img src="{{url('front/img/icons/doctor.png"')}} alt="">
                     <h2>Our Doctors</h2>
                     <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
                 </div>
@@ -270,7 +250,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-doctor-area">
                     <div class="doctor-thumbnail">
-                        <img src="img/bg-img/d1.jpg" alt="">
+                        <img src="{{url('front/img/bg-img/d1.jpg')}}" alt="">
                     </div>
                     <div class="doctor-meta">
                         <h5>Dr. Melissa Smith</h5>
@@ -286,7 +266,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-doctor-area">
                     <div class="doctor-thumbnail">
-                        <img src="img/bg-img/d2.jpg" alt="">
+                        <img src="{{url('front/img/bg-img/d2.jpg')}}" alt="">
                     </div>
                     <div class="doctor-meta">
                         <h5>Dr. Josh Henderson</h5>
@@ -302,7 +282,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-doctor-area">
                     <div class="doctor-thumbnail">
-                        <img src="img/bg-img/d3.jpg" alt="">
+                        <img src="{{url('front/img/bg-img/d3.jpg')}}" alt="">
                     </div>
                     <div class="doctor-meta">
                         <h5>Dr. Christinne Jones</h5>
@@ -318,7 +298,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="single-doctor-area">
                     <div class="doctor-thumbnail">
-                        <img src="img/bg-img/d4.jpg" alt="">
+                        <img src="{{url('front/img/bg-img/d4.jpg')}}" alt="">
                     </div>
                     <div class="doctor-meta">
                         <h5>Dr. William Stan</h5>
@@ -342,7 +322,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
         <div class="row">
             <div class="col-12">
                 <div class="section_heading white-heading">
-                    <img src="img/icons/stethoscope.png" alt="">
+                    <img src="{{url('front/img/icons/stethoscope.png"')}} alt="">
                     <h2>Clients Testimonials</h2>
                 </div>
             </div>
@@ -357,7 +337,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
                     <div class="col-12">
                         <h6>“ Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. ”</h6>
                         <div class="testimonial-given-author-info">
-                            <img src="img/bg-img/testimonials2.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
                             <h6>Julia Smith</h6>
                             <p>Pacient</p>
                         </div>
@@ -372,7 +352,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
                     <div class="col-12">
                         <h6>“ Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. ”</h6>
                         <div class="testimonial-given-author-info">
-                            <img src="img/bg-img/testimonials2.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
                             <h6>Julia Smith</h6>
                             <p>Pacient</p>
                         </div>
@@ -387,7 +367,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
                     <div class="col-12">
                         <h6>“ Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. ”</h6>
                         <div class="testimonial-given-author-info">
-                            <img src="img/bg-img/testimonials2.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
                             <h6>Julia Smith</h6>
                             <p>Pacient</p>
                         </div>
@@ -507,7 +487,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 
             <div class="col-12 col-lg-6">
                 <div class="medica-appointment-thumb">
-                    <img src="img/bg-img/medical1.png" alt="">
+                    <img src="{{url('front/img/bg-img/medical1.png')}}" alt="">
                 </div>
             </div>
         </div>
@@ -521,11 +501,11 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
         <div class="row">
             <div class="col-12">
                 <div class="our-partners-logo d-flex align-items-center justify-content-between">
-                    <a href="#"><img src="img/partners-img/1.png" alt=""></a>
-                    <a href="#"><img src="img/partners-img/2.png" alt=""></a>
-                    <a href="#"><img src="img/partners-img/3.png" alt=""></a>
-                    <a href="#"><img src="img/partners-img/4.png" alt=""></a>
-                    <a href="#"><img src="img/partners-img/5.png" alt=""></a>
+                    <a href="#"><img src="{{url('front/img/partners-img/1.png')}}" alt=""></a>
+                    <a href="#"><img src="{{url('front/img/partners-img/2.png')}}" alt=""></a>
+                    <a href="#"><img src="{{url('front/img/partners-img/3.png')}}" alt=""></a>
+                    <a href="#"><img src="{{url('front/img/partners-img/4.png')}}" alt=""></a>
+                    <a href="#"><img src="{{url('front/img/partners-img/5.png')}}" alt=""></a>
                 </div>
             </div>
         </div>
@@ -534,5 +514,4 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 <!-- ***** Partners Area End ***** -->
 
 <!-- ***** Footer Area Start ***** -->
-<?php include('includes/footer.php');?>
 

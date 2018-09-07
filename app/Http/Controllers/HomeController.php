@@ -11,10 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
     /**
      * Show the application dashboard.
@@ -23,9 +23,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['view'] = 'home-page';
+        $data['view'] = 'front/index';
         $data['site_title'] = $data['page_title'] = 'Home';
         $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
-        return view('home',$data);
+        return view('front_home',$data);
+    }
+
+     public function contact()
+    {
+        $data['view'] = 'front/contact';
+        $data['site_title'] = $data['page_title'] = 'Home';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
+        return view('front_home',$data);
+    }
+
+    public function aboutUs()
+    {
+        $data['view'] = 'front/about-us';
+        $data['site_title'] = $data['page_title'] = 'Home';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
+        return view('front_home',$data);
     }
 }

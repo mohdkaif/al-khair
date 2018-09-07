@@ -11,21 +11,15 @@
 |
 */
 
-Route::get('/',
-	function () {
-	    return redirect('/login');
-	}
-);
 
 Route::get('/', 'HomeController@index');
-Route::get('doctors', 'HomeController@index');
-Route::get('hospitals', 'HomeController@index');
+Route::get('/contact', 'HomeController@contact');
+Route::get('/about', 'HomeController@aboutUs');
 
-
-	Auth::routes();
-	Route::get('/home', 'HomeController@index')->name('home');
 	
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
+		Auth::routes();
+		Route::get('/home', 'HomeController@index')->name('home');
 		Route::group(['prefix' => 'associate'],function(){
 			Route::post('/status', 'AssociateController@changeStatus');
 			Route::resource('/', 'AssociateController');
