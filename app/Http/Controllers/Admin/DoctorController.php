@@ -143,8 +143,14 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['site_title'] = $data['page_title'] = 'Edit Associate';
+        $data['view'] = 'admin.associate.edit';
+        $id = ___decrypt($id);
+        $data['associateDetails'] = _arefy(\Models\Associate::list('single',$id));
+        //dd($data['associateDetails']);
+        return view('home',$data);
     }
+
 
     /**
      * Update the specified resource in storage.

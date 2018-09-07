@@ -40,7 +40,9 @@ Route::get('hospitals', 'HomeController@index');
 			Route::get('/associate', 'AssociateController@ajaxList');
 			//Route::resource('/', 'InvestorController');
 		});
+
+		Route::resource('doctors', 'DoctorController');
 	});
 	
-	Route::resource('doctors', 'DoctorController');
+	
 
