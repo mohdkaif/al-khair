@@ -17,15 +17,21 @@
 				</a>
 			</li>
 			<li>
-				<a href="{{url('admin/associate')}}">
+				<a href="{{url('admin/doctors')}}">
 					<i class="icon-user"></i>
-					<span class="title">Associate Management</span>
+					<span class="title">Doctors</span>
 				</a>
 			</li>
 			<li>
-				<a href="{{url('admin/investor')}}">
+				<a href="{{url('admin/hospitals')}}">
 					<i class="icon-envelope-open"></i>
-					<span class="title">Investor Management</span>
+					<span class="title">Hospitals</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url('admin/services')}}">
+					<i class="icon-envelope-open"></i>
+					<span class="title">Services</span>
 				</a>
 			</li>
 			<!-- <li class="last ">

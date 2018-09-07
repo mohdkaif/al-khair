@@ -36,3 +36,8 @@ Route::get('hospitals', 'HomeController@index');
 			//Route::resource('/', 'InvestorController');
 		});
 	});
+	
+	Route::resource('doctors', 'DoctorController');
+
+
+});

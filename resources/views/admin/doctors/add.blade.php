@@ -2,9 +2,10 @@
 	<div class="page-content">
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form role="add-associate" action="{{url('admin/associate')}}" method="POST" class="horizontal-form">
+			<form role="add-doctor" action="{{url('admin/doctors')}}" method="POST" class="horizontal-form">
 				<div class="form-body">
-					<h3 class="form-section">Add associate</h3>
+
+					<h3 class="form-section">Add Doctor</h3>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -156,25 +157,30 @@
 						<!--/span-->
 					</div>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Password</label>
-								<input type="password" class="form-control" placeholder="Enter Password" name="password">
+								<label>Qualifications</label>
+								<textarea rows="4" class="form-control" placeholder="Enter Qualifications" name="qualifications">
+								</textarea>
 							</div>
 						</div>
 						<!--/span-->
-						<div class="col-md-6">
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Confirm Password</label>
-								<input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm_password">
+								<label>Specifications</label>
+								<textarea rows="4" class="form-control" placeholder="Enter Specifications" name="specifications">
+								</textarea>
 							</div>
 						</div>
 						<!--/span-->
 					</div>
 				</div>
 				<div class="form-actions right">
-					<a href="{{url('admin/associate')}}" class="btn default">Cancel</a>
-					<button type="button" data-request="ajax-submit" data-target='[role="add-associate"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
+					<a href="{{url('admin/doctors')}}" class="btn default">Cancel</a>
+					<button type="button" data-request="ajax-submit" data-target='[role="add-doctor"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
 				</div>
 			</form>
 			<!-- END FORM-->
