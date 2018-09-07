@@ -24,7 +24,7 @@
 			</li>
 			<li>
 				<a href="{{url('admin/hospitals')}}">
-					<i class="icon-"></i>
+					<i class="icon-user"></i>
 					<span class="title">Hospitals</span>
 				</a>
 			</li>

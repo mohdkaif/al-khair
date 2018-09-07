@@ -16,7 +16,6 @@ Route::get('/', 'HomeController@index');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/about', 'HomeController@aboutUs');
 
-	
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
 		Auth::routes();
 		Route::get('/home', 'HomeController@index')->name('home');
@@ -36,6 +35,11 @@ Route::get('/about', 'HomeController@aboutUs');
 		});
 
 		Route::resource('doctors', 'DoctorController');
+		Route::group(['prefix' => 'doctors'],function(){
+			Route::post('/status', 'DoctorController@changeStatus');
+			//Route::resource('/', 'InvestorController');
+		});
+		
 	});
 	
 	

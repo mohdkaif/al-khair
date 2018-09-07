@@ -1,3 +1,6 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <div class="page-content-wrapper">
 	<div class="page-content">
 		<div class="portlet-body form">
@@ -79,29 +82,6 @@
 						</div>
 						<!--/span-->
 					</div>
-					<!--/row-->
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Select Associate</label>
-								<select class="select2_category form-control associate" name="associate" >
-								</select>
-							</div>
-						</div>
-					
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Membership</label>
-								<div class="radio-list">
-									<label class="radio-inline">
-									<input type="radio" name="membership" id="membership1" value="option1" checked> Option 1 </label>
-									<label class="radio-inline">
-									<input type="radio" name="membership" id="membership2" value="option2"> Option 2 </label>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--/row-->
 					<div class="row">
 						<div class="col-md-12 ">
 							<div class="form-group">
@@ -149,8 +129,7 @@
 								<label>Country</label>
 								<select class="form-control" name="country">
 									<option value="">select Country</option>
-									<option value="India">India</option>
-									<option value="Singapore">Singapore</option>
+									<option value="">India</option>
 								</select>
 							</div>
 						</div>
@@ -188,7 +167,45 @@
 	</div>
 </div>
 @section('requirejs')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script type="text/javascript">
-	dynamicSelect2('.associate','{{url("admin/ajax/associate")}}','Select Associate');
+	//dynamicSelect2('.associate','{{url("admin/ajax/associate")}}','Select Associate');
+	$(document).ready(function(){
+            $('#country').select2({
+                ajax : {
+                    url : 'country',
+                    dataType : 'json',
+                    delay : 200,
+                    data : function(params){
+                        return {
+                            q : params.term,
+                            page : params.page
+                        };
+                    },
+                    processResults : function(data, params){
+                        params.page = params.page || 1;
+                        return {
+                            results : data.data,
+                            pagination: {
+                                more : (params.page  * 10) < data.total
+                            }
+                        };
+                    }
+                },
+                minimumInputLength : 1,
+                templateResult : function (repo){
+                    if(repo.loading) return repo.name;
+                    var markup = "<img src="+repo.photo+"></img> &nbsp; "+ repo.name;
+                    return markup;
+                },
+                templateSelection : function(repo)
+                {
+                    return repo.name;
+                },
+                escapeMarkup : function(markup){ return markup; }
+            });
+        });
 </script>
 @endsection

@@ -17,7 +17,7 @@ class Doctor
 	private function validation($key){
 		$validation = [
 			'id'				=> ['required'],
-			'email'				=> ['required','email','unique:doctors'],
+			'email'				=> ['required','email'],
 			'first_name' 		=> ['required','string'],
 			'last_name' 		=> ['nullable','string'],
 			'date_of_birth' 	=> ['nullable','string'],
@@ -60,10 +60,23 @@ class Doctor
 					$query->where('id','!=',$this->data->id);
 				})
 			]);
+			$validations['mobile_number'] = array_merge($this->validation('mobile_number'),[
+				Rule::unique('doctors')->ignore('trashed','status')->where(function($query){
+					$query->where('id','!=',$this->data->id);
+				})
+			]);
 		}
+
         $validator = \Validator::make($this->data->all(), $validations,[]);
-        
         return $validator;		
 	}
+
+	public function changeStatus(){
+		$validator = Validator::make($this->data->all(),[
+			'id'    			=> 'required',
+			'status'    		=> 'required',
+		]);
+		return $validator;
+	}	
 	
 }
