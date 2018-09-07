@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/',
+Route::get('/admin',
 	function () {
 	    return redirect('/login');
 	}
 );
+Route::get('/', 'HomeController@index');
+Route::get('doctors', 'HomeController@index');
+Route::get('hospitals', 'HomeController@index');
 
 Auth::routes();
 	Route::get('/home', 'HomeController@index')->name('home');
