@@ -1,1 +1,0 @@
-hospitals.blade.php

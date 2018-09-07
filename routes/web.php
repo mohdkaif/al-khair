@@ -24,4 +24,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
 	Route::resource('/associate', 'AssociateController');
 	Route::resource('/investor', 'InvestorController');
 
+	
+	Route::resource('doctors', 'DoctorController');
+
+
 });

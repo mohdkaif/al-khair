@@ -142,10 +142,10 @@
 							<!-- <span class="caption-helper">manage records...</span> -->
 						</div>
 						<div class="actions">
-							<a href="{{url('admin/associate/create')}}" class="btn btn-default btn-circle">
+							<a href="{{url('admin/doctors/create')}}" class="btn btn-default btn-circle">
 							<i class="fa fa-plus"></i>
 							<span class="hidden-480">
-							Add Associate </span>
+							Add Doctor </span>
 							</a>
 							<div class="btn-group">
 								<a class="btn btn-default btn-circle" href="javascript:;" data-toggle="dropdown">

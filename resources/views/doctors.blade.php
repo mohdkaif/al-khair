@@ -1,1 +1,0 @@
-doctors.blade.php
