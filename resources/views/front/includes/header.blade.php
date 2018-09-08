@@ -1,4 +1,3 @@
-<!-- ***** Header Area Start ***** -->
 <header class="header-area">
     <!-- Top Header Area -->
     <div class="top-header-area gradient-background">
@@ -38,7 +37,7 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="index.html"><img src="{{url('front/img/core-img/logo.png')}}" alt="Logo"></a>
+                            <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('front/img/core-img/logo.png')}}" alt="Logo"></a>
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medicaMenu" aria-controls="medicaMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
 
@@ -46,9 +45,9 @@
                                 <!-- Menu Area -->
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
                                     </li>
-                                    <li class="nav-item dropdown">
+                                    <!-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="{{url('/')}}">Home</a>
@@ -58,16 +57,22 @@
                                             <a class="dropdown-item" href="{{url('contact')}}">Contact</a>
                                             <a class="dropdown-item" href="{{url('/')}}">Elements</a>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{url('about')}}">About Us</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="services.html">Services</a>
+                                        <a class="nav-link" href="{{url('services')}}">Services</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="blog.html">News</a>
+                                        <a class="nav-link" href="{{url('doctors')}}">Doctors</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('hospitals')}}">Hospitals</a>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="{{url('news')}}">News</a>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{url('contact')}}">Contact</a>
                                     </li>
@@ -91,4 +96,4 @@
         </div>
     </div>
 </header>
-<!-- ***** Header Area End ***** -->
+<!-- ***** Header Area End *****

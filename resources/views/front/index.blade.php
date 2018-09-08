@@ -20,7 +20,7 @@
             </div>
         </div>
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide height-800 bg-img" style="background-image: url(img/bg-img/hero1.jpg);">
+        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/hero1.jpg')}});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -37,7 +37,7 @@
             </div>
         </div>
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide height-800 bg-img" style="background-image: url(img/bg-img/hero1.jpg);">
+        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/hero1.jpg')}});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -74,7 +74,7 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
-                        <img src="{{url('front/img/icons/envelope.png"')}} alt="">
+                        <img src="{{url('front/img/icons/envelope.png')}}" alt="">
                     </div>
                     <div class="contact-meta">
                         <p>0080 673 729 766 | 0080 234 5678 900 <br> contact@business.com</p>
@@ -175,7 +175,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section_heading white-heading">
-                    <img src="{{url('front/img/icons/hospital2.png"')}} alt="">
+                    <img src="{{url('front/img/icons/hospital2.png')}}" alt="">
                     <h2>Our Services</h2>
                 </div>
             </div>
@@ -184,28 +184,28 @@
         <div class="row">
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="{{url('front/img/icons/hospital.png"')}} alt="">
+                    <img src="{{url('front/img/icons/hospital.png')}}" alt="">
                     <h5>Ambulatory Care</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.3s">
-                    <img src="{{url('front/img/icons/blood.png"')}} alt="">
+                    <img src="{{url('front/img/icons/blood.png')}}" alt="">
                     <h5>Laboratory</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.4s">
-                    <img src="{{url('front/img/icons/ambulance.png"')}} alt="">
+                    <img src="{{url('front/img/icons/ambulance.png')}}" alt="">
                     <h5>Ambulance Service</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.5s">
-                    <img src="{{url('front/img/icons/nuclear.png"')}} alt="">
+                    <img src="{{url('front/img/icons/nuclear.png')}}" alt="">
                     <h5>Radiology</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
@@ -219,7 +219,7 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="single-service-area">
-                    <img src="{{url('front/img/icons/medicine.png"')}} alt="">
+                    <img src="{{url('front/img/icons/medicine.png')}}" alt="">
                     <h5>Pharmacy</h5>
                     <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
                 </div>
@@ -239,7 +239,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section_heading">
-                    <img src="{{url('front/img/icons/doctor.png"')}} alt="">
+                    <img src="{{url('front/img/icons/doctor.png')}}" alt="">
                     <h2>Our Doctors</h2>
                     <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
                 </div>
@@ -317,12 +317,12 @@
 <!-- ***** Doctors Area End ***** -->
 
 <!-- ***** Testimonials Area Start ***** -->
-<section class="medica-testimonials-area section_padding_100 bg-img background-overlay" style="background-image: url(img/bg-img/hero2.jpg);">
+<section class="medica-testimonials-area section_padding_100 bg-img background-overlay" style="background-image: url({{url('front/img/bg-img/hero2.jpg')}});">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section_heading white-heading">
-                    <img src="{{url('front/img/icons/stethoscope.png"')}} alt="">
+                    <img src="{{url('front/img/icons/stethoscope.png')}}" alt="">
                     <h2>Clients Testimonials</h2>
                 </div>
             </div>
@@ -513,5 +513,4 @@
 </div>
 <!-- ***** Partners Area End ***** -->
 
-<!-- ***** Footer Area Start ***** -->
 
