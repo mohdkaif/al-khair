@@ -11,19 +11,14 @@
 |
 */
 
-
 Route::get('/', 'HomeController@index');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/about', 'HomeController@aboutUs');
+Route::get('/service', 'HomeController@service');
+
 
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
-		
-		Route::get('/',
-			function () {
-			    return redirect('/login');
-			}
-		);
-
+	Route::get('admin','Auth\LoginController@login');
 		Auth::routes();
 		Route::get('/home', 'HomeController@index')->name('home');
 		Route::group(['prefix' => 'associate'],function(){
