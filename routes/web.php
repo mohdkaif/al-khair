@@ -44,6 +44,8 @@ Route::get('/hospitals', 'HomeController@hospitals');
 			Route::post('/status', 'DoctorController@changeStatus');
 			//Route::resource('/', 'InvestorController');
 		});
+
+		Route::resource('hospitals', 'HospitalController');
 		
 	});
 	
