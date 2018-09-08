@@ -25,6 +25,7 @@
 							<div class="form-group">
 								<label>Profile Picture</label>
 								<input type="file" value="{{$hospitalDetails['image']}}" class="form-control" name="profile_picture">
+								<img src="{{url('uploads/hospitals/'.$hospitalDetails['image'])}}" alt="">
 								
 							</div>
 						</div>
@@ -37,15 +38,15 @@
 									<div class="form-group">
 										<label class="control-label">Country Code</label>
 										<select class="form-control" name="country_code">
-											<option value="+91">+91</option>
-											<option value="+1">+1</option>
-											<option value="+86">+86</option>
-											<option value="+61">+61</option>
-											<option value="+33">+33</option>
-											<option value="+98">+98</option>
-											<option value="+964">+964</option>
-											<option value="+972">+972</option>
-											<option value="+39">+39</option>
+											<option value="+91" @if ($hospitalDetails['country_code'] == "91")selected="selected" @endif>+91</option>
+											<option value="+1" @if ($hospitalDetails['country_code'] == "1")selected="selected" @endif>+1</option>
+											<option value="+86" @if ($hospitalDetails['country_code'] == "86")selected="selected" @endif>+86</option>
+											<option value="+61" @if ($hospitalDetails['country_code'] == "61")selected="selected" @endif>+61</option>
+											<option value="+33" @if ($hospitalDetails['country_code'] == "33")selected="selected" @endif>+33</option>
+											<option value="+98" @if ($hospitalDetails['country_code'] == "98")selected="selected" @endif>+98</option>
+											<option value="+964" @if ($hospitalDetails['country_code'] == "964")selected="selected" @endif>+964</option>
+											<option value="+972" @if ($hospitalDetails['country_code'] == "972")selected="selected" @endif>+972</option>
+											<option value="+39" @if ($hospitalDetails['country_code'] == "39")selected="selected" @endif>+39</option>
 										</select>
 									</div>
 								</div>
@@ -99,16 +100,16 @@
 								<label>Country</label>
 								<select class="form-control" name="country">
 									<option value="">Select Country</option>
-									<option value="India">India</option>
-									<option value="United States">United States</option>
-									<option value="Australia">Australia</option>
-									<option value="China">China</option>
-									<option value="France">France</option>
-									<option value="Iran">Iran</option>
-									<option value="Iraq">Iraq</option>
-									<option value="Israel">Israel</option>
-									<option value="Italy">Italy</option>
-									<option value="Malaysia">Malaysia</option>
+									<option value="India"  @if ($hospitalDetails['country'] == "India")selected="selected" @endif >India</option>
+									<option value="United States" @if ($hospitalDetails['country'] == "United States")selected="selected" @endif>United States</option>
+									<option value="Australia" @if ($hospitalDetails['country'] == "Australia")selected="selected" @endif>Australia</option>
+									<option value="China" @if ($hospitalDetails['country'] == "China")selected="selected" @endif>China</option>
+									<option value="France" @if ($hospitalDetails['country'] == "France")selected="selected" @endif>France</option>
+									<option value="Iran" @if ($hospitalDetails['country'] == "Iran")selected="selected" @endif>Iran</option>
+									<option value="Iraq" @if ($hospitalDetails['country'] == "Iraq")selected="selected" @endif>Iraq</option>
+									<option value="Israel" @if ($hospitalDetails['country'] == "Israel")selected="selected" @endif>Israel</option>
+									<option value="Italy" @if ($hospitalDetails['country'] == "Italy")selected="selected" @endif>Italy</option>
+									<option value="Malaysia" @if ($hospitalDetails['country'] == "Malaysia")selected="selected" @endif>Malaysia</option>
 								</select>
 							</div>
 						</div>

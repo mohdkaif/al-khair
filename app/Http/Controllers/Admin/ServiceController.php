@@ -102,7 +102,7 @@ class ServiceController extends Controller
             $data['description']        =!empty($request->description)?$request->description:'';
             $data['updated_at']         =date('Y-m-d H:i:s');
             $data['created_at']         =date('Y-m-d H:i:s');
-
+            if(!empty($request->profile_picture)){
              $image = $request->file('profile_picture');
                $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
                $path = public_path().'/uploads/services';
@@ -119,7 +119,7 @@ class ServiceController extends Controller
                $destinationPath = public_path('images/image');
                $image->move($destinationPath, $input['imagename']);
                $data['image'] = $input['imagename'];
-
+            }
             $inserId = \Models\Services::add($data);
             if($inserId){
                 $this->status = true;
@@ -176,28 +176,28 @@ class ServiceController extends Controller
             $this->message = $validator->errors();
         }else{
             $data['title']              =!empty($request->title)?$request->title:'';
-            $data['image']              = !empty($request->profile_picture)?$request->profile_picture:'';
             $data['status']             = 'active';
             $data['description']        =!empty($request->description)?$request->description:'';
             $data['updated_at']         =date('Y-m-d H:i:s');
             $data['created_at']         =date('Y-m-d H:i:s');
+            if(!empty($request->profile_picture)){
+                $image = $request->file('profile_picture');
+                   $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
+                   $path = public_path().'/uploads/services';
+                    if(!File::exists($path)) {
+                        File::makeDirectory($path, $mode = 0777, true);
+                    }
 
-            $image = $request->file('profile_picture');
-               $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
-               $path = public_path().'/uploads/services';
-                if(!File::exists($path)) {
-                    File::makeDirectory($path, $mode = 0777, true);
-                }
+                   $destinationPath = public_path('uploads/services');
+                   $img = Image::make($image->getRealPath());
+                   $img->resize(100, 100, function ($constraint) {
+                       $constraint->aspectRatio();
+                   })->save($destinationPath . '/' . $input['imagename']);
 
-               $destinationPath = public_path('uploads/services');
-               $img = Image::make($image->getRealPath());
-               $img->resize(100, 100, function ($constraint) {
-                   $constraint->aspectRatio();
-               })->save($destinationPath . '/' . $input['imagename']);
-
-               $destinationPath = public_path('images/image');
-               $image->move($destinationPath, $input['imagename']);
-               $data['image'] = $input['imagename'];
+                   $destinationPath = public_path('images/image');
+                   $image->move($destinationPath, $input['imagename']);
+                   $data['image'] = $input['imagename'];
+           }
             $inserId = \Models\Services::change($id,$data);
             if($inserId){
                 $this->status = true;

@@ -93,6 +93,7 @@
 							<div class="form-group">
 								<label>Profile Picture</label>
 								<input type="file" value="{{$doctorDetails['image']}}" class="form-control" name="profile_picture">
+								<img src="{{url('uploads/doctors/'.$doctorDetails['image'])}}" alt="">
 							</div>
 						</div>
 					</div>
@@ -135,16 +136,16 @@
 								<label>Country</label>
 								<select class="form-control" name="country">
 									<option value="">Select Country</option>
-									<option value="India">India</option>
-									<option value="United States">United States</option>
-									<option value="Australia">Australia</option>
-									<option value="China">China</option>
-									<option value="France">France</option>
-									<option value="Iran">Iran</option>
-									<option value="Iraq">Iraq</option>
-									<option value="Israel">Israel</option>
-									<option value="Italy">Italy</option>
-									<option value="Malaysia">Malaysia</option>
+									<option value="India"  @if ($doctorDetails['country'] == "India")selected="selected" @endif >India</option>
+									<option value="United States" @if ($doctorDetails['country'] == "United States")selected="selected" @endif>United States</option>
+									<option value="Australia" @if ($doctorDetails['country'] == "Australia")selected="selected" @endif>Australia</option>
+									<option value="China" @if ($doctorDetails['country'] == "China")selected="selected" @endif>China</option>
+									<option value="France" @if ($doctorDetails['country'] == "France")selected="selected" @endif>France</option>
+									<option value="Iran" @if ($doctorDetails['country'] == "Iran")selected="selected" @endif>Iran</option>
+									<option value="Iraq" @if ($doctorDetails['country'] == "Iraq")selected="selected" @endif>Iraq</option>
+									<option value="Israel" @if ($doctorDetails['country'] == "Israel")selected="selected" @endif>Israel</option>
+									<option value="Italy" @if ($doctorDetails['country'] == "Italy")selected="selected" @endif>Italy</option>
+									<option value="Malaysia" @if ($doctorDetails['country'] == "Malaysia")selected="selected" @endif>Malaysia</option>
 								</select>
 							</div>
 						</div>

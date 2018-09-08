@@ -32,7 +32,7 @@ class Doctor
 			'description'       => ['nullable','string','max:500'],
 			'required_description'       => ['required','string','max:500'],
 			'title'             => ['required','string'],
-			'profile_picture'   => ['required'],
+			'profile_picture'   => ['required','image','mimes:jpeg,png,jpg'],
 			'pin_code' 			=> ['nullable','max:6','min:4'],
 		];
 		return $validation[$key];
@@ -81,11 +81,42 @@ class Doctor
 	        $validations = [
 	            'title' 		    => $this->validation('title'),
 				'description'		=> $this->validation('required_description'),
-				'profile_picture'   => $this->validation('profile_picture'),
 
 	    	];
+	    	if($action == 'edit'){
 
-	        $validator = \Validator::make($this->data->all(), $validations,[]);
+		        $validator = \Validator::make($this->data->all(), $validations,[]);
+		        if(!empty($this->data->profile_picture)){
+			        $validator->after(function ($validator) {
+				        $allowedMimeTypes = ['image/jpeg','image/png','image/bmp'];
+
+				        $v = Validator::make($this->data->profile_picture, array( 'profile_picture' => 'mimes:jpeg,jpg,png', ));
+
+						if(!$allowedMimeTypes){
+						   $validator->errors()->add('profile_picture', 'The profile picture field should be in a jpeg/png/bmp format');
+						}
+				           
+		    		});
+		        }
+	    	}else{
+	    		$validator = \Validator::make($this->data->all(), $validations,[]);
+		        if(!empty($this->data->profile_picture)){
+			        $validator->after(function ($validator) {
+				        $allowedMimeTypes = ['image/jpeg','image/png','image/bmp'];
+						$contentType = mime_content_type('path/to/image');
+
+						if(! in_array($contentType, $allowedMimeTypes) ){
+						   $validator->errors()->add('profile_picture', 'The profile picture field should be in a jpeg/png/bmp format');
+						}
+				           
+		    		});
+
+		    	
+		        }else{
+		        		$validator->errors()->add('profile_picture', 'this feild is required.');
+		        }
+
+	    	}
 	        return $validator;		
 		}
 	public function createHospital($action='add'){

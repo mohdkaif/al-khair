@@ -114,23 +114,24 @@ class HospitalController extends Controller
             $data['updated_at']         =date('Y-m-d H:i:s');
             $data['created_at']         =date('Y-m-d H:i:s');
            // $img = Image::make('public/uploads'.$['image'])->resize(320, 240)->insert('public/watermark.png');
+               if(!empty($request->profile_picture)){
+                   $image = $request->file('profile_picture');
+                   $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
+                   $path = public_path().'/uploads/hospitals';
+                    if(!File::exists($path)) {
+                        File::makeDirectory($path, $mode = 0777, true);
+                    }
 
-               $image = $request->file('profile_picture');
-               $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
-               $path = public_path().'/uploads/hospitals';
-                if(!File::exists($path)) {
-                    File::makeDirectory($path, $mode = 0777, true);
-                }
+                   $destinationPath = public_path('uploads/hospitals');
+                   $img = Image::make($image->getRealPath());
+                   $img->resize(100, 100, function ($constraint) {
+                       $constraint->aspectRatio();
+                   })->save($destinationPath . '/' . $input['imagename']);
 
-               $destinationPath = public_path('uploads/hospitals');
-               $img = Image::make($image->getRealPath());
-               $img->resize(100, 100, function ($constraint) {
-                   $constraint->aspectRatio();
-               })->save($destinationPath . '/' . $input['imagename']);
-
-               $destinationPath = public_path('images/image');
-               $image->move($destinationPath, $input['imagename']);
-               $data['image'] = $input['imagename'];
+                   $destinationPath = public_path('images/image');
+                   $image->move($destinationPath, $input['imagename']);
+                   $data['image'] = $input['imagename'];
+               }
             $inserId = \Models\Hospitals::add($data);
             if($inserId){
                 $this->status = true;
@@ -188,7 +189,6 @@ class HospitalController extends Controller
         }else{
             $data['name']               = !empty($request->name)?$request->name:'';
             $data['country_code']       = !empty($request->country_code)?$request->country_code:'';
-            $data['image']              = !empty($request->profile_picture)?$request->profile_picture:'';
             $data['status']             = 'active';
             $data['city']               = !empty($request->city)?$request->city:'';
             $data['state']              = !empty($request->state)?$request->state:'';
@@ -198,7 +198,7 @@ class HospitalController extends Controller
             $data['street']             = !empty($request->street)?$request->street:'';
             $data['updated_at']         = date('Y-m-d H:i:s');
             $data['created_at']         = date('Y-m-d H:i:s');
-            
+            if(!empty($request->profile_picture)){
             $image = $request->file('profile_picture');
                $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
                $path = public_path().'/uploads/hospitals';
@@ -215,7 +215,7 @@ class HospitalController extends Controller
                $destinationPath = public_path('images/image');
                $image->move($destinationPath, $input['imagename']);
                $data['image'] = $input['imagename'];
-
+           }
             $inserId = \Models\Hospitals::change($id,$data);
             if($inserId){
                 $this->status = true;

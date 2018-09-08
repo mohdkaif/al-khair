@@ -21,6 +21,7 @@
 							<div class="form-group">
 								<label>Profile Picture</label>
 								<input type="file" value="{{$serviceDetails['image']}}" class="form-control" name="profile_picture">
+								<img src="{{url('uploads/services/'.$serviceDetails['image'])}}" alt="">
 							</div>
 						</div>
 					</div>
@@ -54,44 +55,3 @@
 		</div>		
 	</div>
 </div>
-@section('requirejs')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script>
-      $(document).ready(function(){
-            $('#country').select2({
-                ajax : {
-                    url : 'country',
-                    dataType : 'json',
-                    delay : 200,
-                    data : function(params){
-                        return {
-                            q : params.term,
-                            page : params.page
-                        };
-                    },
-                    processResults : function(data, params){
-                        params.page = params.page || 1;
-                        return {
-                            results : data.data,
-                            pagination: {
-                                more : (params.page  * 10) < data.total
-                            }
-                        };
-                    }
-                },
-                minimumInputLength : 1,
-                templateResult : function (repo){
-                    if(repo.loading) return repo.name;
-                    var markup = "<img src="+repo.photo+"></img> &nbsp; "+ repo.name;
-                    return markup;
-                },
-                templateSelection : function(repo)
-                {
-                    return repo.name;
-                },
-                escapeMarkup : function(markup){ return markup; }
-            });
-        });
-    </script>
-</script>
-@endsection

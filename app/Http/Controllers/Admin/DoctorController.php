@@ -117,6 +117,7 @@ class DoctorController extends Controller
             $data['updated_at']         =date('Y-m-d H:i:s');
             $data['created_at']         =date('Y-m-d H:i:s');
 
+            if(!empty($request->profile_picture)){
              $image = $request->file('profile_picture');
                $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
                $path = public_path().'/uploads/doctors';
@@ -133,7 +134,7 @@ class DoctorController extends Controller
                $destinationPath = public_path('images/image');
                $image->move($destinationPath, $input['imagename']);
                $data['image'] = $input['imagename'];
-
+            }
             $inserId = \Models\Doctors::add($data);
             if($inserId){
                 $this->status = true;
@@ -195,7 +196,6 @@ class DoctorController extends Controller
             $data['email']              =!empty($request->email)?$request->email:'';
             $data['mobile_number']      =!empty($request->mobile_number)?$request->mobile_number:'';
             $data['country_code']       =!empty($request->country_code)?$request->country_code:'';
-            $data['image']              = !empty($request->profile_picture)?$request->profile_picture:'';
             $data['status']             = 'active';
             $data['gender']             =!empty($request->gender)?$request->gender:'';
             $data['dob']                =!empty($request->date_of_birth)?$request->date_of_birth:'';
@@ -209,22 +209,24 @@ class DoctorController extends Controller
             $data['updated_at']         =date('Y-m-d H:i:s');
             $data['created_at']         =date('Y-m-d H:i:s');
 
-            $image = $request->file('profile_picture');
-               $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
-               $path = public_path().'/uploads/doctors';
-                if(!File::exists($path)) {
-                    File::makeDirectory($path, $mode = 0777, true);
-                }
+            if(!empty($request->profile_picture)){
+                $image = $request->file('profile_picture');
+                   $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
+                   $path = public_path().'/uploads/doctors';
+                    if(!File::exists($path)) {
+                        File::makeDirectory($path, $mode = 0777, true);
+                    }
 
-               $destinationPath = public_path('uploads/doctors');
-               $img = Image::make($image->getRealPath());
-               $img->resize(100, 100, function ($constraint) {
-                   $constraint->aspectRatio();
-               })->save($destinationPath . '/' . $input['imagename']);
+                   $destinationPath = public_path('uploads/doctors');
+                   $img = Image::make($image->getRealPath());
+                   $img->resize(100, 100, function ($constraint) {
+                       $constraint->aspectRatio();
+                   })->save($destinationPath . '/' . $input['imagename']);
 
-               $destinationPath = public_path('images/image');
-               $image->move($destinationPath, $input['imagename']);
-               $data['image'] = $input['imagename'];
+                   $destinationPath = public_path('images/image');
+                   $image->move($destinationPath, $input['imagename']);
+                   $data['image'] = $input['imagename'];
+            }
             $inserId = \Models\Doctors::change($id,$data);
             if($inserId){
                 $this->status = true;
