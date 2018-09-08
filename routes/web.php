@@ -14,7 +14,10 @@
 Route::get('/', 'HomeController@index');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/about', 'HomeController@aboutUs');
-Route::get('/service', 'HomeController@service');
+Route::get('/services', 'HomeController@service');
+Route::get('/doctors', 'HomeController@doctors');
+Route::get('/hospitals', 'HomeController@hospitals');
+
 
 
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){

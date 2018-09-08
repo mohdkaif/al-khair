@@ -51,4 +51,19 @@ class HomeController extends Controller
         $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
         return view('front_home',$data);
     }
+    public function doctors()
+    {
+        $data['view'] = 'front/doctors';
+        $data['site_title'] = $data['page_title'] = 'Home';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
+        return view('front_home',$data);
+    }
+    public function hospitals()
+    {
+        $data['view'] = 'front/hospitals';
+        $data['site_title'] = $data['page_title'] = 'Home';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
+        return view('front_home',$data);
+    }
+
 }
