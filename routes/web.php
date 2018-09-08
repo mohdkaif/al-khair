@@ -16,10 +16,17 @@ Route::get('/contact', 'HomeController@contact');
 Route::get('/about', 'HomeController@aboutUs');
 Route::get('/service', 'HomeController@service');
 
-
+	Route::get('admin',
+			function () {
+			    return redirect('login');
+			}
+		);
+	Auth::routes();
 	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
-	Route::get('admin','Auth\LoginController@login');
-		Auth::routes();
+
+
+		//Route::get('admin','Auth\LoginController@login');
+		
 		Route::get('/home', 'HomeController@index')->name('home');
 		Route::group(['prefix' => 'associate'],function(){
 			Route::post('/status', 'AssociateController@changeStatus');
@@ -43,6 +50,16 @@ Route::get('/service', 'HomeController@service');
 		});
 
 		Route::resource('hospitals', 'HospitalController');
+		Route::group(['prefix' => 'hospitals'],function(){
+			Route::post('/status', 'HospitalController@changeStatus');
+			//Route::resource('/', 'InvestorController');
+		});
+
+		Route::resource('services', 'ServiceController');
+		Route::group(['prefix' => 'services'],function(){
+			Route::post('/status', 'ServiceController@changeStatus');
+			//Route::resource('/', 'InvestorController');
+		});
 		
 	});
 	

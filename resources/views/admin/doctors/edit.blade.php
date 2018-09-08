@@ -44,7 +44,14 @@
 										<label class="control-label">Country Code</label>
 										<select class="form-control" name="country_code">
 											<option value="+91">+91</option>
-											<option value="+92">+92</option>
+											<option value="+1">+1</option>
+											<option value="+86">+86</option>
+											<option value="+61">+61</option>
+											<option value="+33">+33</option>
+											<option value="+98">+98</option>
+											<option value="+964">+964</option>
+											<option value="+972">+972</option>
+											<option value="+39">+39</option>
 										</select>
 									</div>
 								</div>
@@ -127,8 +134,17 @@
 							<div class="form-group">
 								<label>Country</label>
 								<select class="form-control" name="country">
-									<option value="">select Country</option>
+									<option value="">Select Country</option>
 									<option value="India">India</option>
+									<option value="United States">United States</option>
+									<option value="Australia">Australia</option>
+									<option value="China">China</option>
+									<option value="France">France</option>
+									<option value="Iran">Iran</option>
+									<option value="Iraq">Iraq</option>
+									<option value="Israel">Israel</option>
+									<option value="Italy">Italy</option>
+									<option value="Malaysia">Malaysia</option>
 								</select>
 							</div>
 						</div>
@@ -138,7 +154,7 @@
 						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
 								<label>Qualifications</label>
-								<textarea rows="4" class="form-control" value="{{$doctorDetails['qualifications']}}" placeholder="Enter Qualifications" name="qualifications">
+								<textarea rows="4" class="form-control" placeholder="Enter Qualifications" name="qualifications">{{$doctorDetails['qualifications']}}
 								</textarea>
 							</div>
 						</div>
@@ -149,7 +165,7 @@
 						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
 								<label>Specifications</label>
-								<textarea rows="4" class="form-control" value="{{$doctorDetails['specifications']}}" placeholder="Enter Specifications" name="specifications">
+								<textarea rows="4" class="form-control" placeholder="Enter Specifications" name="specifications">{{$doctorDetails['specifications']}}
 								</textarea>
 							</div>
 						</div>

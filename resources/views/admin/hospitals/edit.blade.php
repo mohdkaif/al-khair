@@ -8,34 +8,28 @@
 				<input type="hidden" name="_method" value="PUT" />
 				<div class="form-body">
 
-					<h3 class="form-section">Edit hospital</h3>
+					<h3 class="form-section">Add Hospital</h3>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">First Name</label>
-								<input type="text" id="firstName" name="first_name" value="{{$hospitalDetails['first_name']}}" class="form-control" placeholder="Enter First Name">
+								<label class="control-label">Name</label>
+								<input type="text" id="name" value="{{$hospitalDetails['name']}}" name="name" class="form-control" placeholder="Enter Name">
 								
 							</div>
 						</div>
 						<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Last Name</label>
-								<input type="text" id="lastName" value="{{$hospitalDetails['last_name']}}" name="last_name" class="form-control" placeholder="Enter Last Name">
-								
-							</div>
-						</div>
 						<!--/span-->
 					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Email</label>
-								<input type="text" id="email" value="{{$hospitalDetails['email']}}" name="email" class="form-control" placeholder="Enter Email">
+								<label>Profile Picture</label>
+								<input type="file" value="{{$hospitalDetails['image']}}" class="form-control" name="profile_picture">
 								
 							</div>
 						</div>
 						<!--/span-->
+						    {{ csrf_field() }}
 
 						<div class="col-md-6">
 							<div class="row">
@@ -44,50 +38,27 @@
 										<label class="control-label">Country Code</label>
 										<select class="form-control" name="country_code">
 											<option value="+91">+91</option>
-											<option value="+92">+92</option>
+											<option value="+1">+1</option>
+											<option value="+86">+86</option>
+											<option value="+61">+61</option>
+											<option value="+33">+33</option>
+											<option value="+98">+98</option>
+											<option value="+964">+964</option>
+											<option value="+972">+972</option>
+											<option value="+39">+39</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-8">
 									<div class="form-group">
 										<label class="control-label">Mobile Number</label>
-										<input type="text" id="mobile_number" name="mobile_number" class="form-control" value="{{$hospitalDetails['mobile_number']}}" placeholder="Enter Mobile Number">
+										<input type="text" value="{{$hospitalDetails['mobile_number']}}" id="mobile_number" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
 										
 									</div>
 								</div>
 							</div>
 						</div>
 						<!--/span-->
-					</div>
-					<!--/row-->
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Gender</label>
-								<select class="form-control" name="gender">
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-								</select>
-								<span class="help-block">
-								Select your gender </span>
-							</div>
-						</div>
-						<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Date of Birth</label>
-								<input type="date" class="form-control" value="{{$hospitalDetails['dob']}}" name="date_of_birth" placeholder="mm/dd/yyyy">
-							</div>
-						</div>
-						<!--/span-->
-					</div>
-					<div class="row">
-						<div class="col-md-12 ">
-							<div class="form-group">
-								<label>Profile Picture</label>
-								<input type="file" value="{{$hospitalDetails['image']}}" class="form-control" name="profile_picture">
-							</div>
-						</div>
 					</div>
 					<h3 class="form-section">Address</h3>
 					<div class="row">
@@ -102,14 +73,14 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>City</label>
-								<input type="text" class="form-control" placeholder="Enter City" value="{{$hospitalDetails['city']}}" name="city">
+								<input type="text" class="form-control" value="{{$hospitalDetails['city']}}" placeholder="Enter City" name="city">
 							</div>
 						</div>
 						<!--/span-->
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>State</label>
-								<input type="text" class="form-control" placeholder="Enter State" value="{{$hospitalDetails['state']}}" name="state">
+								<input type="text" value="{{$hospitalDetails['state']}}" class="form-control" placeholder="Enter State" name="state">
 							</div>
 						</div>
 						<!--/span-->
@@ -119,7 +90,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Post Code</label>
-								<input type="text" class="form-control" placeholder="Enter Post Code" value="{{$hospitalDetails['post_code']}}" name="pin_code">
+								<input type="text" class="form-control" value="{{$hospitalDetails['post_code']}}" placeholder="Enter Post Code" name="pin_code">
 							</div>
 						</div>
 						<!--/span-->
@@ -127,8 +98,17 @@
 							<div class="form-group">
 								<label>Country</label>
 								<select class="form-control" name="country">
-									<option value="">select Country</option>
+									<option value="">Select Country</option>
 									<option value="India">India</option>
+									<option value="United States">United States</option>
+									<option value="Australia">Australia</option>
+									<option value="China">China</option>
+									<option value="France">France</option>
+									<option value="Iran">Iran</option>
+									<option value="Iraq">Iraq</option>
+									<option value="Israel">Israel</option>
+									<option value="Italy">Italy</option>
+									<option value="Malaysia">Malaysia</option>
 								</select>
 							</div>
 						</div>
@@ -137,24 +117,14 @@
 					<div class="row">
 						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Qualifications</label>
-								<textarea rows="4" class="form-control" value="{{$hospitalDetails['qualifications']}}" placeholder="Enter Qualifications" name="qualifications">
+								<label>Description</label>
+								<textarea rows="4" class="form-control"  placeholder="Enter Description" name="description">{{$hospitalDetails['description']}}
 								</textarea>
 							</div>
 						</div>
 						<!--/span-->
 					</div>
-
-					<div class="row">
-						<div class="col-md-12 col-xs-12 col-lg-12">
-							<div class="form-group">
-								<label>Specifications</label>
-								<textarea rows="4" class="form-control" value="{{$hospitalDetails['specifications']}}" placeholder="Enter Specifications" name="specifications">
-								</textarea>
-							</div>
-						</div>
-						<!--/span-->
-					</div>
+					
 				</div>
 				<div class="form-actions right">
 					<a href="{{url('admin/hospitals')}}" class="btn default">Cancel</a>
@@ -165,44 +135,3 @@
 		</div>		
 	</div>
 </div>
-@section('requirejs')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script>
-      $(document).ready(function(){
-            $('#country').select2({
-                ajax : {
-                    url : 'country',
-                    dataType : 'json',
-                    delay : 200,
-                    data : function(params){
-                        return {
-                            q : params.term,
-                            page : params.page
-                        };
-                    },
-                    processResults : function(data, params){
-                        params.page = params.page || 1;
-                        return {
-                            results : data.data,
-                            pagination: {
-                                more : (params.page  * 10) < data.total
-                            }
-                        };
-                    }
-                },
-                minimumInputLength : 1,
-                templateResult : function (repo){
-                    if(repo.loading) return repo.name;
-                    var markup = "<img src="+repo.photo+"></img> &nbsp; "+ repo.name;
-                    return markup;
-                },
-                templateSelection : function(repo)
-                {
-                    return repo.name;
-                },
-                escapeMarkup : function(markup){ return markup; }
-            });
-        });
-    </script>
-</script>
-@endsection

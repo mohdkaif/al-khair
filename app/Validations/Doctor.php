@@ -19,6 +19,7 @@ class Doctor
 			'id'				=> ['required'],
 			'email'				=> ['required','email'],
 			'first_name' 		=> ['required','string'],
+			'name' 				=> ['required','string'],
 			'last_name' 		=> ['nullable','string'],
 			'date_of_birth' 	=> ['nullable','string'],
 			'gender' 			=> ['required','string'],
@@ -28,6 +29,10 @@ class Doctor
 			'address'           => ['nullable','string','max:500'],
 			'qualifications'    => ['required','string','max:500'],
 			'specifications'    => ['nullable','string','max:500'],
+			'description'       => ['nullable','string','max:500'],
+			'required_description'       => ['required','string','max:500'],
+			'title'             => ['required','string'],
+			'profile_picture'   => ['required'],
 			'pin_code' 			=> ['nullable','max:6','min:4'],
 		];
 		return $validation[$key];
@@ -60,6 +65,46 @@ class Doctor
 					$query->where('id','!=',$this->data->id);
 				})
 			]);
+			$validations['mobile_number'] = array_merge($this->validation('mobile_number'),[
+				Rule::unique('doctors')->ignore('trashed','status')->where(function($query){
+					$query->where('id','!=',$this->data->id);
+				})
+			]);
+		}
+
+        $validator = \Validator::make($this->data->all(), $validations,[]);
+        return $validator;		
+	}
+
+
+	public function createService($action='add'){
+	        $validations = [
+	            'title' 		    => $this->validation('title'),
+				'description'		=> $this->validation('required_description'),
+				'profile_picture'   => $this->validation('profile_picture'),
+
+	    	];
+
+	        $validator = \Validator::make($this->data->all(), $validations,[]);
+	        return $validator;		
+		}
+	public function createHospital($action='add'){
+        $validations = [
+            'name' 		        => $this->validation('name'),
+			'country_code'		=> $this->validation('phone_code'),
+			'mobile_number'  	=> array_merge($this->validation('mobile_number'),[Rule::unique('doctors')->ignore('trashed','status')]),
+			'street'			=> $this->validation('address'),
+			'city'				=> $this->validation('address'),
+			'state'				=> $this->validation('address'),
+			'pin_code'			=> $this->validation('pin_code'),
+			'country'			=> $this->validation('country'),
+			'description'       => $this->validation('description')
+			
+
+    	];
+
+    	if($action == 'edit'){
+    		$validations['id'] = $this->validation('id');
 			$validations['mobile_number'] = array_merge($this->validation('mobile_number'),[
 				Rule::unique('doctors')->ignore('trashed','status')->where(function($query){
 					$query->where('id','!=',$this->data->id);

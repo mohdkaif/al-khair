@@ -1,4 +1,3 @@
-
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <div class="page-content-wrapper">
@@ -12,26 +11,19 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">First Name</label>
-								<input type="text" id="firstName" name="first_name" class="form-control" placeholder="Enter First Name">
+								<label class="control-label">Name</label>
+								<input type="text" id="name" name="name" class="form-control" placeholder="Enter Name">
 								
 							</div>
 						</div>
 						<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Last Name</label>
-								<input type="text" id="lastName" name="last_name" class="form-control" placeholder="Enter Last Name">
-								
-							</div>
-						</div>
 						<!--/span-->
 					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Email</label>
-								<input type="text" id="email" name="email" class="form-control" placeholder="Enter Email">
+								<label>Profile Picture</label>
+								<input type="file" class="form-control" name="profile_picture">
 								
 							</div>
 						</div>
@@ -45,7 +37,14 @@
 										<label class="control-label">Country Code</label>
 										<select class="form-control" name="country_code">
 											<option value="+91">+91</option>
-											<option value="+92">+92</option>
+											<option value="+1">+1</option>
+											<option value="+86">+86</option>
+											<option value="+61">+61</option>
+											<option value="+33">+33</option>
+											<option value="+98">+98</option>
+											<option value="+964">+964</option>
+											<option value="+972">+972</option>
+											<option value="+39">+39</option>
 										</select>
 									</div>
 								</div>
@@ -59,36 +58,6 @@
 							</div>
 						</div>
 						<!--/span-->
-					</div>
-					<!--/row-->
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Gender</label>
-								<select class="form-control" name="gender">
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-								</select>
-								<span class="help-block">
-								Select your gender </span>
-							</div>
-						</div>
-						<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Date of Birth</label>
-								<input type="date" class="form-control" name="date_of_birth" placeholder="mm/dd/yyyy">
-							</div>
-						</div>
-						<!--/span-->
-					</div>
-					<div class="row">
-						<div class="col-md-12 ">
-							<div class="form-group">
-								<label>Profile Picture</label>
-								<input type="file" class="form-control" name="profile_picture">
-							</div>
-						</div>
 					</div>
 					<h3 class="form-section">Address</h3>
 					<div class="row">
@@ -128,8 +97,17 @@
 							<div class="form-group">
 								<label>Country</label>
 								<select class="form-control" name="country">
-									<option value="">select Country</option>
-									<option value="">India</option>
+									<option value="">Select Country</option>
+									<option value="India">India</option>
+									<option value="United States">United States</option>
+									<option value="Australia">Australia</option>
+									<option value="China">China</option>
+									<option value="France">France</option>
+									<option value="Iran">Iran</option>
+									<option value="Iraq">Iraq</option>
+									<option value="Israel">Israel</option>
+									<option value="Italy">Italy</option>
+									<option value="Malaysia">Malaysia</option>
 								</select>
 							</div>
 						</div>
