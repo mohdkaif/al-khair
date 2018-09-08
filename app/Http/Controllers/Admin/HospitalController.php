@@ -34,7 +34,6 @@ class HospitalController extends Controller
             return DataTables::of($hospitals)
             ->editColumn('action',function($item){
                 $html    = '<div class="edit_details_box">';
-                $html   .= '<a href="'.url(sprintf('admin/hospitals/%s',___encrypt($item['id']))).'" title="View Detail"><i class="fa fa-fw fa-eye"></i> | </a>';
                 $html   .= '<a href="'.url(sprintf('admin/hospitals/%s/edit',___encrypt($item['id']))).'"  title="Edit Detail"><i class="fa fa-edit"></i></a> | ';
                 if($item['status'] == 'active'){
                     $html   .= '<a href="javascript:void(0);" 
