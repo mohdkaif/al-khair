@@ -35,6 +35,8 @@
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.min.css')}}">
 <link href="{{ asset('/bower_components/sweetalert2/dist/sweetalert2.css') }}" rel="stylesheet">
 <link href="{{url('css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css"/>
+
 <!-- END THEME STYLES -->
 <script type="text/javascript">
     var asset_url = "{{ url('/') }}";

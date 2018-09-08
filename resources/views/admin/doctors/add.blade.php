@@ -12,8 +12,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">First Name</label>
-								<input type="text" id="firstName" name="first_name" class="form-control" placeholder="Enter First Name">
+								<label class="control-label required">First Name</label>
+								<input type="text" required id="firstName" name="first_name" class="form-control" placeholder="Enter First Name">
 								
 							</div>
 						</div>
@@ -71,8 +71,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Gender</label>
-								<select class="form-control" name="gender">
+								<label class="control-label required">Gender</label>
+								<select required class="form-control" name="gender">
 									<option value="male">Male</option>
 									<option value="female">Female</option>
 								</select>
@@ -133,8 +133,8 @@
 						<!--/span-->
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Country</label>
-								<select class="form-control" name="country">
+								<label class="required">Country</label>
+								<select required class="form-control" name="country">
 									<option value="">Select Country</option>
 									<option value="India">India</option>
 									<option value="United States">United States</option>
@@ -154,8 +154,8 @@
 					<div class="row">
 						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Qualifications</label>
-								<textarea rows="4" class="form-control" placeholder="Enter Qualifications" name="qualifications">
+								<label class="required">Qualifications</label>
+								<textarea required rows="4" class="form-control" placeholder="Enter Qualifications" name="qualifications">
 								</textarea>
 							</div>
 						</div>
