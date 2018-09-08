@@ -12,8 +12,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Name</label>
-								<input type="text" id="name" value="{{$hospitalDetails['name']}}" name="name" class="form-control" placeholder="Enter Name">
+								<label class="control-label required">Name</label>
+								<input type="text" required id="name" value="{{$hospitalDetails['name']}}" name="name" class="form-control" placeholder="Enter Name">
 								
 							</div>
 						</div>
@@ -36,8 +36,8 @@
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label class="control-label">Country Code</label>
-										<select class="form-control" name="country_code">
+										<label class="control-label required">Country Code</label>
+										<select required class="form-control" name="country_code">
 											<option value="+91" @if ($hospitalDetails['country_code'] == "91")selected="selected" @endif>+91</option>
 											<option value="+1" @if ($hospitalDetails['country_code'] == "1")selected="selected" @endif>+1</option>
 											<option value="+86" @if ($hospitalDetails['country_code'] == "86")selected="selected" @endif>+86</option>

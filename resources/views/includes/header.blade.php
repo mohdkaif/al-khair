@@ -5,7 +5,7 @@
 	<div class="page-logo">
 		<a href="index.html">
 		<!-- <img src="{{ asset('assets/admin/layout4/img/logo-light.png') }}" alt="logo" class="logo-default"/> -->
-		<h1>Food Truck</h1>
+		<h1>Al-Khair</h1>
 		</a>
 		<div class="menu-toggler sidebar-toggler">
 			<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->

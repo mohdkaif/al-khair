@@ -11,8 +11,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Name</label>
-								<input type="text" id="name" name="name" class="form-control" placeholder="Enter Name">
+								<label class="control-label required">Name</label>
+								<input type="text" required id="name" name="name" class="form-control" placeholder="Enter Name">
 								
 							</div>
 						</div>
@@ -95,8 +95,8 @@
 						<!--/span-->
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Country</label>
-								<select class="form-control" name="country">
+								<label class="required">Country</label>
+								<select required class="form-control" name="country">
 									<option value="">Select Country</option>
 									<option value="India">India</option>
 									<option value="United States">United States</option>

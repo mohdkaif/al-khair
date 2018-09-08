@@ -11,15 +11,15 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Title</label>
+								<label class="control-label required">Title</label>
 								<input type="text" required="required" id="title" name="title" class="form-control" placeholder="Enter Title">
 								
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Profile Picture</label>
-								<input type="file" class="form-control" name="profile_picture">
+								<label class="required">Profile Picture</label>
+								<input type="file" required class="form-control" name="profile_picture">
 								
 							</div>
 						</div>
@@ -31,8 +31,8 @@
 					<div class="row">
 						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Description</label>
-								<textarea rows="4" class="form-control" placeholder="Enter Description" name="description">
+								<label class="required">Description</label>
+								<textarea required rows="4" class="form-control" placeholder="Enter Description" name="description">
 								</textarea>
 							</div>
 						</div>

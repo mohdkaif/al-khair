@@ -12,15 +12,15 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Title</label>
-								<input type="text" id="title" name="title" value="{{$serviceDetails['title']}}" class="form-control" placeholder="Enter First Name">
+								<label class="control-label required">Title</label>
+								<input type="text" id="title" required  name="title" value="{{$serviceDetails['title']}}" class="form-control" placeholder="Enter First Name">
 								
 							</div>
 						</div>
 						<div class="col-md-12 ">
 							<div class="form-group">
-								<label>Profile Picture</label>
-								<input type="file" value="{{$serviceDetails['image']}}" class="form-control" name="profile_picture">
+								<label class="required">Profile Picture</label>
+								<input type="file" required value="{{$serviceDetails['image']}}" class="form-control" name="profile_picture">
 								<img src="{{url('uploads/services/'.$serviceDetails['image'])}}" alt="">
 							</div>
 						</div>
@@ -37,8 +37,8 @@
 					<div class="row">
 						<div class="col-md-12 col-xs-12 col-lg-12">
 							<div class="form-group">
-								<label>Description</label>
-								<textarea rows="4" class="form-control"  placeholder="Enter Description" name="description">{{$serviceDetails['description']}}
+								<label class="required">Description</label>
+								<textarea required rows="4" class="form-control"  placeholder="Enter Description" name="description">{{$serviceDetails['description']}}
 								</textarea>
 							</div>
 						</div>
