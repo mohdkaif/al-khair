@@ -54,6 +54,8 @@ class HomeController extends Controller
     public function doctors()
     {
         $data['view'] = 'front/doctors';
+        $data['doctors']  = _arefy(\Models\Doctors::where('status','!=','trashed')->get());
+        //dd($data['doctors']);
         $data['site_title'] = $data['page_title'] = 'Home';
         $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
         return view('front_home',$data);
