@@ -126,7 +126,7 @@ class DoctorController extends Controller
 
                $destinationPath = public_path('uploads/doctors');
                $img = Image::make($image->getRealPath());
-               $img->resize(100, 100, function ($constraint) {
+               $img->resize(264, 337, function ($constraint) {
                    $constraint->aspectRatio();
                })->save($destinationPath . '/' . $input['imagename']);
 
@@ -218,7 +218,7 @@ class DoctorController extends Controller
 
                    $destinationPath = public_path('uploads/doctors');
                    $img = Image::make($image->getRealPath());
-                   $img->resize(100, 100, function ($constraint) {
+                   $img->resize(264, 337, function ($constraint) {
                        $constraint->aspectRatio();
                    })->save($destinationPath . '/' . $input['imagename']);
 
