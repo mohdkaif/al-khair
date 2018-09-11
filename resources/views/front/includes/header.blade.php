@@ -79,7 +79,7 @@
                                 </ul>
                                 <!-- Search Form -->
                                 <div class="header-search-form ml-auto">
-                                    <form action="#">
+                                    <form action="{{url('search')}}" method="GET">
                                         <input type="search" class="form-control" placeholder="Input your keyword then press enter..." id="search" name="search">
                                         <input class="d-none" type="submit" value="submit">
                                     </form>

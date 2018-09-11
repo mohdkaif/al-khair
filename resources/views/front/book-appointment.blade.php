@@ -68,8 +68,8 @@
 				<input type="hidden" name="type" value="{{$type}}">
 				<input type="hidden" name="requirement" value="{{$name}}">
 				<div class="form-actions right">
-					<a href="{{url('home')}}" class="btn default">Cancel</a>
-					<button type="button" data-request="ajax-submit" data-target='[role="add-appointment"]' class="btn blue"><i class="fa fa-check"></i> Save</button>
+					<a href="{{url('/')}}" class="btn default">Cancel</a>
+					<button type="button" data-request="ajax-submit" data-target='[role="add-appointment"]' class="btn medica-btn btn-3 mt-3"><i class="fa fa-check"></i> Save</button>
 					
 				</div>
 			</form>

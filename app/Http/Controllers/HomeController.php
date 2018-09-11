@@ -178,7 +178,16 @@ public function sendMessage(Request $request)
         } 
         return $this->populateresponse();
     }
-
+ public function search(Request $request) 
+    {
+        $data['view'] = 'front/all-data';
+        $data['site_title'] = $data['page_title'] = 'Home';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
+        
+        $searched_data = \Models\Search::list($request->search);
+        $data['searched_data'] = $searched_data;
+        return view('front_home',$data);
+    }
 
 
 
