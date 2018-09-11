@@ -182,7 +182,8 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-{       $id = ___decrypt($id);
+    {   
+        $id = ___decrypt($id);
         $request->request->add(['id'=>$id]);
         $validation = new Validations($request);
         $validator  = $validation->createDoctor('edit');
