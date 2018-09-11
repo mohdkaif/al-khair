@@ -93,7 +93,8 @@
 						<div class="col-md-12 ">
 							<div class="form-group">
 								<label>Profile Picture</label>
-								<input type="file" class="form-control" name="profile_picture">
+								<input type="file" class="form-control" id="imgInp" name="profile_picture">
+								<img id="previewImage" src="#" alt="Choose image" />
 							</div>
 						</div>
 					</div>
@@ -188,40 +189,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script type="text/javascript">
 	//dynamicSelect2('.associate','{{url("admin/ajax/associate")}}','Select Associate');
-	$(document).ready(function(){
-            $('#country').select2({
-                ajax : {
-                    url : 'country',
-                    dataType : 'json',
-                    delay : 200,
-                    data : function(params){
-                        return {
-                            q : params.term,
-                            page : params.page
-                        };
-                    },
-                    processResults : function(data, params){
-                        params.page = params.page || 1;
-                        return {
-                            results : data.data,
-                            pagination: {
-                                more : (params.page  * 10) < data.total
-                            }
-                        };
-                    }
-                },
-                minimumInputLength : 1,
-                templateResult : function (repo){
-                    if(repo.loading) return repo.name;
-                    var markup = "<img src="+repo.photo+"></img> &nbsp; "+ repo.name;
-                    return markup;
-                },
-                templateSelection : function(repo)
-                {
-                    return repo.name;
-                },
-                escapeMarkup : function(markup){ return markup; }
-            });
-        });
+	function readURL(input) {
+
+	if (input.files && input.files[0]) {
+	var reader = new FileReader();
+
+	reader.onload = function(e) {
+	  $('#previewImage').attr('src', e.target.result);
+	}
+
+	reader.readAsDataURL(input.files[0]);
+	}
+	}
+
+	$("#imgInp").change(function() {
+	readURL(this);
+	});
 </script>
 @endsection

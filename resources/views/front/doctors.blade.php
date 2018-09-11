@@ -31,6 +31,7 @@
             <div class="row">
                 @if(!empty($doctors))
                     @foreach($doctors as $doctor)
+
                         <div class="col-12 col-sm-6 col-lg-3">
                             <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="doctor-thumbnail">
@@ -39,6 +40,9 @@
                                 <div class="doctor-meta">
                                     <h5>Dr. {{$doctor['name']}}</h5>
                                     <h6>{{$doctor['specifications']}}</h6>
+                                    <div class="doctor-social-info">
+                                        <a href="{{url('appointment/'.___encrypt($doctor['id']))}}" class="btn btn-primary">Book Appointment</a>
+                                    </div>
                                     <div class="doctor-social-info">
                                         <a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>

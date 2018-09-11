@@ -126,7 +126,7 @@ class DoctorController extends Controller
 
                $destinationPath = public_path('uploads/doctors');
                $img = Image::make($image->getRealPath());
-               $img->resize(100, 100, function ($constraint) {
+               $img->resize(264, 337, function ($constraint) {
                    $constraint->aspectRatio();
                })->save($destinationPath . '/' . $input['imagename']);
 
@@ -182,7 +182,8 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-{       $id = ___decrypt($id);
+    {   
+        $id = ___decrypt($id);
         $request->request->add(['id'=>$id]);
         $validation = new Validations($request);
         $validator  = $validation->createDoctor('edit');
@@ -218,7 +219,7 @@ class DoctorController extends Controller
 
                    $destinationPath = public_path('uploads/doctors');
                    $img = Image::make($image->getRealPath());
-                   $img->resize(100, 100, function ($constraint) {
+                   $img->resize(264, 337, function ($constraint) {
                        $constraint->aspectRatio();
                    })->save($destinationPath . '/' . $input['imagename']);
 
