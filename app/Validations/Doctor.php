@@ -30,10 +30,13 @@ class Doctor
 			'qualifications'    => ['required','string','max:500'],
 			'specifications'    => ['nullable','string','max:500'],
 			'description'       => ['nullable','string','max:500'],
-			'required_description'       => ['required','string','max:500'],
+			'required_description'  => ['required','string','max:500'],
 			'title'             => ['required','string'],
 			'profile_picture'   => ['required','image','mimes:jpeg,png,jpg'],
 			'pin_code' 			=> ['nullable','max:6','min:4'],
+			'appointment_date'  => ['required','string'],
+			'type' 	            => ['required','string'],
+			'phone' 	        => ['required','string'],
 		];
 		return $validation[$key];
 	}
@@ -78,19 +81,21 @@ class Doctor
 
 
 	public function createService($action='add'){
+
 	        $validations = [
 	            'title' 		    => $this->validation('title'),
 				'description'		=> $this->validation('required_description'),
 
 	    	];
+	    	$validator = \Validator::make($this->data->all(), $validations,[]);
 	    	if($action == 'edit'){
 
-		        $validator = \Validator::make($this->data->all(), $validations,[]);
+		        
 		        if(!empty($this->data->profile_picture)){
 			        $validator->after(function ($validator) {
 				        $allowedMimeTypes = ['image/jpeg','image/png','image/bmp'];
 
-				        $v = Validator::make($this->data->profile_picture, array( 'profile_picture' => 'mimes:jpeg,jpg,png', ));
+				        $v = Validator::make($this->data->profile_picture, array( 'profile_picture' => 'mimes:jpeg,jpg,png' ));
 
 						if(!$allowedMimeTypes){
 						   $validator->errors()->add('profile_picture', 'The profile picture field should be in a jpeg/png/bmp format');
@@ -99,13 +104,11 @@ class Doctor
 		    		});
 		        }
 	    	}else{
-	    		$validator = \Validator::make($this->data->all(), $validations,[]);
 		        if(!empty($this->data->profile_picture)){
 			        $validator->after(function ($validator) {
 				        $allowedMimeTypes = ['image/jpeg','image/png','image/bmp'];
-						$contentType = mime_content_type('path/to/image');
-
-						if(! in_array($contentType, $allowedMimeTypes) ){
+				       /* $v = Validator::make($this->data->profile_picture, array( 'profile_picture' => 'mimes:jpeg,jpg,png' ));*/
+						if(!$allowedMimeTypes){
 						   $validator->errors()->add('profile_picture', 'The profile picture field should be in a jpeg/png/bmp format');
 						}
 				           
@@ -113,7 +116,7 @@ class Doctor
 
 		    	
 		        }else{
-		        		$validator->errors()->add('profile_picture', 'this feild is required.');
+		        		$validator->errors()->add('profile_picture', 'The profile picture field is required.');
 		        }
 
 	    	}
@@ -154,5 +157,22 @@ class Doctor
 		]);
 		return $validator;
 	}	
+	public function createAppointment($action='add'){
+        $validations = [
+            'name' 		        => $this->validation('name'),
+			'email'		        => $this->validation('email'),
+			'mobile_number'  	=> $this->validation('phone'),
+			'type'  	        => $this->validation('type'),
+			'requirement'  	    => $this->validation('title'),
+			'description'       => $this->validation('description'),
+			'appointment_date'  => $this->validation('appointment_date'),
+			
+
+    	];
+
+        $validator = \Validator::make($this->data->all(), $validations,[]);
+        return $validator;		
+	}
+
 	
 }

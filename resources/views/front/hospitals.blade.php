@@ -39,6 +39,7 @@
                                 <div class="hospital-meta">
                                     <h5>{{$hospital['name']}}</h5>
                                     <h6>{{$hospital['description']}}</h6>
+                                    <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary">Book Appointment</a>
                                     <div class="hospital-social-info">
                                         <a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -163,7 +164,7 @@
                 </div> -->
                 <div class="col-12">
                     <div class="see-all-hospitals text-center wow fadeInUp" data-wow-delay="1s">
-                        <a href="#" class="btn medica-btn btn-2">See All hospitals</a>
+                        <a href="{{url('all-hospitals')}}" class="btn medica-btn btn-2">See All hospitals</a>
                     </div>
                 </div>
             </div>

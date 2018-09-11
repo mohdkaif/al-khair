@@ -53,7 +53,7 @@
                         </div>
                     @endforeach
                 @endif
-                <div class="col-12 col-sm-6 col-lg-3">
+              <!--   <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.4s">
                         <div class="doctor-thumbnail">
                             <img src="{{url('front/img/bg-img/d2.jpg')}}" alt="">
@@ -164,12 +164,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="see-all-doctors text-center wow fadeInUp" data-wow-delay="1s">
-                        <a href="{{url('all-doctors')}}" class="btn medica-btn btn-2">See All Doctors</a>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

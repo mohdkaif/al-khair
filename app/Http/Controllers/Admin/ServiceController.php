@@ -94,7 +94,9 @@ class ServiceController extends Controller
         $validator  = $validation->createService();
         if($validator->fails()){
             $this->message = $validator->errors();
+
         }else{
+
             $data['title']              =!empty($request->title)?$request->title:'';
             $data['image']              = !empty($request->profile_picture)?$request->profile_picture:'';
             $data['status']             = 'active';
@@ -111,7 +113,7 @@ class ServiceController extends Controller
 
                $destinationPath = public_path('uploads/services');
                $img = Image::make($image->getRealPath());
-               $img->resize(100, 100, function ($constraint) {
+               $img->resize(264, 337, function ($constraint) {
                    $constraint->aspectRatio();
                })->save($destinationPath . '/' . $input['imagename']);
 
@@ -189,7 +191,7 @@ class ServiceController extends Controller
 
                    $destinationPath = public_path('uploads/services');
                    $img = Image::make($image->getRealPath());
-                   $img->resize(100, 100, function ($constraint) {
+                   $img->resize(264, 337, function ($constraint) {
                        $constraint->aspectRatio();
                    })->save($destinationPath . '/' . $input['imagename']);
 

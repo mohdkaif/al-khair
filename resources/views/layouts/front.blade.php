@@ -14,14 +14,14 @@
    <title>Al-Khair-Meditour - Health</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="{{url('front/img/core-img/favicon.ico')}}">
-
+    <link rel="icon" href="{{asset('front/img/core-img/favicon.ico')}}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="{{url('front/css/core-style.css')}}">
-    <link rel="stylesheet" href="{{url('front/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/core-style.css')}}">
 
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{url('front/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body class="page-md login">
@@ -35,7 +35,7 @@
 <!-- Preloader -->
 <div id="preloader">
 <div class="medica-load"></div>
-    <img src="{{url('front/img/core-img/plus.png')}}" alt="logo">
+    <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">
 </div>
 
     <div id="app">
@@ -55,9 +55,9 @@
     <script src="{{asset('front/js/plugins.js')}}"></script>
     <!-- Active js -->
     <script src="{{asset('front/js/active.js')}}"></script>
-
+    <script src="{{asset('js/script.js')}}"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
-    <script>
+    <script type="text/javascript">
     jQuery(document).ready(function() {     
       Metronic.init(); // init metronic core components
     Layout.init(); // init current layout

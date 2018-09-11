@@ -17,6 +17,13 @@ Route::get('/about', 'HomeController@aboutUs');
 Route::get('/services', 'HomeController@service');
 Route::get('/doctors', 'HomeController@doctors');
 Route::get('/hospitals', 'HomeController@hospitals');
+Route::get('/all-hospitals', 'HomeController@allHospitals');
+Route::get('/services-details', 'HomeController@servicesDetails');
+
+Route::get('/all-doctors', 'HomeController@allDoctors');
+Route::get('/book-appointment', 'HomeController@bookAppointment');
+Route::post('/add-appointment', 'HomeController@addAppointment');
+
 
 
 	Route::get('admin',
