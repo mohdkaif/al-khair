@@ -149,6 +149,37 @@ class HomeController extends Controller
         return $this->populateresponse();
     }
 
+public function sendMessage(Request $request)
+    {  
+        $request->request->add(['appointment_date'=>date('Y-m-d H:i:s'),'requirement'=>'contact','type'=>'contact']);
+       $validation = new Validations($request);
+        $validator  = $validation->createAppointment();
+        if($validator->fails()){
+            $this->message = $validator->errors();
+        }else{
+            $data['name']               =!empty($request->name)?$request->name:'';
+            $data['email']              =!empty($request->email)?$request->email:'';
+            $data['phone']              =!empty($request->mobile_number)?$request->mobile_number:'';
+            $data['appointment_date']   =date('Y-m-d H:i:s');
+            $data['description']        =!empty($request->description)?$request->description:'';
+            $data['requirement']        ='contact';
+            $data['type']               ='contact';
+            $data['updated_at']         =date('Y-m-d H:i:s');
+            $data['created_at']         =date('Y-m-d H:i:s');
+
+            $inserId = \Models\Appointments::add($data);
+            if($inserId){
+                $this->status = true;
+                $this->modal  = true;
+                $this->alert    = true;
+                $this->message  = "Your Appointment has been booked successfully";
+                $this->redirect = url('/');
+            } 
+        } 
+        return $this->populateresponse();
+    }
+
+
 
 
 }

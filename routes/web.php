@@ -23,6 +23,9 @@ Route::get('/services-details', 'HomeController@servicesDetails');
 Route::get('/all-doctors', 'HomeController@allDoctors');
 Route::get('/book-appointment', 'HomeController@bookAppointment');
 Route::post('/add-appointment', 'HomeController@addAppointment');
+Route::post('contact-us', 'HomeController@sendMessage');
+
+
 
 
 

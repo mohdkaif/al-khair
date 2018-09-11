@@ -21,7 +21,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('appointment_date');
             $table->text('description')->nullable();
             $table->string('requirement');
-            $table->enum('type',['doctor','hospital','service'])->default('doctor');
+            $table->enum('type',['doctor','hospital','service','contact'])->default('doctor');
             $table->timestamps();
         });
     }
