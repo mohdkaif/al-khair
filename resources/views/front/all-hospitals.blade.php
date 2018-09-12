@@ -31,15 +31,15 @@
             <div class="row">
                 @if(!empty($hospitals))
                     @foreach($hospitals as $hospital)
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="g single-hospital-area wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="hospital-thumbnail">
                                     <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="">
                                 </div>
-                                <div class="hospital-meta">
-                                    <h5>{{$hospital['name']}}</h5>
-                                    <h6>{{$hospital['description']}}</h6>
-                                    <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary">Book Appointment</a>
+                                <div class="hospital-meta" style="align:center">
+                                    <h2>{{$hospital['name']}}</h2>
+                                    <h4>{{$hospital['description']}}</h4>
+                                    <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary btn-large">Book Appointment</a>
                                     <div class="hospital-social-info">
                                         <a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -50,124 +50,22 @@
                         </div>
                     @endforeach
                 @endif
-             <!--    <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="hospital-thumbnail">
-                            <img src="{{url('front/img/bg-img/d2.jpg')}}" alt="">
-                        </div>
-                        <div class="hospital-meta">
-                            <h5>Dr. Josh Henderson</h5>
-                            <h6>Plastic Surgeon</h6>
-                            <div class="hospital-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="hospital-thumbnail">
-                            <img src="{{url('front/img/bg-img/d3.jpg')}}" alt="">
-                        </div>
-                        <div class="hospital-meta">
-                            <h5>Dr. Christinne Jones</h5>
-                            <h6>Pediatrist</h6>
-                            <div class="hospital-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="hospital-thumbnail">
-                            <img src="{{url('front/img/bg-img/d4.jpg')}}" alt="">
-                        </div>
-                        <div class="hospital-meta">
-                            <h5>Dr. William Stan</h5>
-                            <h6>General Practicioner</h6>
-                            <div class="hospital-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="hospital-thumbnail">
-                            <img src="{{url('front/img/bg-img/d5.jpg')}}" alt="">
-                        </div>
-                        <div class="hospital-meta">
-                            <h5>Dr. William Parker</h5>
-                            <h6>Cardiologist</h6>
-                            <div class="hospital-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="hospital-thumbnail">
-                            <img src="{{url('front/img/bg-img/d6.jpg')}}" alt="">
-                        </div>
-                        <div class="hospital-meta">
-                            <h5>Dr. Maria Hernandez</h5>
-                            <h6>Plastic Surgeon</h6>
-                            <div class="hospital-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="hospital-thumbnail">
-                            <img src="{{url('front/img/bg-img/d7.jpg')}}" alt="">
-                        </div>
-                        <div class="hospital-meta">
-                            <h5>Dr. Stella Jones</h5>
-                            <h6>Pediatrist</h6>
-                            <div class="hospital-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="hospital-thumbnail">
-                            <img src="{{url('front/img/bg-img/d8.jpg')}}" alt="">
-                        </div>
-                        <div class="hospital-meta">
-                            <h5>Dr. Jack Gillian</h5>
-                            <h6>General Practicioner</h6>
-                            <div class="hospital-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-             
             </div>
         </div>
     </section>
+<style>
+    div {
+        text-align: center;
+        
+    }
+    div .g {
+       border: 1px solid white;
+        border-radius: 5px;
+        margin: 5px;
+        padding:2px;
+    }
 
-
+</style>
    
 
   

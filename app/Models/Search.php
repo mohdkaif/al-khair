@@ -21,15 +21,15 @@ class Search extends Model
     public static function list($search){
 
        $doctors = \DB::table('doctors')
-        ->select(\DB::raw("NULL as title"),'name','mobile_number','country','qualifications',\DB::raw("NULL as description"),'image') 
+        ->select('id',\DB::raw("NULL as title"),'name','mobile_number','country','qualifications',\DB::raw("NULL as description"),'image',\DB::raw("'doctors' as table_name")) 
         ->where('name','LIKE','%'.$search.'%');
 
         $hospitals = \DB::table('hospitals')
-        ->select(\DB::raw("NULL as title"),'name','mobile_number','country',\DB::raw("NULL as qualifications"),'description','image')
+        ->select('id',\DB::raw("NULL as title"),'name','mobile_number','country',\DB::raw("NULL as qualifications"),'description','image',\DB::raw("'hospitals' as table_name"))
         ->where('name','LIKE','%'.$search.'%');
 
         $services = \DB::table('services')
-        ->select('title',\DB::raw("NULL as name"),\DB::raw("NULL as mobile_number"),\DB::raw("NULL as country"),\DB::raw("NULL as qualifications"),'description','image')
+        ->select('id','title',\DB::raw("NULL as name"),\DB::raw("NULL as mobile_number"),\DB::raw("NULL as country"),\DB::raw("NULL as qualifications"),'description','image',\DB::raw("'services' as table_name"))
         ->where('title','LIKE','%'.$search.'%')
         ->unionAll($doctors)
         ->unionAll($hospitals)
