@@ -146,8 +146,8 @@ class HomeController extends Controller
                $emailData['email']= !empty($request->email)?$request->email:'';;
                $emailData['phone'] = $request->mobile_number;
                $emailData['requirement']        =!empty($request->requirement)?$request->requirement:'';
-               $emailData['appointment_date']   =!empty($request->appointment_date)?$request->appointment_date:'';
-               
+               $emailData['date']   =!empty($request->appointment_date)?$request->appointment_date:'';
+
                $emailData['custom_text'] = 'You Appointment has been booked successfully';
                ___mail_sender($emailData['email'],$name,"booking_email",$emailData);
 
