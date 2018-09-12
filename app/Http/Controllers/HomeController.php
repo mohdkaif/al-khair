@@ -139,6 +139,18 @@ class HomeController extends Controller
 
             $inserId = \Models\Appointments::add($data);
             if($inserId){
+
+               $name = $request->name.' '.$request->name;
+               $emailData         = ___email_settings();
+               $emailData['name'] = $name;
+               $emailData['email']= !empty($request->email)?$request->email:'';;
+               $emailData['phone'] = $request->mobile_number;
+               $emailData['requirement']        =!empty($request->requirement)?$request->requirement:'';
+               $emailData['appointment_date']   =!empty($request->appointment_date)?$request->appointment_date:'';
+               
+               $emailData['custom_text'] = 'You Appointment has been booked successfully';
+               ___mail_sender($emailData['email'],$name,"booking_email",$emailData);
+
                 $this->status = true;
                 $this->modal  = true;
                 $this->alert    = true;
@@ -189,6 +201,22 @@ public function sendMessage(Request $request)
         return view('front_home',$data);
     }
 
+public function country(Request $request){
+       $language = \App::getLocale();
+       $where = '';
+       if(!empty($request->search)){
+           $where .= "AND name LIKE '%{$request->search}%'";
+       }
+
+       $countries = \Models\Country::list(
+           'array',
+           $where,
+           ['name as text', 'id as id']
+       );
+       return response()->json([
+           'results'    => $countries,
+       ]);
+   }
 
 
 }

@@ -5,73 +5,75 @@
 			<!-- BEGIN FORM-->
 			<form role="add-appointment" action="{{url('add-appointment')}}" method="POST" class="horizontal-form">
 				<div class="form-body">
-
-					<h3 class="form-section">Add Appointment for {{ucfirst($name)}} ( {{ucfirst($type)}})</h3>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label required">Name</label>
-								<input type="text" required id="name" name="name" class="form-control" placeholder="Enter Name">
-								
+					<div class="container">
+						<h3 class="form-section">Add Appointment for {{ucfirst($name)}} ( {{ucfirst($type)}})</h3>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="control-label required">Name</label>
+									<input type="text" required id="name" name="name" class="form-control" placeholder="Enter Name">
+									
+								</div>
 							</div>
-						</div>
-						<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-										<label class="control-label">Mobile Number</label>
-										<input type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
-										
-						    </div>
-						</div>
-						<!--/span-->
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">Email</label>
-								<input type="text" id="email" name="email" class="form-control" placeholder="Enter Email">
-								
-							</div>
-						</div>
-						<!--/span-->
-						    {{ csrf_field() }}
-
-						<div class="col-md-6">
-
-								<div class="col-md-6">
-									<div class="form-group">
-										<label class="control-label">Date of Birth</label>
-										<input type="date" class="form-control" name="appointment_date" placeholder="mm/dd/yyyy">
-									</div>
+							<!--/span-->
+							<div class="col-md-6">
+								<div class="form-group">
+											<label class="control-label">Mobile Number</label>
+											<input type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
+											
 							    </div>
-							   
-						</div>
-						<!--/span-->
-						
-					</div>
-					<!--/row-->
-				
-					
-					
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="required">Description</label>
-								<textarea required rows="4" class="form-control" placeholder="Enter Description" name="description">
-								</textarea>
 							</div>
+							<!--/span-->
 						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="control-label">Email</label>
+									<input type="text" id="email" name="email" class="form-control" placeholder="Enter Email">
+									
+								</div>
+							</div>
+							<!--/span-->
+							    {{ csrf_field() }}
+
+							<div class="col-md-6">
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label">Appointment Date</label>
+											<input type="date" class="form-control" name="appointment_date" placeholder="mm/dd/yyyy">
+										</div>
+								    </div>
+								   
+							</div>
+							<!--/span-->
+							
+						</div>
+						<!--/row-->
+					
 						
-						<!--/span-->
-					</div>
-				</div>
-				<input type="hidden" name="type" value="{{$type}}">
-				<input type="hidden" name="requirement" value="{{$name}}">
-				<div class="form-actions right">
-					<a href="{{url('/')}}" class="btn default">Cancel</a>
-					<button type="button" data-request="ajax-submit" data-target='[role="add-appointment"]' class="btn medica-btn btn-3 mt-3"><i class="fa fa-check"></i> Save</button>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label class="required">Description</label>
+									<textarea required rows="4" class="form-control" placeholder="Enter Description" name="description">
+									</textarea>
+								</div>
+							</div>
+							
+							<!--/span-->
+						</div>
+						<input type="hidden" name="type" value="{{$type}}">
+						<input type="hidden" name="requirement" value="{{$name}}">
+						<div class="form-actions right">
+							<a href="{{url('/')}}" class="btn default">Cancel</a>
+							<button type="button" data-request="ajax-submit" data-target='[role="add-appointment"]' class="btn medica-btn btn-3 mt-3"><i class="fa fa-check"></i> Save</button>
 					
 				</div>
+				    </div>
+				</div>
+				
 			</form>
 			<!-- END FORM-->
 		</div>		

@@ -135,18 +135,8 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="required">Country</label>
-								<select required class="form-control" name="country">
+								<select required class="select2 form-control" name="country">
 									<option value="">Select Country</option>
-									<option value="India">India</option>
-									<option value="United States">United States</option>
-									<option value="Australia">Australia</option>
-									<option value="China">China</option>
-									<option value="France">France</option>
-									<option value="Iran">Iran</option>
-									<option value="Iraq">Iraq</option>
-									<option value="Israel">Israel</option>
-									<option value="Italy">Italy</option>
-									<option value="Malaysia">Malaysia</option>
 								</select>
 							</div>
 						</div>
@@ -187,6 +177,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<link href="{{url('css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+<script src="{{url('js/select2.full.min.js')}}" type="text/javascript"></script>
+
 <script type="text/javascript">
 	//dynamicSelect2('.associate','{{url("admin/ajax/associate")}}','Select Associate');
 	function readURL(input) {
@@ -205,5 +198,22 @@
 	$("#imgInp").change(function() {
 	readURL(this);
 	});
+
+	$('[name="country"]').select2({
+           formatLoadMore   : function() {return 'Loading more...'},
+           placeholder : "Select Country",
+           allowClear : true,
+           ajax: {
+               url: "{{ url('country') }}",
+               dataType: 'json',
+               data: function (params) {
+                   var query = {
+                       search: params.term,
+                       type: 'public'
+                   }
+                   return query;
+               }
+           }
+       }).parent('.customSelect').addClass('select2Init');
 </script>
 @endsection

@@ -96,18 +96,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="required">Country</label>
-								<select required class="form-control" name="country">
-									<option value="">Select Country</option>
-									<option value="India">India</option>
-									<option value="United States">United States</option>
-									<option value="Australia">Australia</option>
-									<option value="China">China</option>
-									<option value="France">France</option>
-									<option value="Iran">Iran</option>
-									<option value="Iraq">Iraq</option>
-									<option value="Israel">Israel</option>
-									<option value="Italy">Italy</option>
-									<option value="Malaysia">Malaysia</option>
+								<select required class="select2 form-control" name="country">
 								</select>
 							</div>
 						</div>
@@ -140,40 +129,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script type="text/javascript">
 	//dynamicSelect2('.associate','{{url("admin/ajax/associate")}}','Select Associate');
-	$(document).ready(function(){
-            $('#country').select2({
-                ajax : {
-                    url : 'country',
-                    dataType : 'json',
-                    delay : 200,
-                    data : function(params){
-                        return {
-                            q : params.term,
-                            page : params.page
-                        };
-                    },
-                    processResults : function(data, params){
-                        params.page = params.page || 1;
-                        return {
-                            results : data.data,
-                            pagination: {
-                                more : (params.page  * 10) < data.total
-                            }
-                        };
-                    }
-                },
-                minimumInputLength : 1,
-                templateResult : function (repo){
-                    if(repo.loading) return repo.name;
-                    var markup = "<img src="+repo.photo+"></img> &nbsp; "+ repo.name;
-                    return markup;
-                },
-                templateSelection : function(repo)
-                {
-                    return repo.name;
-                },
-                escapeMarkup : function(markup){ return markup; }
-            });
-        });
+
+	$('[name="country"]').select2({
+           formatLoadMore   : function() {return 'Loading more...'},
+           placeholder : "Select Country",
+           allowClear : true,
+           ajax: {
+               url: "{{ url('country') }}",
+               dataType: 'json',
+               data: function (params) {
+                   var query = {
+                       search: params.term,
+                       type: 'public'
+                   }
+                   return query;
+               }
+           }
+       }).parent('.customSelect').addClass('select2Init');
 </script>
 @endsection

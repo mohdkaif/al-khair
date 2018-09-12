@@ -134,18 +134,9 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="required">Country</label>
-								<select class="form-control" required  name="country">
+								<select class="form-control select2" required  name="country">
 									<option value="">Select Country</option>
-									<option value="India"  @if ($doctorDetails['country'] == "India")selected="selected" @endif >India</option>
-									<option value="United States" @if ($doctorDetails['country'] == "United States")selected="selected" @endif>United States</option>
-									<option value="Australia" @if ($doctorDetails['country'] == "Australia")selected="selected" @endif>Australia</option>
-									<option value="China" @if ($doctorDetails['country'] == "China")selected="selected" @endif>China</option>
-									<option value="France" @if ($doctorDetails['country'] == "France")selected="selected" @endif>France</option>
-									<option value="Iran" @if ($doctorDetails['country'] == "Iran")selected="selected" @endif>Iran</option>
-									<option value="Iraq" @if ($doctorDetails['country'] == "Iraq")selected="selected" @endif>Iraq</option>
-									<option value="Israel" @if ($doctorDetails['country'] == "Israel")selected="selected" @endif>Israel</option>
-									<option value="Italy" @if ($doctorDetails['country'] == "Italy")selected="selected" @endif>Italy</option>
-									<option value="Malaysia" @if ($doctorDetails['country'] == "Malaysia")selected="selected" @endif>Malaysia</option>
+									
 								</select>
 							</div>
 						</div>
@@ -185,41 +176,23 @@
 @section('requirejs')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script>
-      $(document).ready(function(){
-            $('#country').select2({
-                ajax : {
-                    url : 'country',
-                    dataType : 'json',
-                    delay : 200,
-                    data : function(params){
-                        return {
-                            q : params.term,
-                            page : params.page
-                        };
-                    },
-                    processResults : function(data, params){
-                        params.page = params.page || 1;
-                        return {
-                            results : data.data,
-                            pagination: {
-                                more : (params.page  * 10) < data.total
-                            }
-                        };
-                    }
-                },
-                minimumInputLength : 1,
-                templateResult : function (repo){
-                    if(repo.loading) return repo.name;
-                    var markup = "<img src="+repo.photo+"></img> &nbsp; "+ repo.name;
-                    return markup;
-                },
-                templateSelection : function(repo)
-                {
-                    return repo.name;
-                },
-                escapeMarkup : function(markup){ return markup; }
-            });
-        });
+      $('[name="country"]').select2({
+           formatLoadMore   : function() {return 'Loading more...'},
+           placeholder : "Select Country",
+           allowClear : true,
+           ajax: {
+               url: "{{ url('country') }}",
+               dataType: 'json',
+               data: function (params) {
+                   var query = {
+                       search: params.term,
+                       type: 'public'
+                   }
+                   return query;
+               }
+           }
+       }).parent('.customSelect').addClass('select2Init');
+
     </script>
 </script>
 @endsection

@@ -37,7 +37,7 @@
                                     @if($data['image']!=null)
                                     <img src="{{url('uploads/'.$data['table_name'].'/'.$data['image'])}}" alt="">
                                     @else
-                                    <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190">
+                                    <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                     @endif
                                 </div>
                                 <div class="hospital-meta">

@@ -120,17 +120,24 @@
                 <div class="col-12 col-lg-4">
                     <div class="medica-appointment-card wow fadeInUp" data-wow-delay="0.6s">
                         <h5>Book an apppointment</h5>
-                        <form action="#" method="post">
+                        <form role="add-appointment" action="{{url('add-appointment')}}" method="POST">
+                             {{ csrf_field() }}
                             <div class="form-group">
                                 <input type="text" class="form-control text-white" name="name" id="name" placeholder="Name">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="number" id="number" placeholder="Phone">
+                                <input type="text" class="form-control" name="mobile_number" id="mobile_number" placeholder="Phone">
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                             </div>
-                            <button type="submit" class="btn medica-btn mt-15">Make an Appointment</button>
+                            <div class="form-group">
+                                <input type="date" class="form-control" name="appointment_date" placeholder="mm/dd/yyyy">
+                            </div>
+                                        
+                            <button type="button" class="btn medica-btn mt-15" data-request="ajax-submit" data-target='[role="add-appointment"]'>Make an Appointment</button>
+                            <input type="hidden" name="type" value="booking">
+                            <input type="hidden" name="requirement" value="none">
                         </form>
                     </div>
                 </div>

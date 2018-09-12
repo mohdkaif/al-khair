@@ -8,7 +8,7 @@ namespace Models;
 class Country extends Model
 {
     protected $primaryKey = 'id';
-    
+    protected $table = 'country';
     /*const CREATED_AT = 'created';
     const UPDATED_AT = 'updated';*/
 
@@ -17,9 +17,12 @@ class Country extends Model
         'name',
     ];
 
-  public static function search($fetch='array'){
+  public static function list($fetch='array',$where=NULL,$keys=[]){
                 
-        $table_country = self::select(['*']);
+        $table_country = self::select($keys);
+        if(!empty($where)){
+            $table_country->whereRaw($where);
+        }
         if($fetch === 'array'){
             $list = $table_country->get();
             return json_decode(json_encode($list ), true );

@@ -98,18 +98,8 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label>Country</label>
-								<select class="form-control" name="country">
-									<option value="">Select Country</option>
-									<option value="India"  @if ($hospitalDetails['country'] == "India")selected="selected" @endif >India</option>
-									<option value="United States" @if ($hospitalDetails['country'] == "United States")selected="selected" @endif>United States</option>
-									<option value="Australia" @if ($hospitalDetails['country'] == "Australia")selected="selected" @endif>Australia</option>
-									<option value="China" @if ($hospitalDetails['country'] == "China")selected="selected" @endif>China</option>
-									<option value="France" @if ($hospitalDetails['country'] == "France")selected="selected" @endif>France</option>
-									<option value="Iran" @if ($hospitalDetails['country'] == "Iran")selected="selected" @endif>Iran</option>
-									<option value="Iraq" @if ($hospitalDetails['country'] == "Iraq")selected="selected" @endif>Iraq</option>
-									<option value="Israel" @if ($hospitalDetails['country'] == "Israel")selected="selected" @endif>Israel</option>
-									<option value="Italy" @if ($hospitalDetails['country'] == "Italy")selected="selected" @endif>Italy</option>
-									<option value="Malaysia" @if ($hospitalDetails['country'] == "Malaysia")selected="selected" @endif>Malaysia</option>
+								<select class="select2 form-control" name="country">
+									
 								</select>
 							</div>
 						</div>
@@ -136,3 +126,25 @@
 		</div>		
 	</div>
 </div>
+@section('requirejs')
+<script type="text/javascript">
+	//dynamicSelect2('.associate','{{url("admin/ajax/associate")}}','Select Associate');
+
+	$('[name="country"]').select2({
+           formatLoadMore   : function() {return 'Loading more...'},
+           placeholder : "Select Country",
+           allowClear : true,
+           ajax: {
+               url: "{{ url('country') }}",
+               dataType: 'json',
+               data: function (params) {
+                   var query = {
+                       search: params.term,
+                       type: 'public'
+                   }
+                   return query;
+               }
+           }
+       }).parent('.customSelect').addClass('select2Init');
+</script>
+@endsection
