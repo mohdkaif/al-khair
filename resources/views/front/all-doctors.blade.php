@@ -1,5 +1,5 @@
    
-   <!--  <section class="cta-area section_padding_100 bg-img gradient-background-overlay" style="background-image: url({{url('front/img/bg-img/cta1.jpg')}});">
+    <section class="cta-area section_padding_100 bg-img gradient-background-overlay" style="background-image: url({{url('front/img/bg-img/cta1.jpg')}});">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-7 col-lg-9">
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <section class="medica-doctors-area bg-gray section_padding_100">
         <div class="container">
             <div class="row">
@@ -33,9 +33,13 @@
                     @foreach($doctors as $doctor)
 
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="doctor-thumbnail">
-                                    <img src="{{url('uploads/doctors/'.$doctor['image'])}}" alt="">
+                            <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
+                                <div class="doctor-thumbnail" height="300px">
+                                    @if($doctor['image']!=null)
+                                        <img src="{{url('uploads/doctors/'.$doctor['image'])}}" alt="">
+                                    @else
+                                        <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
+                                    @endif
                                 </div>
                                 <div class="doctor-meta">
                                     <h5>Dr. {{$doctor['name']}}</h5>

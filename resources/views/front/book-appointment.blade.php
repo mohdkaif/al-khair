@@ -18,8 +18,8 @@
 							<!--/span-->
 							<div class="col-md-6">
 								<div class="form-group">
-											<label class="control-label">Mobile Number</label>
-											<input type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
+											<label class="control-label required">Mobile Number</label>
+											<input type="text" id="mobile_number" name="mobile_number" required class="form-control" placeholder="Enter Mobile Number">
 											
 							    </div>
 							</div>
@@ -40,8 +40,8 @@
 
 									<div class="col-md-6">
 										<div class="form-group">
-											<label class="control-label">Appointment Date</label>
-											<input type="date" class="form-control" name="appointment_date" placeholder="mm/dd/yyyy">
+											<label class="control-label required">Appointment Date</label>
+											<input type="date" required class="form-control" name="appointment_date" placeholder="mm/dd/yyyy">
 										</div>
 								    </div>
 								   
@@ -56,8 +56,8 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<label class="required">Description</label>
-									<textarea required rows="4" class="form-control" placeholder="Enter Description" name="description">
+									<label class="">Description</label>
+									<textarea rows="4" class="form-control" placeholder="Enter Description" name="description">
 									</textarea>
 								</div>
 							</div>

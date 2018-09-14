@@ -1,4 +1,5 @@
-<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(img/bg-img/hero2.jpg);">
+<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url({{url('front/img/bg-img/hero2.jpg')}});">
+    <div class="container">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -16,6 +17,8 @@
                 </div>
             </div>
         </div>
+        
+    </div>
     </section>
 
     <section class="medica-about-content section_padding_100">
@@ -35,12 +38,12 @@
                             <li>Neurology</li>
                             <li>Ortopedy</li>
                         </ul>
-                        <img src="img/bg-img/signature.png" alt="">
+                        <img src="{{url('front/img/bg-img/signature')}}.png" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-lg-5">
                     <div class="medica-about-thumbnail">
-                        <img src="img/bg-img/about1.png" alt="">
+                        <img src="{{url('front/img/bg-img/about1')}}.png" alt="">
                     </div>
                 </div>
             </div>
@@ -52,7 +55,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section_heading">
-                        <img src="img/icons/doctor.png" alt="">
+                        <img src="{{url('front/img/icons/doctor.png')}}" alt="">
                         <h2>Our Doctors</h2>
                         <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
                     </div>
@@ -63,7 +66,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d1.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d1')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. Melissa Smith</h5>
@@ -79,7 +82,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.4s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d2.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d2')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. Josh Henderson</h5>
@@ -95,7 +98,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.6s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d3.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d3')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. Christinne Jones</h5>
@@ -111,7 +114,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.8s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d4.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d4')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. William Stan</h5>
@@ -127,7 +130,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d5.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d5')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. William Parker</h5>
@@ -143,7 +146,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.4s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d6.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d6')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. Maria Hernandez</h5>
@@ -159,7 +162,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.6s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d7.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d7')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. Stella Jones</h5>
@@ -175,7 +178,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.8s">
                         <div class="doctor-thumbnail">
-                            <img src="img/bg-img/d8.jpg" alt="">
+                            <img src="{{url('front/img/bg-img/d8')}}.jpg" alt="">
                         </div>
                         <div class="doctor-meta">
                             <h5>Dr. Jack Gillian</h5>
@@ -220,7 +223,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section_heading">
-                        <img src="img/icons/molecule.png" alt="">
+                        <img src="{{url('front/img/icons/molecule.png')}}" alt="">
                         <h2>Our Services</h2>
                         <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
                     </div>
@@ -230,73 +233,73 @@
             <div class="row">
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/scanner.png" alt="">
+                        <img src="{{url('front/img/icons/scanner.png')}}" alt="">
                         <h6>Radiology</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/cardiogram.png" alt="">
+                        <img src="{{url('front/img/icons/cardiogram.png')}}" alt="">
                         <h6>Cardiology</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/blood-donation.png" alt="">
+                        <img src="{{url('front/img/icons/blood-donation')}}.png" alt="">
                         <h6>ENT</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/stomach.png" alt="">
+                        <img src="{{url('front/img/icons/stomach.png')}}" alt="">
                         <h6>Gastroenterology</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/head.png" alt="">
+                        <img src="{{url('front/img/icons/head.png')}}" alt="">
                         <h6>Neurology</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/lungs.png" alt="">
+                        <img src="{{url('front/img/icons/lungs.png')}}" alt="">
                         <h6>General surgery</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/microscope.png" alt="">
+                        <img src="{{url('front/img/icons/microscope.png')}}" alt="">
                         <h6>Haematology</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/mortar.png" alt="">
+                        <img src="{{url('front/img/icons/mortar.png')}}" alt="">
                         <h6>Nutrition</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/ribbon.png" alt="">
+                        <img src="{{url('front/img/icons/ribbon.png')}}" alt="">
                         <h6>Obstetrics</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/glasses.png" alt="">
+                        <img src="{{url('front/img/icons/glasses.png')}}" alt="">
                         <h6>Ophthalmology</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/stretcher.png" alt="">
+                        <img src="{{url('front/img/icons/stretcher.png')}}" alt="">
                         <h6>Physiotherapy</h6>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <div class="single-department-area text-center">
-                        <img src="img/icons/injection.png" alt="">
+                        <img src="{{url('front/img/icons/injection.png')}}" alt="">
                         <h6>Urology</h6>
                     </div>
                 </div>

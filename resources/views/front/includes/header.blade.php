@@ -18,7 +18,7 @@
                                 <ul>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="{{url(sprintf('book-appointment?type=%s&id=%s','booking','null'))}}">Book Appointment</a></li>
-                                    <li><a href="#">Contacts</a></li>
+                                    <li><a href="{{url('contact')}}">Contacts</a></li>
                                     <li><a href="#">contact@business.com</a></li>
                                 </ul>
                             </nav>
@@ -95,4 +95,3 @@
         </div>
     </div>
 </header>
-<!-- ***** Header Area End *****

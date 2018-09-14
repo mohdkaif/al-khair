@@ -18,34 +18,26 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="{{asset('front/css/core-style.css')}}">
+    <link rel="stylesheet" href="{{url('front/css/core-style.css')}}">
 
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+        }
+    </script>
 </head>
 <body class="page-md login">
     <div id="google_translate_element"></div>
-
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
-    }
-</script>
-<!-- Preloader -->
-<div id="preloader">
-<div class="medica-load"></div>
-    <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">
-</div>
-
-    <div id="app">
-       
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+    <div id="preloader">
+        <div class="medica-load"></div>
+        <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">
     </div>
-   
+
+    @yield('content')
+
      <script src="{{asset('front/js/jquery/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
     <script src="{{asset('front/js/popper.min.js')}}"></script>
@@ -73,6 +65,7 @@
         );
     });
     </script>
+    
     <!-- END JAVASCRIPTS -->
 </body>
 </html>

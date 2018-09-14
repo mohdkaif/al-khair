@@ -94,7 +94,7 @@
 							<div class="form-group">
 								<label>Profile Picture</label>
 								<input type="file" class="form-control" id="imgInp" name="profile_picture">
-								<img id="previewImage" src="#" alt="Choose image" />
+								<img id="previewImage" width="200px" height="200px" src="#" alt="Choose image" />
 							</div>
 						</div>
 					</div>

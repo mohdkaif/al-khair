@@ -25,7 +25,7 @@
                     <!-- Contact Form Area -->
                     <div class="col-12 col-lg-8">
                         <div class="contact-form">
-                            <h5 class="mb-50">Get in touch</h5>
+                            <h2 class="mb-50">Get in touch</h2>
 
                             <form role="add-contact" action="{{url('contact-us')}}" method="POST" class="horizontal-form">
                                 {{csrf_field()}}

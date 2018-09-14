@@ -31,15 +31,20 @@
             <div class="row">
                 @if(!empty($hospitals))
                     @foreach($hospitals as $hospital)
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-hospital-area wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="hospital-thumbnail">
+                                    @if($hospital['image']!=null)
                                     <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="">
+                                    @else
+                                    <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
+                                    @endif
                                 </div>
                                 <div class="hospital-meta">
-                                    <h5>{{$hospital['name']}}</h5>
-                                    <h6>{{$hospital['description']}}</h6>
-                                    <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary">Book Appointment</a>
+                                    <h2>{{$hospital['name']}}</h2>
+                                    <h4>{{!empty($hospital['description'])?wordwrap($hospital['description'], 10, "\n", true):''}}</h4>
+
+                                    <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
                                     <div class="hospital-social-info">
                                         <a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>

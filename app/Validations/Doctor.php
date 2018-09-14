@@ -17,7 +17,7 @@ class Doctor
 	private function validation($key){
 		$validation = [
 			'id'				=> ['required'],
-			'email'				=> ['required','email'],
+			'email'				=> ['nullable','email'],
 			'first_name' 		=> ['required','string'],
 			'name' 				=> ['required','string'],
 			'last_name' 		=> ['nullable','string'],

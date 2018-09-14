@@ -32,7 +32,7 @@
                 @if(!empty($searched_data))
                     @foreach($searched_data as $data)
                         <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="g single-hospital-area wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
                                 <div class="hospital-thumbnail">
                                     @if($data['image']!=null)
                                     <img src="{{url('uploads/'.$data['table_name'].'/'.$data['image'])}}" alt="">
@@ -40,17 +40,18 @@
                                     <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                     @endif
                                 </div>
-                                <div class="hospital-meta">
+                                <div class="centertext">
                                     <h1>{{!empty($data['name'])?$data['name']:''}}</h1>
                                     <h2>{{!empty($data['title'])?$data['title']:''}}</h2>
                                     <h4>{{!empty($data['mobile_number'])?$data['mobile_number']:''}}</h4>
                                     <h4>{{!empty($data['country'])?$data['country']:''}}</h4>
                                     
-                                    <h4>{{substr(strip_tags($data['description']),0,10)}} 
-                                    {{strlen(strip_tags($data['description'])) > 10 ? '...' : ''}}</h4>
-                                    <h4>{{!empty($data['qualifications'])?$data['qualifications']:''}}</h4>
+                                    <!-- <h4>{{substr(strip_tags($data['description']),0,100)}} 
+                                    {{strlen(strip_tags($data['description'])) > 100 ? '...' : ''}}</h4> -->
+                                    <h4>{{!empty($data['description'])?wordwrap($data['description'], 10, "\n", true):''}}</h4>
+                                    <h4>{{!empty($data['qualifications'])?wordwrap($data['qualifications'], 10, "\n", true):''}}</h4>
                                     <a href="{{url(sprintf('book-appointment?type=%s&id=%s',
-                                    rtrim($data['table_name'],'s'),___encrypt($data['id'])))}}" class="btn btn-primary">Book Appointment</a>
+                                    rtrim($data['table_name'],'s'),___encrypt($data['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
                                 </div>
                             </div>
                         </div>
@@ -60,19 +61,7 @@
             </div>
         </div>
     </section>
-<style>
-    div {
-        text-align: center;
-        
-    }
-    div .g {
-    
-        margin: 5px;
-        padding:2px;
-        height:350px;
-    }
 
-</style>
 
    
 

@@ -50,18 +50,25 @@
                         <!-- Medica Appointment Card -->
                         <div class="medica-appointment-card">
                             <h5>Book an apppointment</h5>
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <input type="text" class="form-control text-white" name="name" id="name" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="number" id="number" placeholder="Phone">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
-                                </div>
-                                <button type="submit" class="btn medica-btn mt-15">Make an Appointment</button>
-                            </form>
+                             <form role="add-appointment" action="{{url('add-appointment')}}" method="POST">
+                             {{ csrf_field() }}
+                            <div class="form-group">
+                                <input type="text" class="form-control text-white" name="name" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="mobile_number" id="mobile_number" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control" name="appointment_date" placeholder="mm/dd/yyyy">
+                            </div>
+                                        
+                            <button type="button" class="btn medica-btn mt-15" data-request="ajax-submit" data-target='[role="add-appointment"]'>Make an Appointment</button>
+                            <input type="hidden" name="type" value="booking">
+                            <input type="hidden" name="requirement" value="none">
+                        </form>
                         </div>
                         <!-- Medica Appointment Card -->
                         <div class="medica-contact-card">
@@ -101,8 +108,13 @@
                             @if(!empty($services))
                                 @foreach($services as $service)
                                     <div class="col-12 col-lg-6">
-                                        <div class="single-service">
-                                            <img src="{{url('uploads/services/'.$service['image'])}}" alt="">
+                                        <div class="single-service" height="400px">
+                                            @if($service['image']!=null)
+                                                <img src="{{url('uploads/services/'.$service['image'])}}" alt="">
+                                            @else
+                                                <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
+                                             @endif
+                                           
                                             <h5>{{$service['title']}}</h5>
                                             <!-- <p>{{ str_limit(strip_tags($service['description']), 5) }}</p>
                                             @if (strlen(strip_tags($service['description'])) > 5)
@@ -115,72 +127,11 @@
                                 @endforeach
                             @endif
                             <!-- Single Service -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-service">
-                                    <img src="{{url('front/img/bg-img/service2.jpg')}}" alt="">
-                                    <h5>Gastroenterology</h5>
-                                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                            <!-- Single Service -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-service">
-                                    <img src="{{url('front/img/bg-img/service3.jpg')}}" alt="">
-                                    <h5>General Surgery</h5>
-                                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                            <!-- Single Service -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-service">
-                                    <img src="{{url('front/img/bg-img/service4.jpg')}}" alt="">
-                                    <h5>Nutrition</h5>
-                                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                            <!-- Single Service -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-service">
-                                    <img src="{{url('front/img/bg-img/service5.jpg')}}" alt="">
-                                    <h5>Radiology</h5>
-                                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                            <!-- Single Service -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-service">
-                                    <img src="{{url('front/img/bg-img/service6.jpg')}}" alt="">
-                                    <h5>Ophthamology</h5>
-                                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                            <!-- Single Service -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-service">
-                                    <img src="{{url('front/img/bg-img/service7.jpg')}}" alt="">
-                                    <h5>Radiology</h5>
-                                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                            <!-- Single Service -->
-                            <div class="col-12 col-lg-6">
-                                <div class="single-service">
-                                    <img src="{{url('front/img/bg-img/service8.jpg')}}" alt="">
-                                    <h5>Ophthamology</h5>
-                                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
                             
-                            <div class="col-12">
+                            
+                           <!--  <div class="col-12">
                                 <a href="#" class="btn medica-btn btn-2">Load More</a>
-                            </div>
+                            </div> -->
                             
                         </div>
                     </div>
@@ -191,7 +142,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-    var maxLength = 5;
+    var maxLength = 20;
     $(".show-read-more").each(function(){
         var myStr = $(this).text();
         if($.trim(myStr).length > maxLength){
@@ -213,6 +164,10 @@
 <style type="text/css">
     .show-read-more .more-text{
         display: none;
+    }
+
+    .all-services{
+        text-align:center;
     }
 </style>
 
