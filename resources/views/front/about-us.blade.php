@@ -63,134 +63,30 @@
             </div>
 
             <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d1')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. Melissa Smith</h5>
-                            <h6>Cardiologist</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                @if(!empty($doctors))
+                    @foreach($doctors as $key => $doctor)
+                        @if($key < 4)
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-doctor-area">
+                                    <div class="doctor-thumbnail">
+                                        @if($doctor['image']!=null)
+                                            <img src="{{url('uploads/doctors/'.$doctor['image'])}}" alt="">
+                                        @else
+                                            <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
+                                        @endif
+                                    </div>
+                                    <div class="doctor-meta">
+                                        <h5>Dr. {{$doctor['name']}}</h5>
+                                        <h6>{{$doctor['specifications']}}</h6>
+                                        <div class="doctor-social-info">
+                                            <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d2')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. Josh Henderson</h5>
-                            <h6>Plastic Surgeon</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d3')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. Christinne Jones</h5>
-                            <h6>Pediatrist</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d4')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. William Stan</h5>
-                            <h6>General Practicioner</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d5')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. William Parker</h5>
-                            <h6>Cardiologist</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d6')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. Maria Hernandez</h5>
-                            <h6>Plastic Surgeon</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d7')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. Stella Jones</h5>
-                            <h6>Pediatrist</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="doctor-thumbnail">
-                            <img src="{{url('front/img/bg-img/d8')}}.jpg" alt="">
-                        </div>
-                        <div class="doctor-meta">
-                            <h5>Dr. Jack Gillian</h5>
-                            <h6>General Practicioner</h6>
-                            <div class="doctor-social-info">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        @endif
+                    @endforeach
+                @endif
                 <div class="col-12">
                     <div class="see-all-doctors text-center wow fadeInUp" data-wow-delay="1s">
                         <a href="#" class="btn medica-btn btn-2">See All Doctors</a>

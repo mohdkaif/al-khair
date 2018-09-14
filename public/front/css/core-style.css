@@ -514,6 +514,12 @@ img {
     margin-right: 20px;
     display: inline-block;
 }
+.top-header-social-info h5 {
+    font-size: 12px;
+    color: #fff;
+    margin-right: 20px;
+    display: inline-block;
+}
 
 .top-menu ul {
     display: -webkit-box;
