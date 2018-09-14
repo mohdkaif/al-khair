@@ -1,4 +1,5 @@
-
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <!-- ***** Hero Area Start ***** -->
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
@@ -239,7 +240,6 @@
     </div>
 </section>
 <!-- ***** Services Area End ***** -->
-
 <!-- ***** Doctors Area Start ***** -->
 <section class="medica-doctors-area section_padding_100_20">
     <div class="container">
@@ -254,69 +254,34 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-doctor-area">
-                    <div class="doctor-thumbnail">
-                        <img src="{{url('front/img/bg-img/d1.jpg')}}" alt="">
-                    </div>
-                    <div class="doctor-meta">
-                        <h5>Dr. Melissa Smith</h5>
-                        <h6>Cardiologist</h6>
-                        <div class="doctor-social-info">
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
+            @if(!empty($doctors))
+                @foreach($doctors as $key => $doctor)
+                    @if($key < 4)
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="single-doctor-area">
+                                <div class="doctor-thumbnail">
+                                    @if($doctor['image']!=null)
+                                        <img src="{{url('uploads/doctors/'.$doctor['image'])}}" alt="">
+                                    @else
+                                        <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
+                                    @endif
+                                </div>
+                                <div class="doctor-meta">
+                                    <h5>Dr. {{$doctor['name']}}</h5>
+                                    <h6>{{$doctor['specifications']}}</h6>
+                                    <div class="doctor-social-info">
+                                        <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-doctor-area">
-                    <div class="doctor-thumbnail">
-                        <img src="{{url('front/img/bg-img/d2.jpg')}}" alt="">
-                    </div>
-                    <div class="doctor-meta">
-                        <h5>Dr. Josh Henderson</h5>
-                        <h6>Plastic Surgeon</h6>
-                        <div class="doctor-social-info">
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-doctor-area">
-                    <div class="doctor-thumbnail">
-                        <img src="{{url('front/img/bg-img/d3.jpg')}}" alt="">
-                    </div>
-                    <div class="doctor-meta">
-                        <h5>Dr. Christinne Jones</h5>
-                        <h6>Pediatrist</h6>
-                        <div class="doctor-social-info">
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-doctor-area">
-                    <div class="doctor-thumbnail">
-                        <img src="{{url('front/img/bg-img/d4.jpg')}}" alt="">
-                    </div>
-                    <div class="doctor-meta">
-                        <h5>Dr. William Stan</h5>
-                        <h6>General Practicioner</h6>
-                        <div class="doctor-social-info">
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
+            @endif
+        </div>
+        <div class="col-12">
+            <div class="see-all-doctors text-center wow fadeInUp" data-wow-delay="1s">
+                <a href="{{url('all-doctors')}}" class="btn medica-btn btn-2">See All Doctors</a>
             </div>
         </div>
     </div>
@@ -438,54 +403,50 @@
             <div class="col-12 col-lg-6">
                 <div class="medica-appointment-card">
                     <h5>Book an apppointment</h5>
-
-                    <form action="#" method="post">
+                   <!--  -->
+                    <form role="add-appointment-2" action="{{url('add-appointment')}}" method="POST">
+                             {{ csrf_field() }}
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control text-white" name="name" id="appointmentName" placeholder="Name">
+                                   <input type="text" class="form-control text-white" name="name" id="name" placeholder="Name">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                    <select class="form-control" id="speciality">
-                                        <option>Speciality 1</option>
-                                        <option>Speciality 2</option>
-                                        <option>Speciality 3</option>
-                                        <option>Speciality 4</option>
-                                        <option>Speciality 5</option>
+                                    <select class="form-control drop-down" id="specialitytype"  name="specialitytype">
+                                        <option value="doctor">Doctor</option>
+                                        <option value="hospital">Hospital</option>
+                                        <option value="service">Service</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="number" id="appointmentNumber" placeholder="Phone">
+                                    <input type="text" class="form-control" name="mobile_number" id="mobile_number" placeholder="Phone">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                    <select class="form-control" id="doctors">
-                                        <option>Dr. Riyadh Khan</option>
-                                        <option>Dr. Kumkum Rashid</option>
-                                        <option>Dr. Lim Sarah</option>
+                                    <select class="form-control drop-down  requirementname" name="requirementname" >
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="appointmentEmail" placeholder="E-mail">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    <input type="date" class="form-control" name="date" id="date">
+                                <div class="form-group">                              
+                                    <input type="date" class="form-control" name="appointment_date" placeholder="mm/dd/yyyy">
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn medica-btn mt-15">Make an Appointment</button>
+                                <input type="hidden" name="reqname" id="reqname" value="">
+                                <button type="button" class="btn medica-btn mt-15" data-request="ajax-submit" data-target='[role="add-appointment-2"]'>Make an Appointment</button>
                             </div>
                         </div>
                     </form>
@@ -520,4 +481,42 @@
 </div>
 <!-- ***** Partners Area End ***** -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+   
+
+    $('#specialitytype').on('change', function(){
+        var id = $(this).val();
+        $('.requirementname').select2({
+               formatLoadMore   : function() {return 'Loading more...'},
+               placeholder : "Select Requirement",
+               allowClear : true,
+               ajax: {
+                   url: "{{ url('requirement-name') }}",
+                   dataType: 'json',
+                   data: function (params) {
+                       var query = {
+                           search: params.term,
+                           type: 'public',
+                           id: id
+                       }
+                       return query;
+                   }
+               }
+           }).parent('.customSelect').addClass('select2Init');
+
+    });
+    $('#specialitytype').on('change', function(){
+        $('.requirementname').on('change', function(){
+            var data = JSON.stringify($('.requirementname').select2('data'));
+            var stringify = JSON.parse(data);
+            for (var i = 0; i < stringify.length; i++) {
+                $("#reqname").val(stringify[i]['text']);
+            }
+            
+        });
+    });
+  
+</script>
 

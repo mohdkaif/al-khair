@@ -27,6 +27,7 @@ class HomeController extends Controller
         $data['view'] = 'front/index';
         $data['site_title'] = $data['page_title'] = 'Home';
         $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
+        $data['doctors']  = _arefy(\Models\Doctors::where('status','!=','trashed')->get());
         return view('front_home',$data);
     }
 
@@ -121,8 +122,13 @@ class HomeController extends Controller
         return view('front_home',$data);
     }
     public function addAppointment(Request $request)
-    {
-       $validation = new Validations($request);
+    {   if(empty($request->type)){
+            $request->request->add(['type'=>$request->specialitytype]);
+          }
+        if(empty($request->requirement)){
+            $request->request->add(['requirement'=>$request->reqname]);
+          }
+        $validation = new Validations($request);
         $validator  = $validation->createAppointment();
         if($validator->fails()){
             $this->message = $validator->errors();
@@ -132,8 +138,12 @@ class HomeController extends Controller
             $data['phone']              =!empty($request->mobile_number)?$request->mobile_number:'';
             $data['appointment_date']   =!empty($request->appointment_date)?$request->appointment_date:'';
             $data['description']        =!empty($request->description)?$request->description:'';
-            $data['requirement']        =!empty($request->requirement)?$request->requirement:'';
-            $data['type']               =!empty($request->type)?$request->type:'';
+            /*if(!empty($request->requirementname)){
+                if()
+                $name = \Models\
+            }*/
+            $data['requirement']               =!empty($request->requirement)?$request->requirement:(!empty($request->reqname)?$request->reqname:'');
+            $data['type']               =!empty($request->type)?$request->type:(!empty($request->specialitytype)?$request->specialitytype:'');
             $data['updated_at']         =date('Y-m-d H:i:s');
             $data['created_at']         =date('Y-m-d H:i:s');
 
@@ -215,6 +225,51 @@ public function country(Request $request){
        );
        return response()->json([
            'results'    => $countries,
+       ]);
+   }
+
+public function requirementName(Request $request){
+       $language = \App::getLocale();
+       $where = '';
+       if(!empty($request->search)){
+           $where .= "AND name LIKE '%{$request->search}%'";
+       }
+      // $hospital = _arefy(\Models\Hospitals::where('id',$id)->get()->first());
+       if(!empty($request->id)){
+            switch($request->id){
+                case 'hospital':
+                $list = \Models\Hospitals::datalist(
+                   'array',
+                   $where,
+                   ['name as text', 'id as id']
+               );
+                break;
+
+                case 'doctor':
+                $list = \Models\Doctors::datalist(
+                   'array',
+                   $where,
+                   ['name as text', 'id as id']
+               );
+                break;
+
+                case 'service':
+
+                $list = \Models\Services::datalist(
+                   'array',
+                   $where,
+                   ['title as text', 'id as id']
+               );
+                break;
+
+
+            }
+       }
+       
+
+       
+       return response()->json([
+           'results'    => $list,
        ]);
    }
 

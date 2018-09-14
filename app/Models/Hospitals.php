@@ -98,5 +98,16 @@ class Hospitals extends Model
             return $table_hospital->limit($limit)->get();
         }
     }
+     public static function datalist($fetch='array',$where=NULL,$keys=[]){
+                
+        $table_hospital = self::select($keys);
+        if(!empty($where)){
+            $table_hospital->whereRaw($where);
+        }
+        if($fetch === 'array'){
+            $list = $table_hospital->get();
+            return json_decode(json_encode($list ), true );
+        }
+    }
 
 }

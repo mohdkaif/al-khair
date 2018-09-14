@@ -839,6 +839,7 @@ img {
 
 select.form-control:not([size]):not([multiple]) {
     height: 40px;
+    color:black;
 }
 
 .medica-appointment-card select {
