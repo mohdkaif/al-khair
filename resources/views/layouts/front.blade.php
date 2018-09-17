@@ -22,6 +22,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
     <link href="{{url('css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+     <link href="{{ asset('/bower_components/sweetalert2/dist/sweetalert2.css') }}" rel="stylesheet">
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -47,7 +48,6 @@
     <div id="google_translate_element"></div>
     <div id="preloader">
         <div class="medica-load"></div>
-        <script type="text/javascript">setcookie('googtrans', '/en/pt');</script>
         <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">
     </div>
 
@@ -63,8 +63,12 @@
     <!-- Active js -->
     <script src="{{asset('front/js/active.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{ asset('/bower_components/sweetalert2/dist/sweetalert2.min.js') }}"></script>    
+
     <!-- END PAGE LEVEL SCRIPTS -->
     <script src="{{url('js/select2.full.min.js')}}" type="text/javascript"></script>
+
+    <script src="{{ asset('assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
     jQuery(document).ready(function() {     
       Metronic.init(); // init metronic core components

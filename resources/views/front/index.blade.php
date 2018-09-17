@@ -2,13 +2,13 @@
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/hero1.jpg')}});">
+        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/slide2.jpg')}});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="hero-slides-content">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
-                            <h5 data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
+                            <h2 style="color:black" data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
+                            <h5 style="color:black" data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
                             <div class="slide-btn-group mt-50" data-animation="fadeInUp" data-delay="700ms">
                                 <a href="{{url('book-appointment?type=booking&id=null')}}" class="btn medica-btn">Make an Appointment</a>
                                 <a href="#" class="btn medica-btn ml-2 btn-2">Read More</a>
@@ -19,13 +19,13 @@
             </div>
         </div>
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/hero1.jpg')}});">
+        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/slide1.jpg')}});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="hero-slides-content">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
-                            <h5 data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
+                            <h2 style="color:black" data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
+                            <h5 style="color:black" data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
                             <div class="slide-btn-group mt-50" data-animation="fadeInUp" data-delay="700ms">
                                 <a href="#" class="btn medica-btn">Make an Appointment</a>
                                 <a href="#" class="btn medica-btn ml-2 btn-2">Read More</a>
@@ -36,13 +36,13 @@
             </div>
         </div>
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/hero1.jpg')}});">
+        <div class="single-hero-slide height-800 bg-img" style="background-image: url({{url('front/img/bg-img/slide3.jpg')}});">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="hero-slides-content">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
-                            <h5 data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
+                            <h2 style="color:black" data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
+                            <h5 style="color:black" data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
                             <div class="slide-btn-group mt-50" data-animation="fadeInUp" data-delay="700ms">
                                 <a href="#" class="btn medica-btn">Make an Appointment</a>
                                 <a href="#" class="btn medica-btn ml-2 btn-2">Read More</a>
@@ -111,13 +111,13 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="medica-doctors-card wow fadeInUp" data-wow-delay="0.4s">
                         <h5>The Doctors</h5>
-                        <p>​Al-Khair Meditour provides the staff members with professional experiences and medical expertise. Every Al-Khair staff member is committed to delivering the safest, most effective and most compassionate care to each and every one of our patients.</p>
+                        <p>​Al-Khair Meditour provides the staff members with professional experiences and medical expertise. Every Al-Khair staff member from any hospital is committed to delivering the safest, most effective and most compassionate care to each and every one of our patients.</p>
                         <a href="{{url('doctors')}}">Read More</a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="medica-appointment-card wow fadeInUp" data-wow-delay="0.6s">
-                        <h5>Book an apppointment</h5>
+                        <h5>Book an appointment</h5>
                         <form role="add-appointment" action="{{url('add-appointment')}}" method="POST">
                              {{ csrf_field() }}
                             <div class="form-group">
@@ -149,7 +149,7 @@
                 <div class="col-12 col-lg-7">
                     <div class="medica-about-text">
                         <h2>Welcome to <span>Al-Khair Meditour</span> Health Center</h2>
-                        <p>Al-Khair Meditour is the provider of medical healthcare in Gulf countries and one of the leading hospital providers there
+                        <p>Al-Khair Meditour is the provider of medical healthcare hospitals, services and doctors in Gulf countries and one of the leading hospital providers there.
 
 Al-Khair promises to deliver the best healthcare to the patients, with care, love and effective help.
 
@@ -220,7 +220,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.5s">
                     <img src="{{url('front/img/icons/nuclear.png')}}" alt="">
                     <h5>Radiology</h5>
-                    <p>We use X-ray radiography, ultrasound, computed tomography (CT), and magnetic resonance imaging (MRI) to diagnose diseases</p>
+                    <p>We provide X-ray radiography, ultrasound, computed tomography (CT), and magnetic resonance imaging (MRI) to diagnose diseases</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
@@ -330,7 +330,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                     <div class="col-12">
                         <h6>“ From the time I arrived by ambulance to the time I left, the care and attention I received from the doctors, on down the line, was excellent. Let me say, due to the excellent care that the ICU/CCU staff provided, that you turned my nightmare into a promising dream”</h6>
                         <div class="testimonial-given-author-info">
-                            <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
+                            <img src="{{url('front/img/bg-img/clienttest.jpg')}}" alt="">
                             <h6>Richard</h6>
                             <p>Heart Attack Survivor</p>
                         </div>
@@ -345,7 +345,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                     <div class="col-12">
                         <h6>“ Please allow me to admit that ordinarily, I am a very poor patient. My surgeon did an excellent job after which I was dispatched into the capable hands of the nursing staff in recovery. I was very surprised when my family came to me up, I was told that my wife had an accident and was in the hospital Emergency Department”</h6>
                         <div class="testimonial-given-author-info">
-                            <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
+                            <img src="{{url('front/img/bg-img/clienttest2.jpg')}}" alt="">
                             <h6>Thomas</h6>
                             <p>Surgery Patient</p>
                         </div>

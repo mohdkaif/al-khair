@@ -31,7 +31,7 @@
             <div class="row">
                 @if(!empty($hospitals))
                     @foreach($hospitals as $hospital)
-                        <div class="col-12 col-sm-6 col-lg-4">
+                        <div style="margin-top:40px;margin-bottom:40px" class="col-12 col-sm-6 col-lg-4">
                             <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
                                 <div class="doctor-thumbnail centertext" height="300px">
                                     @if($hospital['image']!=null)
