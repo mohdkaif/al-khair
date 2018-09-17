@@ -514,6 +514,12 @@ img {
     margin-right: 20px;
     display: inline-block;
 }
+.top-header-social-info h5 {
+    font-size: 12px;
+    color: #fff;
+    margin-right: 20px;
+    display: inline-block;
+}
 
 .top-menu ul {
     display: -webkit-box;
@@ -839,6 +845,7 @@ img {
 
 select.form-control:not([size]):not([multiple]) {
     height: 40px;
+    color:black;
 }
 
 .medica-appointment-card select {
@@ -992,6 +999,20 @@ select.form-control:not([size]):not([multiple]) {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 10px;
+}
+
+.doctor-meta h4 {
+    color: #7f7f7f;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.doctor-meta a {
+    color: #ffffff;
+    display: block;
+    font-weight: 1000;
+    margin-left:80px;
+    font-size:14px;
 }
 
 .doctor-social-info a {
@@ -1293,14 +1314,16 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .single-service a {
-    color: #2f88fd;
+    color: #ffffff;
     display: block;
-    font-weight: 600;
+    font-weight: 1000;
+    margin-left:80px;
+    font-size:14px;
 }
 
 .single-service a:hover,
 .single-service a:focus {
-    color: #7f7e7e;
+    color: #ffffff;
 }
 
 /* :: 17.0 Blog Area CSS */
@@ -1628,4 +1651,27 @@ span.accor-open {
         content:'*'; 
         color:red; 
         padding-left:5px;
+}
+.logo-text{
+    width:300px;
+}
+.logo-text h1{
+    font-weight:bolder;
+    font-size:20px;
+    float:left;
+}
+.logo-text h3{
+    font-weight:500;
+    font-size:14px;
+    color:#7f7f7f;
+    float:left;
+}
+.side-crop { 
+    max-width: 65px;
+    overflow: hidden; 
+}
+
+.side-crop img { 
+    max-width: initial;
+    float:left;
 }

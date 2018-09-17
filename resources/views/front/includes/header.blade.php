@@ -6,12 +6,8 @@
                 <div class="col-12 h-100">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
                         <div class="top-header-social-info">
-                            <a href="#" data-toggle="tooltip" data-placement="left" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="left" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="left" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <h5 >Connect with us on:</h5>
+                            <a href="https://www.facebook.com/imran.sahir.50?ref=br_rs" data-toggle="tooltip" data-placement="left" title="Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </div>
                         <div class="top-header-menu">
                             <nav class="top-menu">
@@ -36,15 +32,30 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('front/img/core-img/logo.png')}}" alt="Logo"></a>
+                            <div class="logo-text">
+                                <div class="row">
+                                    <a class="navbar-brand" href="{{url('/')}}">
+                                    
+                                    <div class="side-crop col-md-6">
+                                        <img src="{{url('front/img/core-img/logo.png')}}" alt="Logo">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1>Al-Khair Meditour</h1>
+                                        <h3>Health & Medica</h3>
+                                    </div>
+                                    </a>
+                                </div>
+                                
+
+                            </div>
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medicaMenu" aria-controls="medicaMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
 
                             <div class="collapse navbar-collapse" id="medicaMenu">
                                 <!-- Menu Area -->
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+                                    <li class="nav-item @if(Request::segment(1)=='')active @endif" >
+                                        <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only" >(current)</span></a>
                                     </li>
                                     <!-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
@@ -57,22 +68,22 @@
                                             <a class="dropdown-item" href="{{url('/')}}">Elements</a>
                                         </div>
                                     </li> -->
-                                    <li class="nav-item">
+                                    <li class="nav-item @if(Request::segment(1)=='about')active @endif">
                                         <a class="nav-link" href="{{url('about')}}">About Us</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item  @if(Request::segment(1)=='services')active @endif">
                                         <a class="nav-link" href="{{url('services')}}">Services</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item  @if(Request::segment(1)=='doctors')active @endif">
                                         <a class="nav-link" href="{{url('doctors')}}">Doctors</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{url('hospitals')}}">Hospitals</a>
+                                    <li class="nav-item  @if(Request::segment(1)=='hospitals')active @endif">
+                                        <a class="nav-link " href="{{url('hospitals')}}">Hospitals</a>
                                     </li>
                                     <!-- <li class="nav-item">
                                         <a class="nav-link" href="{{url('news')}}">News</a>
                                     </li> -->
-                                    <li class="nav-item">
+                                    <li class="nav-item  @if(Request::segment(1)=='contact')active @endif">
                                         <a class="nav-link" href="{{url('contact')}}">Contact</a>
                                     </li>
                                 </ul>

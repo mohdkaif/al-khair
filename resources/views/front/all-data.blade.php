@@ -33,14 +33,14 @@
                     @foreach($searched_data as $data)
                         <div class="col-12 col-sm-6 col-lg-4">
                             <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
-                                <div class="hospital-thumbnail">
+                                <div class="doctor-thumbnail centertext" height="300px">
                                     @if($data['image']!=null)
                                     <img src="{{url('uploads/'.$data['table_name'].'/'.$data['image'])}}" alt="">
                                     @else
                                     <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                     @endif
                                 </div>
-                                <div class="centertext">
+                                <div class="doctor-meta centertext" style="align:center">
                                     <h1>{{!empty($data['name'])?$data['name']:''}}</h1>
                                     <h2>{{!empty($data['title'])?$data['title']:''}}</h2>
                                     <h4>{{!empty($data['mobile_number'])?$data['mobile_number']:''}}</h4>

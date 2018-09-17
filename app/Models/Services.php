@@ -74,4 +74,17 @@ class Services extends Model
         }
     }
 
+     public static function datalist($fetch='array',$where=NULL,$keys=[]){
+                
+        $table_services = self::select($keys);
+        if(!empty($where)){
+            $table_services->whereRaw($where);
+        }
+        if($fetch === 'array'){
+            $list = $table_services->get();
+            return json_decode(json_encode($list ), true );
+        }
+    }
+
+
 }

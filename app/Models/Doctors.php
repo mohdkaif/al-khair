@@ -105,4 +105,16 @@ class Doctors extends Model
         }
     }
 
+    public static function datalist($fetch='array',$where=NULL,$keys=[]){
+                
+        $table_doctor = self::select($keys);
+        if(!empty($where)){
+            $table_doctor->whereRaw($where);
+        }
+        if($fetch === 'array'){
+            $list = $table_doctor->get();
+            return json_decode(json_encode($list ), true );
+        }
+    }
+
 }

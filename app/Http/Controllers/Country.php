@@ -14,7 +14,7 @@ class Country extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function country(Request $request)
-    {
+    {  
         $term = trim($request->q);
 
         if (empty($term)) {

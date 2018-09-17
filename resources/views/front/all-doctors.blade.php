@@ -16,7 +16,7 @@
             </div>
         </div>
     </section>
-    <section class="medica-doctors-area bg-gray section_padding_100">
+    <section class="medica-hospitals-area bg-gray section_padding_100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -32,21 +32,19 @@
                 @if(!empty($doctors))
                     @foreach($doctors as $doctor)
 
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-doctor-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
-                                <div class="doctor-thumbnail" height="300px">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
+                                <div class="doctor-thumbnail centertext" height="300px">
                                     @if($doctor['image']!=null)
                                         <img src="{{url('uploads/doctors/'.$doctor['image'])}}" alt="">
                                     @else
                                         <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                     @endif
                                 </div>
-                                <div class="doctor-meta">
+                                <div class="doctor-meta centertext" style="align:center">
                                     <h5>Dr. {{$doctor['name']}}</h5>
                                     <h6>{{$doctor['specifications']}}</h6>
-                                    <div class="doctor-social-info">
-                                        <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary">Book Appointment</a>
-                                    </div>
+                                        <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
                                     <div class="doctor-social-info">
                                         <a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
