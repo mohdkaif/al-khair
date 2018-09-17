@@ -174,5 +174,16 @@ class Doctor
         return $validator;		
 	}
 
+	public function login(){
+        $validations = [
+            'email' 		       => $this->validation('email'),
+			'password'       	   => $this->validation('description')
+			
+    	];
+
+        $validator = \Validator::make($this->data->all(), $validations,[]);
+        return $validator;		
+	}
+
 	
 }

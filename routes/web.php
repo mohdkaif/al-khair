@@ -32,52 +32,45 @@ Route::post('contact-us', 'HomeController@sendMessage');
 
 
 
-	Route::get('admin',
-			function () {
-			    return redirect('login');
-			}
-		);
-	Auth::routes();
-	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],function(){
+	Route::get('admin/login','Admin\LoginController@login');
+	Route::post('admin/login','Admin\LoginController@authentication');
+		Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'AdminAuth'],function(){
+			
+			Route::get('/home', 'HomeController@index')->name('home');
+			Route::group(['prefix' => 'associate'],function(){
+				Route::post('/status', 'AssociateController@changeStatus');
+				Route::resource('/', 'AssociateController');
+			});
+			
+			Route::group(['prefix' => 'investor'],function(){
+				Route::post('/status', 'InvestorController@changeStatus');
+				Route::resource('/', 'InvestorController');
+			});
 
+			Route::group(['prefix' => 'ajax'],function(){
+				Route::get('/associate', 'AssociateController@ajaxList');
+				//Route::resource('/', 'InvestorController');
+			});
 
-		//Route::get('admin','Auth\LoginController@login');
-		
-		Route::get('/home', 'HomeController@index')->name('home');
-		Route::group(['prefix' => 'associate'],function(){
-			Route::post('/status', 'AssociateController@changeStatus');
-			Route::resource('/', 'AssociateController');
-		});
-		
-		Route::group(['prefix' => 'investor'],function(){
-			Route::post('/status', 'InvestorController@changeStatus');
-			Route::resource('/', 'InvestorController');
-		});
+			Route::resource('doctors', 'DoctorController');
+			Route::group(['prefix' => 'doctors'],function(){
+				Route::post('/status', 'DoctorController@changeStatus');
+				//Route::resource('/', 'InvestorController');
+			});
 
-		Route::group(['prefix' => 'ajax'],function(){
-			Route::get('/associate', 'AssociateController@ajaxList');
-			//Route::resource('/', 'InvestorController');
-		});
+			Route::resource('hospitals', 'HospitalController');
+			Route::group(['prefix' => 'hospitals'],function(){
+				Route::post('/status', 'HospitalController@changeStatus');
+				//Route::resource('/', 'InvestorController');
+			});
 
-		Route::resource('doctors', 'DoctorController');
-		Route::group(['prefix' => 'doctors'],function(){
-			Route::post('/status', 'DoctorController@changeStatus');
-			//Route::resource('/', 'InvestorController');
+			Route::resource('services', 'ServiceController');
+			Route::group(['prefix' => 'services'],function(){
+				Route::post('/status', 'ServiceController@changeStatus');
+				//Route::resource('/', 'InvestorController');
+			});
+			
 		});
-
-		Route::resource('hospitals', 'HospitalController');
-		Route::group(['prefix' => 'hospitals'],function(){
-			Route::post('/status', 'HospitalController@changeStatus');
-			//Route::resource('/', 'InvestorController');
-		});
-
-		Route::resource('services', 'ServiceController');
-		Route::group(['prefix' => 'services'],function(){
-			Route::post('/status', 'ServiceController@changeStatus');
-			//Route::resource('/', 'InvestorController');
-		});
-		
-	});
 	
 	
 
