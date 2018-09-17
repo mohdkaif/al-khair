@@ -102,22 +102,40 @@ class HomeController extends Controller
         $data['type'] = $request->type;
         $data['id'] = $id ;
         if($request->type=='doctor'){
-            $doctor = _arefy(\Models\Doctors::where('id',$id)->get()->first());
-            $name = $doctor['first_name'].' '.$doctor['last_name'];
+          if($id!='null'){ 
+              $doctor = _arefy(\Models\Doctors::where('id',$id)->get()->first());
+              $name = $doctor['first_name'].' '.$doctor['last_name'];
+            }
+            else{
+              $name = 'none';
+            }
         }
         else if($request->type=='hospital'){
-            $hospital = _arefy(\Models\Hospitals::where('id',$id)->get()->first());
-            $name = $hospital['name'];
+
+            if($id!='null'){
+              $hospital = _arefy(\Models\Hospitals::where('id',$id)->get()->first());
+              $name = $hospital['name'];
+            }
+            else{
+              $name = 'none';
+            }
+
         }
         else if($request->type=='service'){
+          if($id!='null'){
             $service = _arefy(\Models\Services::where('id',$id)->get()->first());
             $name = $service['title'];
+          }
+          else{
+              $name = 'none';
+            }  
+
         }
         else{
             $name = 'none';
         }
         $data['name'] = $name ;
-        $data['site_title'] = $data['page_title'] = 'Create Service';
+        $data['site_title'] = $data['page_title'] = 'Book Appointment';
         $data['view'] = 'front.book-appointment';
         return view('front_home',$data);
     }

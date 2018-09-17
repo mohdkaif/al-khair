@@ -25,14 +25,29 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
-        }
+          var ckDomain;
+          for (var ckDomain = window.location.hostname.split("."); 2 < ckDomain.length;){
+            ckDomain.shift();
+          }
+          ckDomain = ";domain=" + ckDomain.join(".");
+          // domain cookie
+          document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/" + ckDomain;
+          // host-only cookie (with no domain name definition)
+          document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/";
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            autoDisplay: false,
+            layout: google.translate.TranslateElement
+          }, 'google_translate_element');
+}
+
     </script>
 </head>
 <body class="page-md login">
     <div id="google_translate_element"></div>
     <div id="preloader">
         <div class="medica-load"></div>
+        <script type="text/javascript">setcookie('googtrans', '/en/pt');</script>
         <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">
     </div>
 

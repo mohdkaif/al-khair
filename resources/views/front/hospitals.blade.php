@@ -23,7 +23,7 @@
                     <div class="section_heading">
                         <img src="{{url('front/img/icons/hospital.png')}}" alt="">
                         <h2>Our hospitals</h2>
-                        <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
+                        <p>We have number of hospitals at different locations to provide health care to people in different regions.</p>
                     </div>
                 </div>
             </div>
