@@ -23,7 +23,7 @@
                     <div class="section_heading">
                         <img src="{{url('front/img/icons/hospital.png')}}" alt="">
                         <h2>Results</h2>
-                        <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
+                        <p>You can see all the doctors,hospitals and services provided by Al-Khair</p>
                     </div>
                 </div>
             </div>

@@ -29,8 +29,8 @@
                         <div class="medica-emergency-card">
                             <h5>For Emergencies</h5>
                             <h4>+0080 954 4557 884</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis id explicabo quam quo nisi nihil ducimus, possimus. Lorem ipsum dolor sit amet.</p>
-                            <a href="#">Read More</a>
+                            <p>For any emergencies, appointments, health care reach us anywhere anytime.</p>
+                            <a href="{{url('contact')}}">Any Queries?</a>
                         </div>
                         <!-- Medica Doctors Card -->
                         <div class="medica-department-card">
@@ -66,7 +66,7 @@
                             </div>
                                         
                             <button type="button" class="btn medica-btn mt-15" data-request="ajax-submit" data-target='[role="add-appointment"]'>Make an Appointment</button>
-                            <input type="hidden" name="type" value="booking">
+                            <input type="hidden" name="type" value="service">
                             <input type="hidden" name="requirement" value="none">
                         </form>
                         </div>

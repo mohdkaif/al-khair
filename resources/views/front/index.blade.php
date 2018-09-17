@@ -104,19 +104,15 @@
                     <div class="medica-emergency-card wow fadeInUp" data-wow-delay="0.2s">
                         <h5>For Emergencies</h5>
                         <h4>+0080 954 4557 884</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis id explicabo quam quo nisi nihil ducimus, possimus. Lorem ipsum dolor sit amet.</p>
-                        <a href="#">Read More</a>
+                        <p>For any emergencies, appointments, health care reach us anywhere anytime.</p>
+                        <a href="{{url('contact')}}">Any Queries?</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="medica-doctors-card wow fadeInUp" data-wow-delay="0.4s">
                         <h5>The Doctors</h5>
-                        <p>​ every Hamad Medical Corporation staff member is committed to delivering the safest, most effective and most compassionate care to each and every one of our patients.
- 
-We are Qatar’s leading healthcare provider to more than two million people living and working in Qatar.
- 
-We are a diverse and exciting organization with more than 90 different nationalities working to deliver the best care always to our patients and the community</p>
-                        <a href="#">Read More</a>
+                        <p>​Al-Khair Meditour provides the staff members with professional experiences and medical expertise. Every Al-Khair staff member is committed to delivering the safest, most effective and most compassionate care to each and every one of our patients.</p>
+                        <a href="{{url('doctors')}}">Read More</a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
@@ -172,7 +168,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                             <li>Neurology</li>
                             <li>Ortopedy</li>
                         </ul>
-                        <a href="#" class="btn medica-btn btn-2">Read More</a>
+                        <a href="{{url('services')}}" class="btn medica-btn btn-2">Read More</a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-5">
@@ -203,47 +199,47 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.2s">
                     <img src="{{url('front/img/icons/hospital.png')}}" alt="">
                     <h5>Ambulatory Care</h5>
-                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
+                    <p>Ambulatory care includes diagnosis, observation, consultation, treatment, intervention, and rehabilitation services along with advanced medical technology</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.3s">
                     <img src="{{url('front/img/icons/blood.png')}}" alt="">
                     <h5>Laboratory</h5>
-                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
+                    <p>Tests are carried out on clinical specimens in laboraties in order to obtain information about the health of a patient</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.4s">
                     <img src="{{url('front/img/icons/ambulance.png')}}" alt="">
                     <h5>Ambulance Service</h5>
-                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
+                    <p>Ambulance service is provided to all our patients in emergency and other situations as well</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.5s">
                     <img src="{{url('front/img/icons/nuclear.png')}}" alt="">
                     <h5>Radiology</h5>
-                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
+                    <p>We use X-ray radiography, ultrasound, computed tomography (CT), and magnetic resonance imaging (MRI) to diagnose diseases</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-service-area wow fadeInUp" data-wow-delay="0.6s">
                     <img src="{{url('front/img/icons/emergency-call.png')}}" alt="">
                     <h5>Emergency Care</h5>
-                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
+                    <p>Our Emergency services are present for 24 hours every day</p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="single-service-area">
                     <img src="{{url('front/img/icons/medicine.png')}}" alt="">
                     <h5>Pharmacy</h5>
-                    <p>Phasellus at nunc orci. Donec ipsum metus, pharetr a quis nunc sit amet, maximus vehicula nibh.</p>
+                    <p>Our Pharmacy provides medicines which are pre-examined and checked before providing them to the patients</p>
                 </div>
             </div>
 
             <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.9s">
-                <a href="#" class="btn medica-btn">See All Services</a>
+                <a href="{{url('services')}}" class="btn medica-btn">See All Services</a>
             </div>
         </div>
     </div>
@@ -257,7 +253,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                 <div class="section_heading">
                     <img src="{{url('front/img/icons/doctor.png')}}" alt="">
                     <h2>Our Doctors</h2>
-                    <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
+                    <p>We have numerous doctors with different areas of expertise and professional knowledge to help diagnose patients in the most effective way.</p>
                 </div>
             </div>
         </div>
@@ -265,22 +261,22 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
         <div class="row">
             @if(!empty($doctors))
                 @foreach($doctors as $key => $doctor)
-                    @if($key < 4)
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="single-doctor-area">
-                                <div class="doctor-thumbnail">
+                    @if($key < 3)
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
+                                <div class="doctor-thumbnail centertext" height="300px">
                                     @if($doctor['image']!=null)
                                         <img src="{{url('uploads/doctors/'.$doctor['image'])}}" alt="">
                                     @else
                                         <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                     @endif
                                 </div>
-                                <div class="doctor-meta">
+                                <div class="doctor-meta centertext" style="align:center">
                                     <h5>Dr. {{$doctor['name']}}</h5>
                                     <h6>{{$doctor['specifications']}}</h6>
-                                    <div class="doctor-social-info">
+                                    
                                         <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
-                                    </div>
+                                 
                                 </div>
                             </div>
                         </div>
@@ -316,11 +312,12 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h6>“ Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. ”</h6>
+                        <h6>“ The days and nights became easier directly because of the wonderful care I received from the Nurses, Aids, and Charge Nurses.”</h6>
                         <div class="testimonial-given-author-info">
                             <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
-                            <h6>Julia Smith</h6>
-                            <p>Pacient</p>
+                            <h6>
+                            George</h6>
+                            <p>Total Joint Patient</p>
                         </div>
                     </div>
                 </div>
@@ -331,11 +328,11 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h6>“ Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. ”</h6>
+                        <h6>“ From the time I arrived by ambulance to the time I left, the care and attention I received from the doctors, on down the line, was excellent. Let me say, due to the excellent care that the ICU/CCU staff provided, that you turned my nightmare into a promising dream”</h6>
                         <div class="testimonial-given-author-info">
                             <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
-                            <h6>Julia Smith</h6>
-                            <p>Pacient</p>
+                            <h6>Richard</h6>
+                            <p>Heart Attack Survivor</p>
                         </div>
                     </div>
                 </div>
@@ -346,11 +343,11 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h6>“ Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. ”</h6>
+                        <h6>“ Please allow me to admit that ordinarily, I am a very poor patient. My surgeon did an excellent job after which I was dispatched into the capable hands of the nursing staff in recovery. I was very surprised when my family came to me up, I was told that my wife had an accident and was in the hospital Emergency Department”</h6>
                         <div class="testimonial-given-author-info">
                             <img src="{{url('front/img/bg-img/testimonials2.jpg')}}" alt="">
-                            <h6>Julia Smith</h6>
-                            <p>Pacient</p>
+                            <h6>Thomas</h6>
+                            <p>Surgery Patient</p>
                         </div>
                     </div>
                 </div>

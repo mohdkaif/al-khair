@@ -66,7 +66,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                     <div class="section_heading">
                         <img src="{{url('front/img/icons/doctor.png')}}" alt="">
                         <h2>Our Doctors</h2>
-                        <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
+                        <p>Al-Khair Meditour provides the staff members with professional experiences and medical expertise. Every Al-Khair staff member is committed to delivering the safest, most effective and most compassionate care to each and every one of our patients.</p>
                     </div>
                 </div>
             </div>
@@ -111,12 +111,11 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                 <div class="col-12 col-md-7 col-lg-9">
                     <div class="cta-content">
                         <h2>We have the best doctors in the country</h2>
-                        <h6>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</h6>
                     </div>
                 </div>
                 <div class="col-12 col-md-5 col-lg-3">
                     <div class="cta-btn">
-                        <a href="#" class="btn medica-btn">Make an Appointment</a>
+                        <a href="{{url('book-appointment?type=doctor&id=null')}}" class="btn medica-btn">Make an Appointment</a>
                     </div>
                 </div>
             </div>
@@ -130,7 +129,10 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                     <div class="section_heading">
                         <img src="{{url('front/img/icons/molecule.png')}}" alt="">
                         <h2>Our Services</h2>
-                        <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
+                        <p>We provide Laboratory,Ambulance Service,Radiology,Emergency Care,Pharmacy,etc
+
+                        </p>
+
                     </div>
                 </div>
             </div>

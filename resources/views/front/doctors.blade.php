@@ -23,7 +23,7 @@
                     <div class="section_heading">
                         <img src="{{url('front/img/icons/doctor.png')}}" alt="">
                         <h2>Our Doctors</h2>
-                        <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
+                        <p>We have numerous doctors with different areas of expertise and professional knowledge to help diagnose patients in the most effective way.</p>
                     </div>
                 </div>
             </div>

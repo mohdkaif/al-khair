@@ -5,7 +5,7 @@
                 <div class="col-12 col-md-7 col-lg-9">
                     <div class="cta-content">
                         <h2>We have the best doctors in the country</h2>
-                        <h6>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</h6>
+                        
                     </div>
                 </div>
                 <div class="col-12 col-md-5 col-lg-3">
@@ -23,7 +23,7 @@
                     <div class="section_heading">
                         <img src="{{url('front/img/icons/doctor.png')}}" alt="">
                         <h2>Our Doctors</h2>
-                        <p>Phasellus at nunc orcidonec ipsum metus, pharetra quis nunc sit amet</p>
+                        <p>We have numerous doctors with different areas of expertise and professional knowledge to help diagnose patients in the most effective way.</p>
                     </div>
                 </div>
             </div>
