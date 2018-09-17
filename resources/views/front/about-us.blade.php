@@ -26,8 +26,17 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-7">
                     <div class="medica-about-text">
-                        <h2>Welcome to <span>Medica</span> Health Center</h2>
-                        <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. Fusce ac mattis nulla. Morbi eget ornare dui. Donec nec fringilla mi. Pellentesque molestie consequat felis vitae elementum. Proin ut tempor urna.</p>
+                        <h2>Welcome to <span>Al-Khair Meditour</span> Health Center</h2>
+                        <p>Al-Khair Meditour is the provider of medical healthcare  and one of the leading hospital providers in the Middle East.
+
+Al-Khair promises to deliver the best healthcare to the patients, with care, love and effective help.
+
+Al-Khair manages doctors, nurses, medicines,its health care objectives in an effective and cooperative way.
+
+The advanced facilities and equipments have been added to increase the effectiveness and care provided to the patients. It takes care of everything for the present as well as the patients for their future appointments.
+
+Al-Khair helps its patients worldwide, to receive the pleasant and cooperative medical facilities and support in the most considerate manner.  
+</p>
                         <ul>
                             <li>Cardiovascular Diseases</li>
                             <li>Neonatology</li>

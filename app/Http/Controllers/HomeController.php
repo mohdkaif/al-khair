@@ -150,7 +150,7 @@ class HomeController extends Controller
             $inserId = \Models\Appointments::add($data);
             if($inserId){
 
-               $name = $request->name.' '.$request->name;
+               /*$name = $request->name.' '.$request->name;
                $emailData         = ___email_settings();
                $emailData['name'] = $name;
                $emailData['email']= !empty($request->email)?$request->email:'';;
@@ -160,7 +160,7 @@ class HomeController extends Controller
 
                $emailData['custom_text'] = 'You Appointment has been booked successfully';
                ___mail_sender($emailData['email'],$name,"booking_email",$emailData);
-
+*/
                 $this->status = true;
                 $this->modal  = true;
                 $this->alert    = true;

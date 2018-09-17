@@ -7,7 +7,7 @@
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
                         <div class="top-header-social-info">
                             <h5 >Connect with us on:</h5>
-                            <a href="https://www.facebook.com/imran.sahir.50?ref=br_rs" data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/imran.sahir.50?ref=br_rs" data-toggle="tooltip" data-placement="left" title="Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </div>
                         <div class="top-header-menu">
                             <nav class="top-menu">
@@ -32,7 +32,22 @@
                     <div class="main-menu h-100">
                         <nav class="navbar h-100 navbar-expand-lg">
                             <!-- Logo Area  -->
-                            <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('front/img/core-img/logo.png')}}" alt="Logo"></a>
+                            <div class="logo-text">
+                                <div class="row">
+                                    <a class="navbar-brand" href="{{url('/')}}">
+                                    
+                                    <div class="side-crop col-md-6">
+                                        <img src="{{url('front/img/core-img/logo.png')}}" alt="Logo">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1>Al-Khair Meditour</h1>
+                                        <h3>Health & Medica</h3>
+                                    </div>
+                                    </a>
+                                </div>
+                                
+
+                            </div>
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medicaMenu" aria-controls="medicaMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
 

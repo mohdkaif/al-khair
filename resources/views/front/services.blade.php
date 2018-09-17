@@ -121,7 +121,9 @@
                                             <a href="{{url('services-details?id='.___encrypt($service['id'])) }}">Read More</a>
                                             @endif -->
                                             <p class="show-read-more">{{$service['description']}}</p>
-                                            <a class="btn btn-default" href="{{url(sprintf('book-appointment?type=%s&id=%s','service',___encrypt($service['id'])))}}">Book Appointment</a>
+                                            <div class="doctor-meta centertext">
+                                                <a class="btn btn-primary custom" href="{{url(sprintf('book-appointment?type=%s&id=%s','service',___encrypt($service['id'])))}}">Book Appointment</a>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
@@ -142,7 +144,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-    var maxLength = 20;
+    var maxLength = 80;
     $(".show-read-more").each(function(){
         var myStr = $(this).text();
         if($.trim(myStr).length > maxLength){

@@ -1,6 +1,4 @@
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<!-- ***** Hero Area Start ***** -->
+
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
         <!-- Single Hero Slide -->
@@ -12,7 +10,7 @@
                             <h2 data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
                             <h5 data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
                             <div class="slide-btn-group mt-50" data-animation="fadeInUp" data-delay="700ms">
-                                <a href="#" class="btn medica-btn">Make an Appointment</a>
+                                <a href="{{url('book-appointment?type=booking&id=null')}}" class="btn medica-btn">Make an Appointment</a>
                                 <a href="#" class="btn medica-btn ml-2 btn-2">Read More</a>
                             </div>
                         </div>
@@ -56,7 +54,6 @@
         </div>
     </div>
 </section>
-<!-- ***** Hero Area End ***** -->
 
 <!-- ***** Contact Info Area Start ***** -->
 <div class="medica-contact-info-area">
@@ -114,7 +111,11 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="medica-doctors-card wow fadeInUp" data-wow-delay="0.4s">
                         <h5>The Doctors</h5>
-                        <p>Sit amet, consectetur adipisicing elit. Perferendis id explicabo quam quo nisi nihil ducimus, possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur.</p>
+                        <p>​ every Hamad Medical Corporation staff member is committed to delivering the safest, most effective and most compassionate care to each and every one of our patients.
+ 
+We are Qatar’s leading healthcare provider to more than two million people living and working in Qatar.
+ 
+We are a diverse and exciting organization with more than 90 different nationalities working to deliver the best care always to our patients and the community</p>
                         <a href="#">Read More</a>
                     </div>
                 </div>
@@ -151,8 +152,16 @@
             <div class="row">
                 <div class="col-12 col-lg-7">
                     <div class="medica-about-text">
-                        <h2>Welcome to <span>Medica</span> Health Center</h2>
-                        <p>Phasellus at nunc orci. Donec ipsum metus, pharetra quis nunc sit amet, maximus vehicula nibh. Praesent pulvinar porta elit, a commodo erat accumsan sed. Vivamus vel tristique nibh. Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque. Fusce ac mattis nulla. Morbi eget ornare dui. Donec nec fringilla mi. Pellentesque molestie consequat felis vitae elementum. Proin ut tempor urna.</p>
+                        <h2>Welcome to <span>Al-Khair Meditour</span> Health Center</h2>
+                        <p>Al-Khair Meditour is the provider of medical healthcare in Gulf countries and one of the leading hospital providers there
+
+Al-Khair promises to deliver the best healthcare to the patients, with care, love and effective help.
+
+Al-Khair manages doctors, nurses, medicines,its health care objectives in an effective and cooperative way.
+
+The advanced facilities and equipments have been added to increase the effectiveness and care provided to the patients. It takes care of everything for the present as well as the patients for their future appointments.
+
+Al-Khair helps its patients worldwide, to receive the pleasant and cooperative medical facilities and support in the most considerate manner. </p>
                         <ul>
                             <li>Cardiovascular Diseases</li>
                             <li>Neonatology</li>
