@@ -72,7 +72,7 @@ class HomeController extends Controller
         return view('front_home',$data);
     }
     public function allHospitals()
-    {
+    {  
         $data['view'] = 'front/all-hospitals';
         $data['hospitals']  = _arefy(\Models\Hospitals::where('status','!=','trashed')->get());
         $data['site_title'] = $data['page_title'] = 'Home';
@@ -166,9 +166,10 @@ class HomeController extends Controller
             $data['created_at']         =date('Y-m-d H:i:s');
 
             $inserId = \Models\Appointments::add($data);
+            //pp($inserId);
             if($inserId){
 
-               /*$name = $request->name.' '.$request->name;
+               $name = $request->name.' '.$request->name;
                $emailData         = ___email_settings();
                $emailData['name'] = $name;
                $emailData['email']= !empty($request->email)?$request->email:'';;
@@ -178,7 +179,7 @@ class HomeController extends Controller
 
                $emailData['custom_text'] = 'You Appointment has been booked successfully';
                ___mail_sender($emailData['email'],$name,"booking_email",$emailData);
-*/
+
                 $this->status = true;
                 $this->modal  = true;
                 $this->alert    = true;
