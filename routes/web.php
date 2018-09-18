@@ -33,7 +33,7 @@ Route::get('/logout','Auth\LoginController@logout');
 
 	Route::get('admin/login','Admin\LoginController@login');
 	Route::post('admin/login','Admin\LoginController@authentication');
-		Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'AdminAuth'],function(){
+		Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'adminAuth'],function(){
 			Route::get('logout','LoginController@logout');
 			
 			Route::get('/home', 'HomeController@index')->name('home');

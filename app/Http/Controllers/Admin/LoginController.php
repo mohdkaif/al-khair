@@ -13,7 +13,7 @@ class LoginController extends Controller
     }
     public function login(){
     	$data['view'] = 'd';
-    	return view('login',$data);
+    	return view('login');
     }
 
     public function authentication(Request $request){
@@ -38,7 +38,7 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request) {
-          Auth::logout();
+          \Auth::logout();
           return redirect('admin/login');
     }  
 }
