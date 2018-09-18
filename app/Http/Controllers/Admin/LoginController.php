@@ -36,4 +36,9 @@ class LoginController extends Controller
 		}
 		return $this->populateresponse();
     }
+
+    public function logout(Request $request) {
+          Auth::logout();
+          return redirect('admin/login');
+    }  
 }

@@ -27,14 +27,14 @@ Route::get('/all-doctors', 'HomeController@allDoctors');
 Route::get('/book-appointment', 'HomeController@bookAppointment');
 Route::post('/add-appointment', 'HomeController@addAppointment');
 Route::post('contact-us', 'HomeController@sendMessage');
-
-
+Route::get('/logout','Auth\LoginController@logout');
 
 
 
 	Route::get('admin/login','Admin\LoginController@login');
 	Route::post('admin/login','Admin\LoginController@authentication');
 		Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'AdminAuth'],function(){
+			Route::get('logout','LoginController@logout');
 			
 			Route::get('/home', 'HomeController@index')->name('home');
 			Route::group(['prefix' => 'associate'],function(){
