@@ -13,7 +13,7 @@ class LoginController extends Controller
     }
     public function login(){
     	$data['view'] = 'd';
-    	return view('login');
+    	return view('login',$data);
     }
 
     public function authentication(Request $request){
