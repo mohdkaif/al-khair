@@ -1317,7 +1317,6 @@ select.form-control:not([size]):not([multiple]) {
     color: #ffffff;
     display: block;
     font-weight: 1000;
-    margin-left:80px;
     font-size:14px;
 }
 
@@ -1677,4 +1676,15 @@ span.accor-open {
 }
 .row-margin div { 
    margin-top:30px;
+}
+.single-service img {
+    min-height: 200px;
+    max-width: 100%;
+    width: 100%;
+}
+p.show-read-more {
+    overflow: hidden;
+    max-width: 330px;
+    word-wrap: break-word;
+    margin: 0px 15px;
 }
