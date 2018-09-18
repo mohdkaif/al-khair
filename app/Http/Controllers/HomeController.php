@@ -233,7 +233,7 @@ public function country(Request $request){
        $language = \App::getLocale();
        $where = '';
        if(!empty($request->search)){
-           $where .= "AND name LIKE '%{$request->search}%'";
+           $where .= "name LIKE '%{$request->search}%'";
        }
 
        $countries = \Models\Country::list(

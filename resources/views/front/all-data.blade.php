@@ -31,20 +31,18 @@
             <div class="row">
                 @if(!empty($searched_data))
                     @foreach($searched_data as $data)
-                        <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="col-12 col-sm-6 col-lg-4"   style="margin-top:60px;margin-bottom:80px">
                             <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
-                                <div class="doctor-thumbnail centertext" height="300px">
+                                <div class="doctor-thumbnail centertext" style="height:300px">
                                     @if($data['image']!=null)
                                     <img src="{{url('uploads/'.$data['table_name'].'/'.$data['image'])}}" alt="">
                                     @else
                                     <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                     @endif
                                 </div>
-                                <div class="doctor-meta centertext" style="align:center">
+                                <div class="doctor-meta centertext" style="align:center" >
                                     <h1>{{!empty($data['name'])?$data['name']:''}}</h1>
                                     <h2>{{!empty($data['title'])?$data['title']:''}}</h2>
-                                    <h4>{{!empty($data['mobile_number'])?$data['mobile_number']:''}}</h4>
-                                    <h4>{{!empty($data['country'])?$data['country']:''}}</h4>
                                     
                                     <!-- <h4>{{substr(strip_tags($data['description']),0,100)}} 
                                     {{strlen(strip_tags($data['description'])) > 100 ? '...' : ''}}</h4> -->

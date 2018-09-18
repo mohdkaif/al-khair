@@ -51,7 +51,7 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<label class="control-label">Mobile Number</label>
-										<input type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
+										<input data-request="isnumeric" maxlength="10" type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Enter Mobile Number">
 										
 									</div>
 								</div>
@@ -146,5 +146,6 @@
                }
            }
        }).parent('.customSelect').addClass('select2Init');
+
 </script>
 @endsection

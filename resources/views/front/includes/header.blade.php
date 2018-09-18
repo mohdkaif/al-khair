@@ -6,8 +6,15 @@
                 <div class="col-12 h-100">
                     <div class="h-100 d-md-flex justify-content-between align-items-center">
                         <div class="top-header-social-info">
-                            <h5 >Connect with us on:</h5>
-                            <a href="https://www.facebook.com/imran.sahir.50?ref=br_rs" data-toggle="tooltip" data-placement="left" title="Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="google_translate_element"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 >Connect with us on:</h5>
+                                    <a href="https://www.facebook.com/imran.sahir.50?ref=br_rs" data-toggle="tooltip" data-placement="left" title="Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
                         </div>
                         <div class="top-header-menu">
                             <nav class="top-menu">
@@ -15,7 +22,7 @@
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="{{url(sprintf('book-appointment?type=%s&id=%s','booking','null'))}}">Book Appointment</a></li>
                                     <li><a href="{{url('contact')}}">Contacts</a></li>
-                                    <li><a href="#">contact@business.com</a></li>
+                                    <li><a href="#">imranahmad1612@gmail.com</a></li>
                                 </ul>
                             </nav>
                         </div>

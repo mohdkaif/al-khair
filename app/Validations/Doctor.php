@@ -26,17 +26,17 @@ class Doctor
 			'phone_code' 		=> ['nullable','required_with:mobile_number','string'],
 			'mobile_number' 	=> ['nullable','required_with:phone_code','numeric'],
 			'country' 			=> ['required','string'],
-			'address'           => ['nullable','string','max:500'],
-			'qualifications'    => ['required','string','max:500'],
-			'specifications'    => ['nullable','string','max:500'],
-			'description'       => ['nullable','string','max:500'],
-			'required_description'  => ['required','string','max:500'],
+			'address'           => ['nullable','string','max:1500'],
+			'qualifications'    => ['required','string','max:1500'],
+			'specifications'    => ['nullable','string','max:1500'],
+			'description'       => ['nullable','string','max:1500'],
+			'required_description'  => ['required','string','max:1500'],
 			'title'             => ['required','string'],
 			'profile_picture'   => ['required','image','mimes:jpeg,png,jpg'],
 			'pin_code' 			=> ['nullable','max:6','min:4'],
 			'appointment_date'  => ['required','string'],
 			'type' 	            => ['required','string'],
-			'phone' 	        => ['required','string'],
+			'phone' 	        => ['required','string','numeric'],
 		];
 		return $validation[$key];
 	}

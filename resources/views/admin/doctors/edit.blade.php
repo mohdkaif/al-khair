@@ -58,7 +58,7 @@
 								<div class="col-md-8">
 									<div class="form-group">
 										<label class="control-label">Mobile Number</label>
-										<input type="text" id="mobile_number" name="mobile_number" class="form-control" value="{{$doctorDetails['mobile_number']}}" placeholder="Enter Mobile Number">
+										<input type="text" id="mobile_number" name="mobile_number" class="form-control" value="{{$doctorDetails['mobile_number']}}" data-request="isnumeric" maxlength="10" placeholder="Enter Mobile Number">
 										
 									</div>
 								</div>
@@ -192,6 +192,7 @@
                }
            }
        }).parent('.customSelect').addClass('select2Init');
+
 
     </script>
 </script>

@@ -18,7 +18,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 											<label class="control-label required">Mobile Number</label>
-											<input type="text" id="mobile_number" name="mobile_number" required class="form-control" placeholder="Enter Mobile Number">
+											<input type="text" data-request="isnumeric" maxlength="10" id="mobile_number" name="mobile_number" required class="form-control" placeholder="Enter Mobile Number">
 											
 							    </div>
 							</div>
@@ -100,5 +100,6 @@
 	$("#imgInp").change(function() {
 	readURL(this);
 	});
+
 </script>
 @endsection

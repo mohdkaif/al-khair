@@ -45,7 +45,7 @@
     </script>
 </head>
 <body class="page-md login">
-    <div id="google_translate_element"></div>
+    
     <div id="preloader">
         <div class="medica-load"></div>
         <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">

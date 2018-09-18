@@ -108,19 +108,22 @@
                             @if(!empty($services))
                                 @foreach($services as $service)
                                     <div class="col-12 col-lg-6">
-                                        <div class="single-service" height="400px">
+                                        <div class="single-service" style="height:400px">
                                             @if($service['image']!=null)
-                                                <img src="{{url('uploads/services/'.$service['image'])}}" alt="">
+                                                <div style="height:200px">
+                                                    <img src="{{url('uploads/services/'.$service['image'])}}" alt="" width="200" height="190">
+                                                </div>
                                             @else
                                                 <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                              @endif
                                            
-                                            <h5>{{$service['title']}}</h5>
+                                            <h5 style="margin-top:20px">{{$service['title']}}</h5>
                                             <!-- <p>{{ str_limit(strip_tags($service['description']), 5) }}</p>
                                             @if (strlen(strip_tags($service['description'])) > 5)
                                             <a href="{{url('services-details?id='.___encrypt($service['id'])) }}">Read More</a>
                                             @endif -->
-                                            <p class="show-read-more">{{$service['description']}}</p>
+                                            <a style="color:black;align:center" href="javascript:void(0);" class="read-more">Read More</a>
+                                            <!-- <p class="show-read-more">{{$service['description']}}</p> -->
                                             <div class="doctor-meta centertext">
                                                 <a class="btn btn-primary custom" href="{{url(sprintf('book-appointment?type=%s&id=%s','service',___encrypt($service['id'])))}}">Book Appointment</a>
                                             </div>
@@ -151,7 +154,7 @@
             var newStr = myStr.substring(0, maxLength);
             var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
             $(this).empty().html(newStr);
-            $(this).append(' <a href="javascript:void(0);" class="read-more">Read More</a>');
+            $(this).append(' <a style="color:black;align:center" href="javascript:void(0);" class="read-more">Read More</a>');
             $(this).append('<span class="more-text">' + removedStr + '</span>');
         }
     });

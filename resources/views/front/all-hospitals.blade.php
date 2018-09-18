@@ -30,28 +30,28 @@
 
             <div class="row">
                 @if(!empty($hospitals))
-                    @foreach($hospitals as $hospital)
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
-                                <div class="doctor-thumbnail centertext" height="300px">
-                                    @if($hospital['image']!=null)
-                                    <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="">
-                                    @else
-                                    <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
-                                    @endif
-                                </div>
-                                <div class="doctor-meta centertext" style="align:center">
-                                    <h2>{{$hospital['name']}}</h2>
-                                    <h4>{{!empty($hospital['description'])?wordwrap($hospital['description'], 10, "\n", true):''}}</h4>
-                                    <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
-                                    <div class="doctor-social-info"">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    @foreach($hospitals as $key => $hospital)
+                            <div style="margin-top:60px;margin-bottom:60px" class="col-12 col-sm-6 col-lg-4">
+                                <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
+                                    <div class="doctor-thumbnail centertext" height="300px">
+                                        @if($hospital['image']!=null)
+                                        <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="">
+                                        @else
+                                        <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
+                                        @endif
+                                    </div>
+                                    <div class="doctor-meta centertext" style="align:center">
+                                        <h2><b>{{$hospital['name']}}</b></h2>
+                                        <h4>{{!empty($hospital['description'])?wordwrap($hospital['description'], 10, "\n", true):''}}</h4>
+                                        <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
+                                        <div class="doctor-social-info"">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     @endforeach
                 @endif
             </div>
