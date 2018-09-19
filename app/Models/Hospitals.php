@@ -32,6 +32,11 @@ class Hospitals extends Model
      * [This method is for scope for default keys] 
      * @return Boolean
      */
+    public function locations(){
+        return $this->hasOne('\Models\Country','id','country');
+    }
+
+
 
     public static function add($data){
         if(!empty($data)){
@@ -74,6 +79,11 @@ class Hospitals extends Model
     public static function list($fetch='array',$user_id=NULL,$where='',$order='id-desc'){
                 
         $table_hospital = self::select(['*'])
+        ->with([
+            'locations' => function($q){
+                $q->select('id','name');
+            }
+        ])
         ->where('status','!=','trashed');
         if($where){
             $table_hospital->whereRaw($where);
@@ -94,6 +104,7 @@ class Hospitals extends Model
             return $table_hospital->limit($limit)->get();                
         }else if($fetch === 'single'){
             return $table_hospital->get()->first();
+
         }else{
             return $table_hospital->limit($limit)->get();
         }

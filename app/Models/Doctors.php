@@ -38,6 +38,9 @@ class Doctors extends Model
      * [This method is for scope for default keys] 
      * @return Boolean
      */
+    public function locations(){
+        return $this->hasOne('\Models\Country','id','country');
+    }
 
     public static function add($data){
         if(!empty($data)){
@@ -80,6 +83,11 @@ class Doctors extends Model
     public static function list($fetch='array',$user_id=NULL,$where='',$order='id-desc'){
                 
         $table_doctor = self::select(['*'])
+        ->with([
+            'locations' => function($q){
+                $q->select('id','name');
+            }
+        ])
         ->where('status','!=','trashed');
         if($where){
             $table_doctor->whereRaw($where);

@@ -90,11 +90,42 @@ class HomeController extends Controller
         return view('front_home',$data);
     }
 
-    public function servicesDetails(Request $request)
+    public function details(Request $request)
     {
         $id = ___decrypt($request->id);
-        $data['services'] = _arefy(\Models\Services::where('id',$id)->get()->first());
-        return view('front.service-details',$data);
+        $type = $request->type;
+        $data['view'] = 'front/details';
+        if($type=='doctor'){
+          $doctors = _arefy(\Models\Doctors::list('single',$id));
+          $data['title'] = $doctors['first_name'].' '.(!empty($doctors['last_name'])?$doctors['last_name']:'');
+          $city = !empty($doctors['city'])?$doctors['city']:'';
+          $country = !empty($doctors['locations']['name'])?$doctors['locations']['name']:'';
+          $data['address'] = !empty($city)?($city.','.$country):$country;
+
+          $data['description'] = $doctors['qualifications'].' '.(!empty($doctors['specifications'])?$doctors['specifications']:'');
+          $data['image'] = !empty($doctors['image'])?$doctors['image']:'';
+           $data['type'] = 'doctors';
+
+        }
+        else if($type=='hospital'){
+          $hospitals = _arefy(\Models\Hospitals::list('single',$id));
+          $data['title'] = $hospitals['name'];
+          $city = !empty($hospitals['city'])?$hospitals['city']:'';
+          $country = !empty($hospitals['locations']['name'])?$hospitals['locations']['name']:'';
+          $data['address'] = !empty($city)?($city.','.$country):$country;
+
+          $data['description'] = !empty($hospitals['description'])?$hospitals['description']:'';
+          $data['image'] = !empty($doctors['image'])?$doctors['image']:'';
+          $data['type'] = 'hospitals';
+        }
+        else if($type=='service'){
+          $services = _arefy(\Models\Services::where('id',$id)->get()->first());
+          $data['title'] = $services['title'];
+          $data['description'] = $services['description'];
+          $data['image'] = !empty($doctors['image'])?$doctors['image']:'';
+           $data['type'] = 'services';
+        }
+        return view('front_home',$data);
     }
     public function bookAppointment(Request $request)
     { 

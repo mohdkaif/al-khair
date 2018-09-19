@@ -31,7 +31,6 @@
             <div class="row">
                 @if(!empty($doctors))
                     @foreach($doctors as $doctor)
-
                         <div class="col-12 col-sm-6 col-lg-4">
                             <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
                                 <div class="doctor-thumbnail centertext" height="300px">
@@ -43,24 +42,19 @@
                                 </div>
                                 <div class="doctor-meta centertext" style="align:center">
                                     <h5>Dr. {{$doctor['name']}}</h5>
-                                    <h6>{{$doctor['specifications']}}</h6>
-                                        <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
-                                    <div class="doctor-social-info">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
+                                    @php $desc = strlen($doctor['qualifications']) > 50 ? substr($doctor['qualifications'],0,50)."..." : $doctor['qualifications']; @endphp
+
+                                    <h6>{{$desc}}</h6>
+
+                                    <a style="color:black;align:center;margin-bottom:15px" href="{{url(sprintf('detail?id=%s&type=doctor',___encrypt($doctor['id'])))}}" class="read-more">Read More</a>
+
+                                    <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 @endif
                
-                <div class="col-12">
-                    <div class="see-all-doctors text-center wow fadeInUp" data-wow-delay="1s">
-                        <a href="{{url('all-doctors')}}" class="btn medica-btn btn-2">See All Doctors</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

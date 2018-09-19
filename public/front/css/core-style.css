@@ -1688,3 +1688,14 @@ p.show-read-more {
     word-wrap: break-word;
     margin: 0px 15px;
 }
+.centertext h6{
+    overflow: hidden;
+    max-width: 330px;
+    word-wrap: break-word;
+    margin: 0px 15px 15px 15px;
+}
+.center-text img {
+    min-height: 200px;
+    max-width: 100%;
+    width: 100%;
+}

@@ -13,12 +13,12 @@ class Country extends Model
     const UPDATED_AT = 'updated';*/
 
     protected $fillable = [
+        'id',
         'code',
         'name',
     ];
 
   public static function list($fetch='array',$where=NULL,$keys=[]){
-                
         $table_country = self::select($keys);
         if(!empty($where)){
             $table_country->whereRaw($where);
