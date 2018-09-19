@@ -47,7 +47,7 @@
 <body class="page-md login">
     
     <div id="preloader">
-        <div class="medica-load"></div>
+        <div ></div>
         <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">
     </div>
 
@@ -62,13 +62,12 @@
     <script src="{{asset('front/js/plugins.js')}}"></script>
     <!-- Active js -->
     <script src="{{asset('front/js/active.js')}}"></script>
-    <script src="{{asset('js/script.js')}}"></script>
     <script src="{{ asset('/bower_components/sweetalert2/dist/sweetalert2.min.js') }}"></script>    
-
     <!-- END PAGE LEVEL SCRIPTS -->
     <script src="{{url('js/select2.full.min.js')}}" type="text/javascript"></script>
 
     <script src="{{ asset('assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+    <script src="{{asset('js/script.js')}}"></script>
     <script type="text/javascript">
     jQuery(document).ready(function() {     
       Metronic.init(); // init metronic core components

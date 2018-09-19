@@ -47,7 +47,6 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                             <li>Neurology</li>
                             <li>Ortopedy</li>
                         </ul>
-                        <img src="{{url('front/img/bg-img/signature')}}.png" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-lg-5">
@@ -72,33 +71,9 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
             </div>
 
             <div class="row">
-                @if(!empty($doctors))
-                    @foreach($doctors as $key => $doctor)
-                        @if($key < 4)
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="single-doctor-area">
-                                    <div class="doctor-thumbnail">
-                                        @if($doctor['image']!=null)
-                                            <img src="{{url('uploads/doctors/'.$doctor['image'])}}" alt="">
-                                        @else
-                                            <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
-                                        @endif
-                                    </div>
-                                    <div class="doctor-meta">
-                                        <h5>Dr. {{$doctor['name']}}</h5>
-                                        <h6>{{$doctor['specifications']}}</h6>
-                                        <div class="doctor-social-info">
-                                            <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-                @endif
                 <div class="col-12">
                     <div class="see-all-doctors text-center wow fadeInUp" data-wow-delay="1s">
-                        <a href="#" class="btn medica-btn btn-2">See All Doctors</a>
+                        <a href="{{url('doctors')}}" class="btn medica-btn btn-2">See All Doctors</a>
                     </div>
                 </div>
             </div>

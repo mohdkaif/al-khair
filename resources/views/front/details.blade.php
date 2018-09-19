@@ -42,6 +42,10 @@
                         @else
                             <img src="{{url('uploads/avatar.png')}}" alt="" class="img-circle">
                          @endif
+                         
+                    </div>
+                    <div class="doctor-meta centertext">
+                        <a href="{{url(sprintf('book-appointment?type=%s&id=%s',rtrim($type,'s'),___encrypt($id)))}}" class="btn btn-primary custom" style="margin-left:130px">Book Appointment</a>
                     </div>
                 </div>
             </div>

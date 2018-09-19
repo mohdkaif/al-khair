@@ -98,6 +98,8 @@ class HomeController extends Controller
         if($type=='doctor'){
           $doctors = _arefy(\Models\Doctors::list('single',$id));
           $data['title'] = $doctors['first_name'].' '.(!empty($doctors['last_name'])?$doctors['last_name']:'');
+          $data['id'] = $doctors['id'];
+
           $city = !empty($doctors['city'])?$doctors['city']:'';
           $country = !empty($doctors['locations']['name'])?$doctors['locations']['name']:'';
           $data['address'] = !empty($city)?($city.','.$country):$country;
@@ -109,6 +111,7 @@ class HomeController extends Controller
         }
         else if($type=='hospital'){
           $hospitals = _arefy(\Models\Hospitals::list('single',$id));
+          $data['id'] = $hospitals['id'];
           $data['title'] = $hospitals['name'];
           $city = !empty($hospitals['city'])?$hospitals['city']:'';
           $country = !empty($hospitals['locations']['name'])?$hospitals['locations']['name']:'';
@@ -120,6 +123,7 @@ class HomeController extends Controller
         }
         else if($type=='service'){
           $services = _arefy(\Models\Services::where('id',$id)->get()->first());
+          $data['id'] = $services['id'];
           $data['title'] = $services['title'];
           $data['description'] = $services['description'];
           $data['image'] = !empty($doctors['image'])?$doctors['image']:'';
@@ -200,7 +204,7 @@ class HomeController extends Controller
             //pp($inserId);
             if($inserId){
 
-               $name = $request->name.' '.$request->name;
+               $name = $request->name;
                $emailData         = ___email_settings();
                $emailData['name'] = $name;
                $emailData['email']= !empty($request->email)?$request->email:'';;

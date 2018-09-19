@@ -1,4 +1,4 @@
-   
+   {{pp($doctors)}}
    <!--  <section class="cta-area section_padding_100 bg-img gradient-background-overlay" style="background-image: url({{url('front/img/bg-img/cta1.jpg')}});">
         <div class="container">
             <div class="row align-items-center">
@@ -46,7 +46,7 @@
 
                                     <h6>{{$desc}}</h6>
 
-                                    <a style="color:black;align:center;margin-bottom:15px" href="{{url(sprintf('detail?id=%s&type=doctor',___encrypt($doctor['id'])))}}" class="read-more">Read More</a>
+                                    <a style="color:black;align:center;margin-bottom:15px" href="{{url(sprintf('detail?id=%s&type=doctor',___encrypt($doctor['id'])))}}" class="read-more custom">Read More...</a>
 
                                     <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
                                 </div>

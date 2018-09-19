@@ -11,7 +11,6 @@
                             <h5 style="color:black" data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
                             <div class="slide-btn-group mt-50" data-animation="fadeInUp" data-delay="700ms">
                                 <a href="{{url('book-appointment?type=booking&id=null')}}" class="btn medica-btn">Make an Appointment</a>
-                                <a href="#" class="btn medica-btn ml-2 btn-2">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -27,8 +26,7 @@
                             <h2 style="color:black" data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
                             <h5 style="color:black" data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
                             <div class="slide-btn-group mt-50" data-animation="fadeInUp" data-delay="700ms">
-                                <a href="#" class="btn medica-btn">Make an Appointment</a>
-                                <a href="#" class="btn medica-btn ml-2 btn-2">Read More</a>
+                                <a href="{{url('book-appointment?type=booking&id=none')}}" class="btn medica-btn">Make an Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -44,8 +42,7 @@
                             <h2 style="color:black" data-animation="fadeInUp" data-delay="100ms">We provide top <br>medical services</h2>
                             <h5 style="color:black" data-animation="fadeInUp" data-delay="400ms">More than 30 professionals</h5>
                             <div class="slide-btn-group mt-50" data-animation="fadeInUp" data-delay="700ms">
-                                <a href="#" class="btn medica-btn">Make an Appointment</a>
-                                <a href="#" class="btn medica-btn ml-2 btn-2">Read More</a>
+                                <a href="{{url('book-appointment?type=booking&id=none')}}" class="btn medica-btn">Make an Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -75,7 +72,8 @@
                         <img src="{{url('front/img/icons/envelope.png')}}" alt="">
                     </div>
                     <div class="contact-meta">
-                        <p>0080 673 729 766 | 0080 234 5678 900 <br> contact@business.com</p>
+                        <p>
+                    +91 9953577208<br>imranahmad1612@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +83,7 @@
                         <img src="{{url('front/img/icons/map-pin.png')}}" alt="">
                     </div>
                     <div class="contact-meta">
-                        <p>Lamas Carbajal Str, no 14-18 <br> 41770 Montellano</p>
+                        <p>Batla House <br>Delhi</p>
                     </div>
                 </div>
             </div>

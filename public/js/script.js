@@ -13,7 +13,7 @@ $(document).on('click', '[data-request="remove"]', function(){
 
 $(document).on('click','[data-request="ajax-submit"]',function(){
     /*REMOVING PREVIOUS ALERT AND ERROR CLASS*/
-    $('#popup').show();  
+    $('#preloader').show();  
     $('.alert').remove(); 
     $(".has-error").removeClass('has-error');
     $('.help-block').remove();
@@ -86,7 +86,7 @@ $(document).on('click','[data-request="ajax-submit"]',function(){
                     show_validation_error($response.data);
                 }
             }
-            $('#popup').hide();
+            $('#preloader').hide();
         }
     }); 
 });

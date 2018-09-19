@@ -35,7 +35,7 @@
                                 <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
                                     <div class="doctor-thumbnail centertext" height="300px">
                                         @if($hospital['image']!=null)
-                                        <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="">
+                                        <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="" style="height: 170px">
                                         @else
                                         <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                         @endif
@@ -46,7 +46,7 @@
 
                                         <h6>{{$desc}}</h6>
 
-                                    <a style="color:black;align:center;margin-bottom:15px" href="{{url(sprintf('detail?id=%s&type=hospital',___encrypt($hospital['id'])))}}" class="read-more">Read More</a>
+                                    <a style="color:black;align:center;margin-bottom:15px" href="{{url(sprintf('detail?id=%s&type=hospital',___encrypt($hospital['id'])))}}" class="read-more custom">Read More...</a>
 
                                         <a href="{{url(sprintf('book-appointment?type=%s&id=%s','hospital',___encrypt($hospital['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
                                     </div>

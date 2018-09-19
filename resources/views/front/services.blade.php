@@ -28,7 +28,7 @@
                         <!-- Medica Emergency Card -->
                         <div class="medica-emergency-card">
                             <h5>For Emergencies</h5>
-                            <h4>+0080 954 4557 884</h4>
+                            <h4>+91 9953577208<br>imranahmad1612@gmail.com</h4>
                             <p>For any emergencies, appointments, health care reach us anywhere anytime.</p>
                             <a href="{{url('contact')}}">Any Queries?</a>
                         </div>
@@ -87,7 +87,7 @@
                                     <img src="{{url('front/img/icons/envelope.png')}}" alt="">
                                 </div>
                                 <div class="contact-meta">
-                                    <p>673 729 766 | 234 5678 900 <br> contact@business.com</p>
+                                    <p>+91 9953577208<br>imranahmad1612@gmail.com</p>
                                 </div>
                             </div>
                             <div class="single-contact-info d-flex align-items-center">
@@ -95,7 +95,7 @@
                                     <img src="{{url('front/img/icons/map-pin.png')}}" alt="">
                                 </div>
                                 <div class="contact-meta">
-                                    <p>Lamas Carbajal Str, no 14-18 <br> 41770 Montellano</p>
+                                    <p>Batla House <br>Delhi</p>
                                 </div>
                             </div>
                         </div>
