@@ -18,6 +18,7 @@ class Doctor
 		$validation = [
 			'id'				=> ['required'],
 			'email'				=> ['nullable','email'],
+			'req_email'			=> ['required','email'],
 			'first_name' 		=> ['required','string'],
 			'name' 				=> ['required','string'],
 			'last_name' 		=> ['nullable','string'],
@@ -25,6 +26,7 @@ class Doctor
 			'gender' 			=> ['required','string'],
 			'phone_code' 		=> ['nullable','required_with:mobile_number','string'],
 			'mobile_number' 	=> ['nullable','required_with:phone_code','numeric'],
+			'req_mobile_number' 	=> ['required','required_with:phone_code','numeric'],
 			'country' 			=> ['required','string'],
 			'address'           => ['nullable','string','max:1500'],
 			'qualifications'    => ['required','string','max:1500'],
@@ -45,9 +47,9 @@ class Doctor
         $validations = [
             'first_name' 		=> $this->validation('first_name'),
             'last_name' 		=> $this->validation('last_name'),
-			'email'  			=> array_merge($this->validation('email'),[Rule::unique('doctors')->ignore('trashed','status')]),
+			'email'  			=> array_merge($this->validation('req_email'),[Rule::unique('doctors')->ignore('trashed','status')]),
 			'country_code'		=> $this->validation('phone_code'),
-			'mobile_number'  	=> array_merge($this->validation('mobile_number'),[Rule::unique('doctors')->ignore('trashed','status')]),
+			'mobile_number'  	=> array_merge($this->validation('req_mobile_number'),[Rule::unique('doctors')->ignore('trashed','status')]),
 			'gender'			=> $this->validation('gender'),
             'date_of_birth' 	=> $this->validation('date_of_birth'),
 			'street'			=> $this->validation('address'),
@@ -63,12 +65,12 @@ class Doctor
 
     	if($action == 'edit'){
     		$validations['id'] = $this->validation('id');
-			$validations['email'] = array_merge($this->validation('email'),[
+			$validations['email'] = array_merge($this->validation('req_email'),[
 				Rule::unique('doctors')->ignore('trashed','status')->where(function($query){
 					$query->where('id','!=',$this->data->id);
 				})
 			]);
-			$validations['mobile_number'] = array_merge($this->validation('mobile_number'),[
+			$validations['mobile_number'] = array_merge($this->validation('req_mobile_number'),[
 				Rule::unique('doctors')->ignore('trashed','status')->where(function($query){
 					$query->where('id','!=',$this->data->id);
 				})
@@ -126,7 +128,7 @@ class Doctor
         $validations = [
             'name' 		        => $this->validation('name'),
 			'country_code'		=> $this->validation('phone_code'),
-			'mobile_number'  	=> array_merge($this->validation('mobile_number'),[Rule::unique('doctors')->ignore('trashed','status')]),
+			'mobile_number'  	=> array_merge($this->validation('req_mobile_number'),[Rule::unique('doctors')->ignore('trashed','status')]),
 			'street'			=> $this->validation('address'),
 			'city'				=> $this->validation('address'),
 			'state'				=> $this->validation('address'),
@@ -139,7 +141,7 @@ class Doctor
 
     	if($action == 'edit'){
     		$validations['id'] = $this->validation('id');
-			$validations['mobile_number'] = array_merge($this->validation('mobile_number'),[
+			$validations['mobile_number'] = array_merge($this->validation('req_mobile_number'),[
 				Rule::unique('doctors')->ignore('trashed','status')->where(function($query){
 					$query->where('id','!=',$this->data->id);
 				})
