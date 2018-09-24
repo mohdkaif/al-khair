@@ -69,6 +69,8 @@ class Services extends Model
             return $table_services->limit($limit)->get();                
         }else if($fetch === 'single'){
             return $table_services->get()->first();
+        }else if($fetch === 'count'){
+            return $table_services->get()->count();
         }else{
             return $table_services->limit($limit)->get();
         }

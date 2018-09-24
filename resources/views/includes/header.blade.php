@@ -3,7 +3,7 @@
 <div class="page-header-inner">
 	<!-- BEGIN LOGO -->
 	<div class="page-logo">
-		<a href="index.html">
+		<a href="{{url('admin/home')}}">
 		<!-- <img src="{{ asset('assets/admin/layout4/img/logo-light.png') }}" alt="logo" class="logo-default"/> -->
 		<h1>Al-Khair</h1>
 		</a>
@@ -20,9 +20,7 @@
 	<!-- DOC: Remove "hide" class to enable the page header actions -->
 	<div class="page-actions">
 		<div class="btn-group">
-			<button type="button" class="btn red-haze btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-			<span class="hidden-sm hidden-xs">Actions&nbsp;</span><i class="fa fa-angle-down"></i>
-			</button>
+			
 			<ul class="dropdown-menu" role="menu">
 				<li>
 					<a href="javascript:;">
@@ -56,14 +54,14 @@
 	<div class="page-top">
 		<!-- BEGIN HEADER SEARCH BOX -->
 		<!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-		<form class="search-form" action="extra_search.html" >
+		<!-- <form class="search-form" action="extra_search.html" >
 			<div class="input-group">
 				<input type="text" class="form-control input-sm" placeholder="Search..." name="query">
 				<span class="input-group-btn">
 				<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
 				</span>
 			</div>
-		</form>
+		</form> -->
 		<!-- END HEADER SEARCH BOX -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
 		<div class="top-menu">
@@ -72,7 +70,7 @@
 				</li>
 				<!-- BEGIN NOTIFICATION DROPDOWN -->
 				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+				<!-- <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
 					<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<i class="icon-bell"></i>
 					<span class="badge badge-success">
@@ -178,7 +176,7 @@
 							</ul>
 						</li>
 					</ul>
-				</li>
+				</li> -->
 				<!-- END NOTIFICATION DROPDOWN -->
 				<!-- END INBOX DROPDOWN -->
 				<li class="separator">
@@ -194,12 +192,7 @@
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
 						<li>
-							<a href="extra_profile.html">
-							<i class="icon-user"></i> My Profile </a>
-						</li>
-						  
-						<li>
-							<a href="login.html">
+							<a href="{{url('admin/logout')}}">
 							<i class="icon-key"></i> Log Out </a>
 						</li>
 					</ul>

@@ -31,7 +31,7 @@ class LoginController extends Controller
 			//dd($credentials);
 
 			if (\Auth::attempt($credentials)) {
-				return redirect('admin/associate');
+				return redirect('admin/home');
 			}
 		}
 		return $this->populateresponse();

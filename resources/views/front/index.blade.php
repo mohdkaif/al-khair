@@ -101,9 +101,9 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="medica-emergency-card wow fadeInUp" data-wow-delay="0.2s">
                         <h5>For Emergencies</h5>
-                        <h4>+0080 954 4557 884</h4>
+                        <h4>+91 9953577208</h4>
                         <p>For any emergencies, appointments, health care reach us anywhere anytime.</p>
-                        <a href="{{url('contact')}}">Any Queries?</a>
+                        <a href="{{url('contact')}}">Any Queries? Click Here</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
@@ -364,7 +364,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                 <div class="single-cool-fact wow fadeIn" data-wow-delay="0.2s">
                     <div class="counter-area">
                         <h2><span class="counter">8723</span></h2>
-                        <h6>Pacients since opening</h6>
+                        <h6>Patients since opening</h6>
                     </div>
                 </div>
             </div>
@@ -468,16 +468,18 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
 <!-- ***** Appointment Area End ***** -->
 
 <!-- ***** Partners Area Start ***** -->
+@php $count = 0; @endphp
 <div class="medica-our-partners-area section_padding_100">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="our-partners-logo d-flex align-items-center justify-content-between">
-                    <a href="#"><img src="{{url('front/img/partners-img/1.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('front/img/partners-img/2.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('front/img/partners-img/3.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('front/img/partners-img/4.png')}}" alt=""></a>
-                    <a href="#"><img src="{{url('front/img/partners-img/5.png')}}" alt=""></a>
+                    @foreach($hospitals as $key => $hospital)
+                        @if($count < 4 && $hospital['image']!=null)
+                            <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="">
+                            @php $count = $count + 1; @endphp
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -67,7 +67,7 @@ class Appointments extends Model
         return (bool)$isUpdated;
     }
 
-    public static function list($fetch='array',$user_id=NULL,$where='',$order='id-desc'){
+    public static function list($fetch='array',$user_id=NULL,$where='',$order='id-desc',$sortbydate=false){
                 
         $table_doctor = self::select(['*']);
         if($where){
@@ -80,6 +80,9 @@ class Appointments extends Model
             $order = explode('-', $order);
             $table_doctor->orderBy($order[0],$order[1]);
         }
+        if($sortbydate){
+            $sorted = $table_doctor->orderBy('appointment_date','DESC');
+        }
         if($fetch === 'array'){
             $doctorlist = $table_doctor->get();
             return json_decode(json_encode($doctorlist ), true );
@@ -87,6 +90,8 @@ class Appointments extends Model
             return $table_doctor->limit($limit)->get();                
         }else if($fetch === 'single'){
             return $table_doctor->get()->first();
+        }else if($fetch === 'count'){
+            return $table_doctor->get()->count();
         }else{
             return $table_doctor->limit($limit)->get();
         }

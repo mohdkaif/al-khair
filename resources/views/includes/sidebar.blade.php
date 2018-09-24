@@ -11,27 +11,33 @@
 		<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 		<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
 			<li class="start active ">
-				<a href="{{url('home')}}">
+				<a href="{{url('admin/home')}}">
 				<i class="icon-home"></i>
 				<span class="title">Dashboard</span>
 				</a>
 			</li>
 			<li>
 				<a href="{{url('admin/doctors')}}">
-					<i class="icon-user"></i>
+					<i class="fa fa-user-md"></i>
 					<span class="title">Doctors</span>
 				</a>
 			</li>
 			<li>
 				<a href="{{url('admin/hospitals')}}">
-					<i class="icon-user"></i>
+					<i class="fa fa-building"></i>
 					<span class="title">Hospitals</span>
 				</a>
 			</li>
 			<li>
 				<a href="{{url('admin/services')}}">
-					<i class="icon-envelope-open"></i>
+					<i class="fa fa-tasks"></i>
 					<span class="title">Services</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{url('admin/appointments')}}">
+					<i class="icon-envelope-open"></i>
+					<span class="title">Appointments</span>
 				</a>
 			</li>
 			<!-- <li class="last ">

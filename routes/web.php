@@ -37,7 +37,7 @@ Route::get('/logout','Auth\LoginController@logout');
 		Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware'=>'adminAuth'],function(){
 			Route::get('logout','LoginController@logout');
 			
-			Route::get('/home', 'HomeController@index')->name('home');
+			Route::get('/home', 'DashboardController@index')->name('home');
 			Route::group(['prefix' => 'associate'],function(){
 				Route::post('/status', 'AssociateController@changeStatus');
 				Route::resource('/', 'AssociateController');
@@ -68,6 +68,12 @@ Route::get('/logout','Auth\LoginController@logout');
 			Route::resource('services', 'ServiceController');
 			Route::group(['prefix' => 'services'],function(){
 				Route::post('/status', 'ServiceController@changeStatus');
+				//Route::resource('/', 'InvestorController');
+			});
+
+			Route::resource('appointments', 'AppointmentController');
+			Route::group(['prefix' => 'appointment'],function(){
+				Route::post('/delete', 'AppointmentController@delete');
 				//Route::resource('/', 'InvestorController');
 			});
 			

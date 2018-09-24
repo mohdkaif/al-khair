@@ -5,7 +5,10 @@
 			<form role="add-appointment" action="{{url('add-appointment')}}" method="POST" class="horizontal-form">
 				<div class="form-body">
 					<div class="container">
-						<h3 class="form-section">Add Appointment for {{ucfirst($name)}} ( {{ucfirst($type)}})</h3>
+						<h3 class="form-section">Add Appointment for
+						@if($name!='none')  {{ucfirst($name)}} @endif 
+						({{ucfirst($type)}})
+						</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">

@@ -55,8 +55,8 @@
                             <!-- Medica Emergency Card -->
                             <div class="medica-emergency-card mb-4">
                                 <h5>For Emergencies</h5>
-                                <h4>+0080 954 4557 884</h4>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <h4>+91 9953577208</h4>
+                                <p class="mb-0">For any emergencies, appointments, health care reach us anywhere anytime.</p>
                             </div>
                             <!-- Medica Appointment Card -->
                             <div class="medica-contact-card">
@@ -75,7 +75,7 @@
                                         <img src="img/icons/envelope.png" alt="">
                                     </div>
                                     <div class="contact-meta">
-                                        <p>673 729 766 | 234 5678 900 <br> contact@business.com</p>
+                                        <p>+91 9953577208<br>imranahmad1612@gmail.com</p>
                                     </div>
                                 </div>
                                 <div class="single-contact-info d-flex align-items-center">
@@ -83,7 +83,7 @@
                                         <img src="img/icons/map-pin.png" alt="">
                                     </div>
                                     <div class="contact-meta">
-                                        <p>Lamas Carbajal Str, no 14-18 <br> 41770 Montellano</p>
+                                        <p>Batla House<br> Delhi</p>
                                     </div>
                                 </div>
                             </div>

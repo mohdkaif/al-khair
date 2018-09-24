@@ -123,8 +123,16 @@
                                             <a href="{{url('services-details?id='.___encrypt($service['id'])) }}">Read More</a>
                                             @endif -->
                                             <!-- <a style="color:black;align:center" href="javascript:void(0);" class="read-more">Read More</a> -->
-                                            @php $desc = strlen($service['description']) > 50 ? substr($service['description'],0,50)."..." : $service['description']; @endphp
-                                            <p>{{$desc}}</p>
+                                             @php if(!empty($service['description'])){
+                                            $desc = strlen($service['description']) > 50 ? substr($service['description'],0,50)."..." : $service['description'];
+                                            }
+                                            else{
+                                                $desc = '';
+                                            }
+                                            @endphp
+
+                                            <h6>{{!empty($desc)?$desc:''}}</h6>
+
                                             <a style="color:black;align:center" href="{{url(sprintf('detail?id=%s&type=service',___encrypt($service['id'])))}}" class="read-more">Read More</a>
                                             <div class="doctor-meta centertext">
                                                 <a class="btn btn-primary custom" href="{{url(sprintf('book-appointment?type=%s&id=%s','service',___encrypt($service['id'])))}}">Book Appointment</a>

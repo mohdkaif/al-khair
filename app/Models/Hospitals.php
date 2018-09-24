@@ -105,6 +105,8 @@ class Hospitals extends Model
         }else if($fetch === 'single'){
             return $table_hospital->get()->first();
 
+        }else if($fetch === 'count'){
+            return $table_hospital->get()->count();
         }else{
             return $table_hospital->limit($limit)->get();
         }

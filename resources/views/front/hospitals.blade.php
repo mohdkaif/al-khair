@@ -35,16 +35,23 @@
                                 <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
                                     <div class="doctor-thumbnail centertext" height="300px">
                                         @if($hospital['image']!=null)
-                                        <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="" style="height: 170px">
+                                        <img src="{{url('uploads/hospitals/'.$hospital['image'])}}" alt="" style="height: 150px;width:260px">
                                         @else
                                         <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
                                         @endif
                                     </div>
                                     <div class="doctor-meta centertext" style="align:center">
                                         <h2><b>{{$hospital['name']}}</b></h2>
-                                         @php $desc = strlen($hospital['description']) > 50 ? substr($hospital['description'],0,50)."..." : $hospital['description']; @endphp
+                                        @php 
+                                        if(!empty($hospital['description'])){
+                                            $desc = strlen($hospital['description']) > 50 ? substr($hospital['description'],0,50)."..." : $hospital['description'];
+                                        }
+                                        else{
+                                            $desc = '';
+                                        }
+                                        @endphp
 
-                                        <h6>{{$desc}}</h6>
+                                        <h6>{{!empty($desc)?$desc:''}}</h6>
 
                                     <a style="color:black;align:center;margin-bottom:15px" href="{{url(sprintf('detail?id=%s&type=hospital',___encrypt($hospital['id'])))}}" class="read-more custom">Read More...</a>
 

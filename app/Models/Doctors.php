@@ -108,6 +108,8 @@ class Doctors extends Model
             return $table_doctor->limit($limit)->get();                
         }else if($fetch === 'single'){
             return $table_doctor->get()->first();
+        }else if($fetch === 'count'){
+            return $table_doctor->get()->count();
         }else{
             return $table_doctor->limit($limit)->get();
         }
