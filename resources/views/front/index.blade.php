@@ -56,7 +56,7 @@
 <div class="medica-contact-info-area">
     <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-12 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
                         <img src="{{url('front/img/icons/alarm-clock.png')}}" alt="">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-12 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
                         <img src="{{url('front/img/icons/envelope.png')}}" alt="">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-12 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
                         <img src="{{url('front/img/icons/map-pin.png')}}" alt="">
