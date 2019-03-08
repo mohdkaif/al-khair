@@ -64,7 +64,7 @@
                                 <div class="mt-50"></div>
                                 <div class="single-contact-info d-flex align-items-center">
                                     <div class="contact-icon mr-30">
-                                        <img src="img/icons/alarm-clock.png" alt="">
+                                        <img src="{{asset('front/img/icons/alarm-clock.png')}}" alt="">
                                     </div>
                                     <div class="contact-meta">
                                         <p>Monday - Friday 08:00 - 21:00 <br> Saturday and Sunday - CLOSED</p>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="single-contact-info d-flex align-items-center">
                                     <div class="contact-icon mr-30">
-                                        <img src="img/icons/envelope.png" alt="">
+                                        <img src="{{asset('front/img/icons/envelope.png')}}" alt="">
                                     </div>
                                     <div class="contact-meta">
                                         <p>+91 9953577208<br>imranahmad1612@gmail.com</p>
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="single-contact-info d-flex align-items-center">
                                     <div class="contact-icon mr-30">
-                                        <img src="img/icons/map-pin.png" alt="">
+                                        <img src="{{asset('front/img/icons/map-pin.png')}}" alt="">
                                     </div>
                                     <div class="contact-meta">
                                         <p>Batla House<br> Delhi</p>

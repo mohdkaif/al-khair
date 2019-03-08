@@ -116,3 +116,79 @@
         </div>
     </div>
 </header>
+@section('requirejs')
+    <script type="text/javascript">
+ 
+    function triggerHtmlEvent(element, eventName) {
+        
+      var event;
+      if(document.createEvent) {
+          event = document.createEvent('HTMLEvents');
+          event.initEvent(eventName, true, true);
+          element.dispatchEvent(event);
+      } else {
+          event = document.createEventObject();
+          event.eventType = eventName;
+          element.fireEvent('on' + event.eventType, event);
+      } 
+    }
+
+   
+        
+
+     
+   
+  
+
+    triggerHtmlEvent(document.getElementById("google_translate_element"), 'change');
+    
+    jQuery('#google_translate_element').on('change', function() {
+
+        var c = document.cookie.split('; '),
+        cookies = {}, i, C;
+
+        for (i = c.length - 1; i >= 0; i--) {
+            C = c[i].split('=');
+            cookies[C[0]] = C[1];
+        }
+
+        var language = cookies['googtrans'];
+
+
+        ////Get Current Selected Language
+        var selected_language = google.translate.TranslateElement().c;
+        if(selected_language == 'en'){
+
+            var ckDomain;
+            for (var ckDomain = window.location.hostname.split("."); 2 < ckDomain.length;){
+                ckDomain.shift();
+            }
+            ckDomain = ";domain=" + ckDomain.join(".");
+            document.cookie = "googtrans=/en/en; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/" + ckDomain;
+            
+            document.cookie = "googtrans=/en/en; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/";
+        }else if(selected_language == 'ar'){
+            var ckDomain;
+            for (var ckDomain = window.location.hostname.split("."); 2 < ckDomain.length;){
+                ckDomain.shift();
+            }
+            ckDomain = ";domain=" + ckDomain.join(".");
+            document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/" + ckDomain;
+            
+            document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/";
+        }
+        //////Set Cookie Again
+        /* var ckDomain;
+          for (var ckDomain = window.location.hostname.split("."); 2 < ckDomain.length;){
+            ckDomain.shift();
+          }
+          ckDomain = ";domain=" + ckDomain.join(".");
+        document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/" + ckDomain;
+        
+        document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/";*/
+
+       
+    });
+
+    </script>
+@endsection

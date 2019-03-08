@@ -26,17 +26,19 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
-          var ckDomain;
+
+         /* var ckDomain;
           for (var ckDomain = window.location.hostname.split("."); 2 < ckDomain.length;){
             ckDomain.shift();
           }
           ckDomain = ";domain=" + ckDomain.join(".");
-          // domain cookie
+         
           document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/" + ckDomain;
-          // host-only cookie (with no domain name definition)
-          document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/";
+         
+          document.cookie = "googtrans=/en/ar; expires=Thu, 07-Mar-2047 20:22:40 GMT; path=/";*/
           new google.translate.TranslateElement({
             pageLanguage: 'en',
+            includedLanguages: 'en,ar',
             autoDisplay: false,
             layout: google.translate.TranslateElement
           }, 'google_translate_element');
@@ -44,6 +46,7 @@
           
           ////alert(google.translate.TranslateElement().a.sd);
 }
+
 
     </script>
 </head>
@@ -62,8 +65,8 @@
             <div class="popup_align"></div>
     </div> --}}
     @yield('content')
-
-     <script src="{{asset('front/js/jquery/jquery-2.2.4.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    {{-- <script src="{{asset('front/js/jquery/jquery-2.2.4.min.js')}}"></script> --}}
     <!-- Popper js -->
     <script src="{{asset('front/js/popper.min.js')}}"></script>
     <!-- Bootstrap js -->
@@ -77,14 +80,15 @@
     <script src="{{url('js/select2.full.min.js')}}" type="text/javascript"></script>
 
     <script src="{{ asset('assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+
     <script src="{{asset('js/script.js')}}"></script>
     <script type="text/javascript">
-    jQuery(document).ready(function() {     
-      Metronic.init(); // init metronic core components
-    Layout.init(); // init current layout
+   /* jQuery(document).ready(function() {     
+      Metronic.init(); 
+    Layout.init();
       Login.init();
       Demo.init();
-           // init background slide images
+        
            $.backstretch([
             "{{ asset('assets/admin/pages/media/bg/2.jpg') }}",
             ], {
@@ -92,8 +96,29 @@
               duration: 8000
         }
         );
-    });
+    });*/
+   /* function triggerHtmlEvent(element, eventName) {
+      var event;
+      if(document.createEvent) {
+          event = document.createEvent('HTMLEvents');
+          event.initEvent(eventName, true, true);
+          element.dispatchEvent(event);
+      } else {
+          event = document.createEventObject();
+          event.eventType = eventName;
+          element.fireEvent('on' + event.eventType, event);
+      } 
+    }
+
+    triggerHtmlEvent(document.getElementsByClassName("goog-te-combo")[0], 'change');
+
+    jQuery('.goog-te-combo').on('change', function() {
+  alert( this.value );
+});*/
+
     </script>
+    @yield('requirejs') 
+
     
     <!-- END JAVASCRIPTS -->
 </body>

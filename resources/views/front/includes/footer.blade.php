@@ -13,7 +13,7 @@
                                 <!-- Single Blog Post -->
                                 <div class="widget-single-blog-post d-flex">
                                     <div class="widget-post-thumbnail pr-2">
-                                        <img src="img/bg-img/fp1.jpg" alt="">
+                                        <img src="{{asset('front/img/bg-img/fp1.jpg')}}" alt="">
                                     </div>
                                     <div class="widget-post-content">
                                         <a href="#">A big discovery for medicine</a>
@@ -23,7 +23,7 @@
                                 <!-- Single Blog Post -->
                                 <div class="widget-single-blog-post d-flex">
                                     <div class="widget-post-thumbnail pr-2">
-                                        <img src="img/bg-img/fp2.jpg" alt="">
+                                        <img src="{{asset('front/img/bg-img/fp2.jpg')}}" alt="">
                                     </div>
                                     <div class="widget-post-content">
                                         <a href="#">Dentistry for everybody</a>
@@ -33,7 +33,7 @@
                                 <!-- Single Blog Post -->
                                 <div class="widget-single-blog-post d-flex">
                                     <div class="widget-post-thumbnail pr-2">
-                                        <img src="img/bg-img/fp3.jpg" alt="">
+                                        <img src="{{asset('front/img/bg-img/fp3.jpg')}}" alt="">
                                     </div>
                                     <div class="widget-post-content">
                                         <a href="#">When it’s time to take pills</a>
@@ -68,7 +68,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="widget-single-contact d-flex align-items-center">
                                     <div class="widget-contact-thumbnail mr-15">
-                                        <img src="img/icons/alarm-clock.png" alt="">
+                                        <img src="{{asset('front/img/icons/alarm-clock.png')}}" alt="">
                                     </div>
                                     <div class="widget-contact-info">
                                         <p>Monday - Friday 08:00 - 21:00 <br>Saturday &amp; Sunday - CLOSED</p>
@@ -77,7 +77,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="widget-single-contact d-flex align-items-center">
                                     <div class="widget-contact-thumbnail mr-15">
-                                        <img src="img/icons/map-pin.png" alt="">
+                                        <img src="{{asset('front/img/icons/map-pin.png')}}" alt="">
                                     </div>
                                     <div class="widget-contact-info">
                                         <p>Batla House <br>Delhi</p>
@@ -86,7 +86,7 @@
                                 <!-- Single Contact Info -->
                                 <div class="widget-single-contact d-flex align-items-center">
                                     <div class="widget-contact-thumbnail mr-15">
-                                        <img src="img/icons/envelope.png" alt="">
+                                        <img src="{{asset('front/img/icons/envelope.png')}}" alt="">
                                     </div>
                                     <div class="widget-contact-info">
                                         <p>+91 9953577208<br>imranahmad1612@gmail.com</p>
@@ -112,10 +112,11 @@
                                 </p>
                             </div>
                             <div>
-                                <p>Developed By <a href="http://www.igniterpro.com" target = "_blank">IgniterPro</a></p>
+                                <p>Developed By <a href="http://www.igniterpro.com" target = "_blank">IgniterPro</a>
+                                 With <i class="fa fa-heart-o" aria-hidden="true"></i></p>
                             </div>
                             <!-- Footer Menu -->
-                            <div class="footer-menu">
+                         {{--    <div class="footer-menu">
                                 <nav>
                                     <ul>
                                         <li><a href="{{url('/')}}">Home</a></li>
@@ -126,7 +127,7 @@
                                         <li><a href="{{url('contact')}}">Contact</a></li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -136,15 +137,7 @@
     <!-- ***** Footer Area End ***** -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+
 
 </body>
 
