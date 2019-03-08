@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/about', 'HomeController@aboutUs');
 Route::get('/services', 'HomeController@service');
+Route::get('/gallery', 'HomeController@gallery');
 Route::get('detail', 'HomeController@details');
 Route::get('/doctors', 'HomeController@doctors');
 Route::get('/hospitals', 'HomeController@hospitals');
@@ -58,7 +59,11 @@ Route::get('/logout','Auth\LoginController@logout');
 				Route::post('/status', 'DoctorController@changeStatus');
 				//Route::resource('/', 'InvestorController');
 			});
-
+			Route::resource('gallery', 'GalleryController');
+			Route::group(['prefix' => 'gallery'],function(){
+				Route::post('/status', 'GalleryController@changeStatus');
+				//Route::resource('/', 'InvestorController');
+			});
 			Route::resource('hospitals', 'HospitalController');
 			Route::group(['prefix' => 'hospitals'],function(){
 				Route::post('/status', 'HospitalController@changeStatus');

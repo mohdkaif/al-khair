@@ -111,6 +111,9 @@
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>
+                            <div>
+                                <p>Developed By <a href="http://www.igniterpro.com" target = "_blank">IgniterPro</a></p>
+                            </div>
                             <!-- Footer Menu -->
                             <div class="footer-menu">
                                 <nav>

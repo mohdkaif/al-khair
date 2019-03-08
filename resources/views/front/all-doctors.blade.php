@@ -42,7 +42,7 @@
                                     @endif
                                 </div>
                                 <div class="doctor-meta centertext" style="align:center">
-                                    <h5>Dr. {{$doctor['name']}}</h5>
+                                    <h5>{{$doctor['name']}}</h5>
                                     <h6>{{$doctor['specifications']}}</h6>
                                         <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
                                     <div class="doctor-social-info">

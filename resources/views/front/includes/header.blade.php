@@ -87,6 +87,9 @@
                                     <li class="nav-item  @if(Request::segment(1)=='hospitals')active @endif">
                                         <a class="nav-link " href="{{url('hospitals')}}">Hospitals</a>
                                     </li>
+                                     <li class="nav-item  @if(Request::segment(1)=='gallery')active @endif">
+                                        <a class="nav-link " href="{{url('gallery')}}">Gallery</a>
+                                    </li>
                                     <!-- <li class="nav-item">
                                         <a class="nav-link" href="{{url('news')}}">News</a>
                                     </li> -->

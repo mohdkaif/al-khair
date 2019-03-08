@@ -53,7 +53,7 @@
 						<input class="input100" type="password" name="password" placeholder="Type your password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
-					
+					<input type="hidden" name="not_exists" class="not_exist_error">
 					<div class="text-right p-t-8 p-b-31">
 						<a href="#">
 							Forgot password?
@@ -63,9 +63,8 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button data-request="ajax-submit" data-target='[role="login"]' class="login100-form-btn">
-								Login
-							</button>
+							<button type="button" data-request="ajax-submit" data-target='[role="login"]'  class="login100-form-btn">Login</button>
+								
 						</div>
 					</div>
 

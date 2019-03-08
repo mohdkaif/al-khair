@@ -40,6 +40,9 @@
             autoDisplay: false,
             layout: google.translate.TranslateElement
           }, 'google_translate_element');
+
+          
+          ////alert(google.translate.TranslateElement().a.sd);
 }
 
     </script>
@@ -50,7 +53,14 @@
         <div ></div>
         <img src="{{asset('front/img/core-img/plus.png')}}" alt="logo">
     </div>
-
+   {{--  <div id="popup" class="popup">
+            <div class="loader">
+                <div class="spinning">
+                    <img src="{{ asset('images/loader.gif') }}" style="border-radius: 30px;"/>
+                </div>
+            </div>
+            <div class="popup_align"></div>
+    </div> --}}
     @yield('content')
 
      <script src="{{asset('front/js/jquery/jquery-2.2.4.min.js')}}"></script>

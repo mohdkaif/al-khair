@@ -29,6 +29,7 @@ class HomeController extends Controller
         $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
         $data['doctors']  = _arefy(\Models\Doctors::where('status','!=','trashed')->get());
         $data['hospitals']  = _arefy(\Models\Hospitals::where('status','!=','trashed')->get());
+        $data['gallery']  = _arefy(\Models\Gallery::where('status','!=','trashed')->get());
         return view('front_home',$data);
     }
 
@@ -59,6 +60,14 @@ class HomeController extends Controller
     {
         $data['view'] = 'front/doctors';
         $data['doctors']  = _arefy(\Models\Doctors::where('status','!=','trashed')->get());
+        $data['site_title'] = $data['page_title'] = 'Home';
+        $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
+        return view('front_home',$data);
+    }
+    public function gallery()
+    {
+        $data['view'] = 'front/gallery';
+        $data['gallery']  = _arefy(\Models\Gallery::where('status','!=','trashed')->get());
         $data['site_title'] = $data['page_title'] = 'Home';
         $data['breadcrumb'] = '<ul class="page-breadcrumb breadcrumb"><li><a href="">Home</a><i class="fa fa-circle"></i></li></ul>';
         return view('front_home',$data);
@@ -128,6 +137,14 @@ class HomeController extends Controller
           $data['description'] = $services['description'];
           $data['image'] = !empty($doctors['image'])?$doctors['image']:'';
            $data['type'] = 'services';
+        }
+        else if($type=='gallery'){
+          $gallery = _arefy(\Models\Gallery::where('id',$id)->get()->first());
+          $data['id'] = $gallery['id'];
+          $data['title'] = $gallery['name'];
+          $data['description'] = $gallery['description'];
+          $data['image'] = !empty($gallery['photo'])?$gallery['photo']:'';
+           $data['type'] = 'gallery';
         }
         return view('front_home',$data);
     }

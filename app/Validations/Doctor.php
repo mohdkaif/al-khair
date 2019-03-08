@@ -187,5 +187,50 @@ class Doctor
         return $validator;		
 	}
 
-	
+	public function createGallery($action='add'){
+        $validations = [
+            'name' 		        => $this->validation('name'),
+
+    	];
+
+        $validator = \Validator::make($this->data->all(), $validations,[]);
+
+        if($action == 'edit'){
+
+	        if(!empty($this->data->profile_picture)){
+
+		        $validator->after(function ($validator) {
+
+					if(substr($this->data->profile_picture->getMimeType(), 0, 5) != 'image') {
+					    $validator->errors()->add('profile_picture', 'The picture field is in invalid format.');
+					}
+					
+			           
+	    		});
+	        }
+	    
+    	}else{
+	        if(!empty($this->data->profile_picture)){
+
+		        $validator->after(function ($validator) {
+
+					if(substr($this->data->profile_picture->getMimeType(), 0, 5) != 'image') {
+					    $validator->errors()->add('profile_picture', 'The  picture field is in invalid format.');
+					}
+	    		});
+
+	        }else{	
+	        		$validator->after(function ($validator) {
+
+						if(empty($this->data->profile_picture)) {
+						    $validator->errors()->add('profile_picture', 'The picture field is required.');
+						}
+	    			});
+
+	        		//$validator->errors()->add('topic_picture', 'The topic picture field is required.');
+	        }
+
+    	}
+        return $validator;		
+	}
 }

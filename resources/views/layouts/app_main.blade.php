@@ -51,7 +51,14 @@
             @yield('content')
         </main>
     </div>  
-
+   {{--  <div id="popup" class="popup">
+            <div class="loader">
+                <div class="spinning">
+                    <img src="{{ asset('images/loader.gif') }}" style="border-radius: 30px;"/>
+                </div>
+            </div>
+            <div class="popup_align"></div>
+    </div>   --}}
 <script src="{{ asset('assets/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/global/plugins/jquery-migrate.min.js') }}" type="text/javascript"></script>
 <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>

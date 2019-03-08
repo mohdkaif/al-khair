@@ -40,7 +40,7 @@
                                     @endif
                                 </div>
                                 <div class="doctor-meta centertext" style="align:center">
-                                    <h5> {{$doctor['name']}}</h5>
+                                    <h5>{{$doctor['name']}}</h5>
                                     @php if(!empty($doctor['qualifications'])){
                                             $desc = strlen($doctor['qualifications']) > 50 ? substr($doctor['qualifications'],0,50)."..." : $doctor['qualifications'];
                                         }

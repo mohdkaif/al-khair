@@ -12,7 +12,7 @@ class LoginController extends Controller
         parent::__construct($request);
     }
     public function login(){
-    	$data['view'] = 'd';
+    	$data['view'] = 'login';
     	return view('login',$data);
     }
 
@@ -31,8 +31,14 @@ class LoginController extends Controller
 			//dd($credentials);
 
 			if (\Auth::attempt($credentials)) {
-				return redirect('admin/home');
-			}
+				$this->status   = true;
+                $this->modal    = true;
+                $this->alert    = true;
+                $this->message  = "Login Successfull!";
+                $this->redirect = url('admin/home');
+			}else{
+                $this->message  =  $validator->errors()->add('not_exists', 'User Email or Password is Incorrect.');
+            }
 		}
 		return $this->populateresponse();
     }

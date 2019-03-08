@@ -56,7 +56,7 @@
 <div class="medica-contact-info-area">
     <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-12 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
                         <img src="{{url('front/img/icons/alarm-clock.png')}}" alt="">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-12 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
                         <img src="{{url('front/img/icons/envelope.png')}}" alt="">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-12 col-lg-4">
                 <div class="single-contact-info d-flex align-items-center">
                     <div class="contact-icon mr-30">
                         <img src="{{url('front/img/icons/map-pin.png')}}" alt="">
@@ -270,7 +270,7 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
                                     @endif
                                 </div>
                                 <div class="doctor-meta centertext" style="align:center">
-                                    <h5>Dr. {{$doctor['name']}}</h5>
+                                    <h5>{{$doctor['name']}}</h5>
                                     <h6>{{$doctor['specifications']}}</h6>
                                     
                                         <a href="{{url(sprintf('book-appointment?type=%s&id=%s','doctor',___encrypt($doctor['id'])))}}" class="btn btn-primary custom">Book Appointment</a>
@@ -355,6 +355,58 @@ Al-Khair helps its patients worldwide, to receive the pleasant and cooperative m
 </section>
 <!-- ***** Testimonials Area End ***** -->
 
+
+<section class="medica-doctors-area section_padding_100_20">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section_heading">
+                    <img src="{{url('front/img/icons/photos.png')}}" alt="">
+                    <h2>Our Works</h2>
+                    <p>Some of our Latest works done for the patients all over the world!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @if(!empty($gallery))
+                @foreach($gallery as $key => $gallery_item)
+                    @if($key < 3)
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="centertext single-hospital-area wow fadeInUp" data-wow-delay="0.2s" height="400px">
+                                <div class="doctor-thumbnail centertext" height="300px">
+                                    @if($gallery_item['photo']!=null)
+                                        <img src="{{url('uploads/gallery/'.$gallery_item['photo'])}}" alt="">
+                                    @else
+                                        <img src="{{url('uploads/avatar.png')}}" alt="" width="200" height="190" class="img-circle">
+                                    @endif
+                                </div>
+                                <div class="doctor-meta centertext" style="align:center">
+                                    <h5>{{$gallery_item['name']}}</h5>
+                                    @php if(!empty($gallery_item['description'])){
+                                            $desc = strlen($gallery_item['description']) > 50 ? substr($gallery_item['description'],0,50)."..." : $gallery_item['description'];
+                                        }
+                                        else{
+                                            $desc = '';
+                                        }
+                                    @endphp
+                                    <h6>{{!empty($desc)?$desc:''}}</h6>
+                                    <a style="color:black;align:center;margin-bottom:15px" href="{{url(sprintf('detail?id=%s&type=gallery',___encrypt($gallery_item['id'])))}}" class="read-more custom">View More...</a>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            @endif
+        </div>
+        <div class="col-12">
+            <div class="see-all-doctors text-center wow fadeInUp" data-wow-delay="1s">
+                <a href="{{url('gallery')}}" class="btn medica-btn btn-2">Visit Gallery</a>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- ***** CTA Area Start ***** -->
 <section class="medica-call-to-action section_padding_50_0 gradient-background">
     <div class="container">

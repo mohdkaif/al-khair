@@ -40,6 +40,12 @@
 					<span class="title">Appointments</span>
 				</a>
 			</li>
+			<li>
+				<a href="{{url('admin/gallery')}}">
+					<i class="icon-frame"></i>
+					<span class="title">Gallery</span>
+				</a>
+			</li>
 			<!-- <li class="last ">
 				<a href="javascript:;">
 				<i class="icon-pointer"></i>

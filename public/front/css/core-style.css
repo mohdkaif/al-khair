@@ -1699,3 +1699,11 @@ p.show-read-more {
     max-width: 100%;
     width: 100%;
 }
+img.gallery-icon {
+    width: 60px;
+    height:50px;
+}
+.section_heading img {
+    width: 60px;
+    height:50px;
+}
