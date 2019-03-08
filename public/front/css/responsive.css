@@ -414,12 +414,14 @@
     .top-header-social-info .col-md-6 h5 {
         padding-top: 15px;
     }
+
     .goog-te-banner-frame {
         display: none !important;
     }
     body.page-md.login {
         top: 0 !important;
     }
+
 }
 
 @media (max-width: 991px) {
